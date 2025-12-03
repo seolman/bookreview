@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schemastore.org/package.json",
+  "private": true,
+  "name": "book-review",
+  "description": "book review service backend",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node .",
+    "dev": "tsc && node .",
+    "test": "vitest --watch",
+    "lint": "eslint .",
+    "format:check": "prettier . --check",
+    "format:write": "prettier . --write",
+    "db:seed": "node scripts/seed.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+  },
+  "keywords": [
+    "book",
+    "review"
+  ],
+  "author": "seolman",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.44.6",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.1",
+    "pg": "^8.16.3",
+    "tspec": "^0.1.116",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/express": "^4.17.23",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^24.6.2",
+    "@types/pg": "^8.15.5",
+    "drizzle-dbml-generator": "^0.10.0",
+    "drizzle-kit": "^0.31.5",
+    "eslint": "^9.36.0",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.45.0",
+    "vitest": "^3.2.4"
+  },
+  "prettier": {
+    "singleQuote": false,
+    "trailingComma": "es5",
+    "printWidth": 100
+  },
+  "workspaces": [
+    "apps/*"
+  ]
+}
