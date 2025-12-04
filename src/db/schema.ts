@@ -1,15 +1,13 @@
 import {
   integer,
-  numeric,
   pgTable as table,
   primaryKey,
   serial,
   text,
   timestamp,
-  unique,
   varchar,
   check,
-  pgEnum
+  pgEnum,
 } from "drizzle-orm/pg-core";
 import { relations, sql } from "drizzle-orm";
 
@@ -80,17 +78,15 @@ export const comments = table("comments", {
     .$onUpdate(() => new Date())
 });
 
-export const favorites = table(
-  "favorites",
-  {
-    userId: integer("user_id")
-      .notNull()
-      .references(() => users.id, { onDelete: "cascade" }),
-    mangaId: integer("manga_id")
-      .notNull()
-      .references(() => mangas.id, { onDelete: "cascade" }),
-    createdAt: timestamp("created_at").defaultNow().notNull()
-  },
+export const favorites = table("favorites", {
+  userId: integer("user_id")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  mangaId: integer("manga_id")
+    .notNull()
+    .references(() => mangas.id, { onDelete: "cascade" }),
+  createdAt: timestamp("created_at").defaultNow().notNull()
+},
   (t) => [primaryKey({ columns: [t.userId, t.mangaId] })]
 );
 

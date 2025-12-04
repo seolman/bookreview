@@ -1,10 +1,18 @@
-import { NextFunction, Request, Response } from "express";
+import { ErrorRequestHandler } from "express";
 
-const errorhandler = (
-  error: Error,
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {};
+import AppError from "../utils/error.js";
+
+// TODO
+const errorhandler: ErrorRequestHandler = (err, req, res, next) => {
+
+  if (err instanceof AppError) {
+
+  }
+
+  res.status(500).json({
+    success: false,
+    error: {}
+  });
+};
 
 export default errorhandler;
