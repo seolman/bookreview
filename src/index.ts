@@ -4,7 +4,7 @@ import cors, { CorsOptions } from "cors";
 import { TspecDocsMiddleware } from "tspec";
 
 import v1Router from "./routes/index.js";
-import config from "./config.js";
+import env from "./configs/env.js";
 import { HttpStatusCode } from "axios";
 import errorhandler from "./middlewares/errorMiddleware.js";
 
@@ -14,7 +14,7 @@ const initServer = async () => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  app.use(morgan(config.ENV === "development" ? "dev" : "combined"));
+  app.use(morgan(env.NODE_ENV === "development" ? "dev" : "combined"));
 
   const corsOptions: CorsOptions = {
     origin(requestOrigin, callback) {
@@ -27,7 +27,7 @@ const initServer = async () => {
     },
     credentials: true
   };
-  app.use(cors(config.ENV === "development" ? {} : corsOptions));
+  app.use(cors(env.NODE_ENV === "development" ? {} : corsOptions));
 
   // TODO
   app.use("/docs", await TspecDocsMiddleware());
@@ -42,8 +42,8 @@ const initServer = async () => {
 
   app.use(errorhandler);
 
-  app.listen(config.PORT, () => {
-    console.log(`server listening to http://localhost:${config.PORT}/`);
+  app.listen(env.PORT, () => {
+    console.log(`server listening to http://localhost:${env.PORT}/`);
   });
 };
 

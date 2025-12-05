@@ -14,7 +14,7 @@ export const listMangasHandler: RequestHandler = asyncHandler(async (req, res) =
 });
 
 export const getMangaByIdHandler: RequestHandler = asyncHandler(async (req, res) => {
-  const id = parseInt(req.query.id as string);
+  const id = parseInt(req.params.id as string);
   const manga = await getMangaById(id);
 
   sendSuccess(res, manga, HttpStatusCode.Ok);

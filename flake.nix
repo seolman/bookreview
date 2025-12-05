@@ -37,7 +37,7 @@
           packages = [
             pkgs.postgresql_16
             # nodejs_18-pkgs.nodejs_18
-            pkgs.nodejs
+            pkgs.nodejs_24
             redis-pkgs.redis
             nginx-pkgs.nginx
           ];

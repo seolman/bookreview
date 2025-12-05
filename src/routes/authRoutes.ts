@@ -1,12 +1,18 @@
 import { Router } from "express";
 
-import { loginController, logoutController } from "../controllers/authController.js";
+import { loginHandler, logoutHandler, registerHandler } from "../controllers/authController.js";
+import validationHandler from "../middlewares/validationMiddleware.js";
 
 const authRouter = Router();
 
-authRouter.use("/login", loginController);
+// TODO add validation
+authRouter.use("/register", registerHandler);
 
-authRouter.use("/logout", logoutController);
+// TODO add validation
+authRouter.use("/login", loginHandler);
+
+// TODO
+authRouter.use("/logout", logoutHandler);
 
 // authRouter.use("/refresh");
 

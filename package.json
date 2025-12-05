@@ -31,11 +31,13 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.44.6",
+    "drizzle-zod": "^0.8.3",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.1",
     "passport": "^0.7.0",
     "pg": "^8.16.3",
+    "redis": "^5.10.0",
     "tspec": "^0.1.116",
     "winston": "^3.18.3",
     "zod": "^4.1.11"

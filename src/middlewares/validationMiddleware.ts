@@ -1,9 +1,17 @@
-import { NextFunction, Request, Response } from "express";
+import { RequestHandler } from "express";
+import { ZodObject } from "zod";
 
-const validationHandler = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {};
+const validationHandler = (schema: ZodObject): RequestHandler => (req, res, next) => {
+  try {
+    schema.parse({
+      body: req.body,
+      query: req.query,
+      params: req.params
+    });
+    next();
+  } catch (err) {
+    next(err);
+  }
+};
 
 export default validationHandler;

@@ -1,17 +1,37 @@
 import { ErrorRequestHandler } from "express";
+import { HttpStatusCode } from "axios";
+import { ZodError } from "zod";
 
 import AppError from "../utils/error.js";
+import env from "../configs/env.js";
 
-// TODO
 const errorhandler: ErrorRequestHandler = (err, req, res, next) => {
+  let message = "Internal Server Error";
+  let statusCode = HttpStatusCode.InternalServerError;
+  let details: any | undefined;
 
   if (err instanceof AppError) {
-
+    message = err.message;
+    statusCode = err.statusCode;
+  } else if (err instanceof ZodError) {
+    message = err.message;
+    statusCode = HttpStatusCode.BadRequest;
+    details = err.issues;
+  } else if (err instanceof Error) {
+    message = err.message;
   }
 
-  res.status(500).json({
+  if (env.NODE_ENV == "development") {
+    console.error(err);
+  }
+
+  res.status(statusCode).json({
     success: false,
-    error: {}
+    error: {
+      message,
+      status: statusCode,
+      ...(details && { details })
+    }
   });
 };
 

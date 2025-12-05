@@ -1,21 +1,26 @@
 import { count, eq } from "drizzle-orm";
 import { HttpStatusCode } from "axios";
 
-import { db } from "../db/index.js";
+import db from "../db/index.js";
 import { mangas } from "../db/schema.js";
 import AppError from "../utils/error.js";
 
 export const getMangaById = async (id: number) => {
-  const [manga] = await db.select().from(mangas).where(eq(mangas.id, id));
-  if (!manga) {
+  const [data] = await db.select().from(mangas).where(eq(mangas.id, id));
+  if (!data) {
     throw new AppError("Not Found", HttpStatusCode.NotFound);
   }
 
-  return manga;
+  return data;
 };
 
 export const getMangas = async (page: number, size: number) => {
   const data = await db.select().from(mangas).limit(size).offset(page * size).orderBy(mangas.id);
+
+  if (data.length == 0) {
+    throw new AppError("Not Found", HttpStatusCode.NotFound);
+  }
+
   const [total] = await db.select({ value: count() }).from(mangas);
 
   const pagination = {
