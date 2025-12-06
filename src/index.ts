@@ -18,8 +18,8 @@ const initServer = async () => {
 
   const corsOptions: CorsOptions = {
     origin(requestOrigin, callback) {
-      // TODO add origin
-      if (!requestOrigin || "*") {
+      const allowedOrgins = env.ALLOWED_ORIGINS!.split(",") || [];
+      if (!requestOrigin || allowedOrgins.includes(requestOrigin)) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
@@ -29,11 +29,11 @@ const initServer = async () => {
   };
   app.use(cors(env.NODE_ENV === "development" ? {} : corsOptions));
 
-  // TODO
+  // TODO swagger ui
   app.use("/docs", await TspecDocsMiddleware());
   app.use("/v1/api", v1Router);
 
-  app.get("/healthz", (_, res) => {
+  app.get("/health", (req, res) => {
     res.status(HttpStatusCode.Ok).json({
       status: "Ok",
       uptime: `${process.uptime().toFixed(2)}`
