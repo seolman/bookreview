@@ -4,12 +4,9 @@ import z from "zod";
 
 import asyncHandler from "../utils/asyncHandler.js";
 import { sendSuccess } from "../utils/response.js";
-import { loginUser, registerUser } from "../services/authService.js";
+import { loginUser, logoutUser } from "../services/authService.js";
+import AppError from "../utils/error.js";
 
-export const registerHandler: RequestHandler = asyncHandler(async (req, res) => {
-  const newUser = await registerUser(req.body);
-  sendSuccess(res, newUser, HttpStatusCode.Created);
-});
 
 export const loginHandler: RequestHandler = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
@@ -21,6 +18,12 @@ export const loginHandler: RequestHandler = asyncHandler(async (req, res) => {
 
 // TODO
 export const logoutHandler: RequestHandler = asyncHandler(async (req, res) => {
+  if (!req.user) {
+    throw new AppError("Unauthorized", HttpStatusCode.Unauthorized);
+  }
+
+  await logoutUser(req.user.id);
+  sendSuccess(res, null, HttpStatusCode.Ok);
 });
 
 // TODO
