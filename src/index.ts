@@ -2,17 +2,30 @@ import express from "express";
 import morgan from "morgan";
 import cors, { CorsOptions } from "cors";
 import { TspecDocsMiddleware } from "tspec";
+import { rateLimit } from "express-rate-limit";
+import { HttpStatusCode } from "axios";
 
 import v1Router from "./routes/index.js";
 import env from "./configs/env.js";
-import { HttpStatusCode } from "axios";
 import errorhandler from "./middlewares/errorMiddleware.js";
+import AppError from "./utils/error.js";
 
 const initServer = async () => {
   const app = express();
 
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
+
+  const globalRateLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    limit: 100,
+    standardHeaders: true,
+    legacyHeaders: false,
+    handler: (req, res, next, opt) => {
+      next(new AppError("Too Many Requests", HttpStatusCode.TooManyRequests));
+    }
+  });
+  app.use(globalRateLimiter);
 
   app.use(morgan(env.NODE_ENV === "development" ? "dev" : "combined"));
 
@@ -48,3 +61,5 @@ const initServer = async () => {
 };
 
 initServer();
+
+// TODO graceful shutdown
