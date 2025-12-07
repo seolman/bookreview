@@ -13,9 +13,10 @@ const errorhandler: ErrorRequestHandler = (err, req, res, next) => {
   if (err instanceof AppError) {
     message = err.message;
     statusCode = err.statusCode;
+    details = err.details;
   } else if (err instanceof ZodError) {
     message = err.message;
-    statusCode = HttpStatusCode.BadRequest;
+    statusCode = HttpStatusCode.UnprocessableEntity;
     details = err.issues;
   } else if (err instanceof Error) {
     message = err.message;
@@ -28,10 +29,12 @@ const errorhandler: ErrorRequestHandler = (err, req, res, next) => {
   res.status(statusCode).json({
     success: false,
     error: {
+      timestamp: new Date(),
+      path: req.path,
       message,
       status: statusCode,
-      ...(details && { details })
-    }
+      ...(details && { details }),
+    },
   });
 };
 

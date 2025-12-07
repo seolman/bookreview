@@ -7,19 +7,30 @@ type Pagination = {
   totalElements: number;
 };
 
-export const sendSuccess = (res: Response, data: any, code: number = 200, message?: string) => {
+export const sendSuccess = (
+  res: Response,
+  data: any,
+  code: number = 200,
+  message?: string
+) => {
   res.status(code).json({
     success: true,
     data,
-    ...(message && { message })
+    ...(message && { message }),
   });
 };
 
-export const sendSuccessPagenation = (res: Response, data: any[], pagination: Pagination, code: number = 200, message?: string) => {
+export const sendSuccessPagenation = (
+  res: Response,
+  data: any[],
+  pagination: Pagination,
+  code: number = 200,
+  message?: string
+) => {
   res.status(code).json({
     success: true,
     data,
     pagination,
-    ...(message && { message })
+    ...(message && { message }),
   });
 };

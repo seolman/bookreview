@@ -23,7 +23,7 @@ const initServer = async () => {
     legacyHeaders: false,
     handler: (req, res, next, opt) => {
       next(new AppError("Too Many Requests", HttpStatusCode.TooManyRequests));
-    }
+    },
   });
   app.use(globalRateLimiter);
 
@@ -38,7 +38,7 @@ const initServer = async () => {
         callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true
+    credentials: true,
   };
   app.use(cors(env.NODE_ENV === "development" ? {} : corsOptions));
 
@@ -49,7 +49,7 @@ const initServer = async () => {
   app.get("/health", (req, res) => {
     res.status(HttpStatusCode.Ok).json({
       status: "Ok",
-      uptime: `${process.uptime().toFixed(2)}`
+      uptime: `${process.uptime().toFixed(2)}`,
     });
   });
 

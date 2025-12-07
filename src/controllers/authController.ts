@@ -7,7 +7,6 @@ import { sendSuccess } from "../utils/response.js";
 import { loginUser, logoutUser } from "../services/authService.js";
 import AppError from "../utils/error.js";
 
-
 export const loginHandler: RequestHandler = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -27,6 +26,6 @@ export const logoutHandler: RequestHandler = asyncHandler(async (req, res) => {
 });
 
 // TODO
-export const refreshHandler: RequestHandler = asyncHandler(async (req, res) => {
-
-});
+export const refreshHandler: RequestHandler = asyncHandler(
+  async (req, res) => {}
+);

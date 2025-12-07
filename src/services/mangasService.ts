@@ -1,8 +1,8 @@
-import { count, eq } from "drizzle-orm";
+import { count, eq, asc, desc } from "drizzle-orm";
 import { HttpStatusCode } from "axios";
 
 import db from "../db/index.js";
-import { mangas } from "../db/schema.js";
+import { mangas, NewManga } from "../db/schema.js";
 import AppError from "../utils/error.js";
 
 export const getMangaById = async (id: number) => {
@@ -14,24 +14,62 @@ export const getMangaById = async (id: number) => {
   return data;
 };
 
-export const getMangas = async (page: number, size: number) => {
-  const data = await db.select().from(mangas).limit(size).offset(page * size).orderBy(mangas.id);
+export const getMangas = async (page: number, size: number, sort: string) => {
+  const [total] = await db.select({ value: count() }).from(mangas);
 
-  if (data.length == 0) {
-    throw new AppError("Not Found", HttpStatusCode.NotFound);
+  const totalPages = Math.ceil(total.value / size) || 1;
+  if (page > totalPages) {
+    throw new AppError("Bad Request", HttpStatusCode.BadRequest);
   }
 
-  const [total] = await db.select({ value: count() }).from(mangas);
+  const [field, order] = sort.split(",");
+  const sortOrder = order?.toLowerCase() === "asc" ? asc : desc;
+
+  const sortableColumns: Record<string, any> = {
+    createdAt: mangas.createdAt,
+    publishedAt: mangas.publishedAt,
+    title: mangas.title,
+  };
+
+  const orderByColumn = sortableColumns[field] || mangas.createdAt;
+
+  const data = await db
+    .select()
+    .from(mangas)
+    .limit(size)
+    .offset((page - 1) * size)
+    .orderBy(sortOrder(orderByColumn));
 
   const pagination = {
     page,
     size,
     totalElements: total.value,
-    totalPages: Math.ceil(total.value / size)
+    totalPages,
+    sort,
   };
 
   return {
     mangas: data,
-    pagination
+    pagination,
   };
+};
+
+export const updateMangaById = async (
+  mangaId: number,
+  updateData: Partial<NewManga>
+) => {
+  const { title, author, imageUrl, publishedAt, synopsis } = updateData;
+  const [updatedManga] = await db
+    .update(mangas)
+    .set({
+      title: title,
+      author: author,
+      imageUrl: imageUrl,
+      publishedAt: publishedAt,
+      synopsis: synopsis,
+    })
+    .where(eq(mangas.id, mangaId))
+    .returning();
+
+  return updatedManga;
 };

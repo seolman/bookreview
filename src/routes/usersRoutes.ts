@@ -1,6 +1,14 @@
 import { Router } from "express";
 
-import { deleteMyAccountHandler, getMyProfileHandler, getUserHandler, getUsersHandler, registerHandler, updateMyUserProfileHandler, updateRoleHandler } from "../controllers/usersController.js";
+import {
+  deleteMyAccountHandler,
+  getMyProfileHandler,
+  getUserHandler,
+  getUsersHandler,
+  registerHandler,
+  updateMyUserProfileHandler,
+  updateRoleHandler,
+} from "../controllers/usersController.js";
 
 const usersRouter = Router();
 

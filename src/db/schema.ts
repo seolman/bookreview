@@ -28,7 +28,7 @@ export const users = table("users", {
   updatedAt: timestamp("updated_at")
     .defaultNow()
     .notNull()
-    .$onUpdate(() => new Date())
+    .$onUpdate(() => new Date()),
 });
 
 // TODO oauth
@@ -38,6 +38,8 @@ export const users = table("users", {
 //   userId: integer("user_id").references(() => users.id).notNull()
 // }, (t) => ({
 // }));
+
+export type NewManga = typeof mangas.$inferInsert;
 
 export const mangas = table("mangas", {
   id: serial("id").primaryKey(),
@@ -51,30 +53,31 @@ export const mangas = table("mangas", {
   updatedAt: timestamp("updated_at")
     .defaultNow()
     .notNull()
-    .$onUpdate(() => new Date())
+    .$onUpdate(() => new Date()),
 });
 
-export const reviews = table("reviews", {
-  id: serial("id").primaryKey(),
-  userId: integer("user_id")
-    .references(() => users.id, { onDelete: "cascade" })
-    .notNull(),
-  mangaId: integer("manga_id")
-    .references(() => mangas.id, { onDelete: "cascade" })
-    .notNull(),
-  rating: integer("rating").notNull(),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at")
-    .defaultNow()
-    .notNull()
-    .$onUpdate(() => new Date())
-}, (t) => [
-  // unique().on(table.userId, table.mangaId),
-  check(
-    "review_rating_check",
-    sql`${t.rating} >= 1 and ${t.rating} <= 5`
-  )
-]);
+export const reviews = table(
+  "reviews",
+  {
+    id: serial("id").primaryKey(),
+    userId: integer("user_id")
+      .references(() => users.id, { onDelete: "cascade" })
+      .notNull(),
+    mangaId: integer("manga_id")
+      .references(() => mangas.id, { onDelete: "cascade" })
+      .notNull(),
+    rating: integer("rating").notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at")
+      .defaultNow()
+      .notNull()
+      .$onUpdate(() => new Date()),
+  },
+  (t) => [
+    // unique().on(table.userId, table.mangaId),
+    check("review_rating_check", sql`${t.rating} >= 1 and ${t.rating} <= 5`),
+  ]
+);
 
 export const comments = table("comments", {
   id: serial("id").primaryKey(),
@@ -85,18 +88,20 @@ export const comments = table("comments", {
   updatedAt: timestamp("updated_at")
     .defaultNow()
     .notNull()
-    .$onUpdate(() => new Date())
+    .$onUpdate(() => new Date()),
 });
 
-export const favorites = table("favorites", {
-  userId: integer("user_id")
-    .notNull()
-    .references(() => users.id, { onDelete: "cascade" }),
-  mangaId: integer("manga_id")
-    .notNull()
-    .references(() => mangas.id, { onDelete: "cascade" }),
-  createdAt: timestamp("created_at").defaultNow().notNull()
-},
+export const favorites = table(
+  "favorites",
+  {
+    userId: integer("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    mangaId: integer("manga_id")
+      .notNull()
+      .references(() => mangas.id, { onDelete: "cascade" }),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+  },
   (t) => [primaryKey({ columns: [t.userId, t.mangaId] })]
 );
 
