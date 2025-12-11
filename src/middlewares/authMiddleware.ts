@@ -10,6 +10,7 @@ import { db } from "../db/index.js";
 import { users } from "../db/schema.js";
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Express {
     interface Request {
       user?: typeof users.$inferSelect;
@@ -18,7 +19,7 @@ declare global {
 }
 
 export const authMiddleware: RequestHandler = asyncHandler(
-  async (req, res, next) => {
+  async (req, _res, next) => {
     const authHeader = req.headers.authorization;
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
       throw new AppError("Unauthorized", HttpStatusCode.Unauthorized);
@@ -41,7 +42,7 @@ export const authMiddleware: RequestHandler = asyncHandler(
       req.user = user;
       next();
     } catch (err) {
-      throw new AppError("Unauthorized", HttpStatusCode.Unauthorized);
+      throw new AppError("Unauthorized", HttpStatusCode.Unauthorized, (err as Error).message);
     }
   }
 );

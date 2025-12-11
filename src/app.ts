@@ -22,7 +22,7 @@ export const createApp = async () => {
     limit: 100,
     standardHeaders: true,
     legacyHeaders: false,
-    handler: (req, res, next, opt) => {
+    handler: (_req, _res, next) => {
       next(new AppError("Too Many Requests", HttpStatusCode.TooManyRequests));
     },
   });
@@ -62,7 +62,7 @@ export const createApp = async () => {
   }));
   app.use("/v1/api", v1Router);
 
-  app.get("/health", (req, res) => {
+  app.get("/health", (_req, res) => {
     res.status(HttpStatusCode.Ok).json({
       status: "Ok",
       uptime: `${process.uptime().toFixed(2)}`,

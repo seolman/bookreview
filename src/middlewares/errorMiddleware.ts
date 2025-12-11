@@ -23,7 +23,7 @@ export type MyErrorResponse = {
   };
 };
 
-const errorhandler: ErrorRequestHandler = (err, req, res, next) => {
+const errorhandler: ErrorRequestHandler = (err, req, res) => {
   let message = "Internal Server Error";
   let statusCode = HttpStatusCode.InternalServerError;
   let details: any | undefined;

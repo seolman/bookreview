@@ -18,7 +18,7 @@ const startServer = async () => {
         try {
           await pool.end();
         } catch (err) {
-          console.error("not finished db");
+          console.error("not finished db", err);
         }
 
         process.exit(0);

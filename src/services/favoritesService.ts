@@ -1,4 +1,4 @@
-import { and, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { HttpStatusCode } from "axios";
 
 import { db } from "../db/index.js";
@@ -6,7 +6,6 @@ import { favorites, mangas, users } from "../db/schema.js";
 import AppError from "../utils/error.js";
 
 export const addFavorite = async (userId: number, mangaId: number) => {
-  // Check if manga exists
   const [manga] = await db
     .select({ id: mangas.id })
     .from(mangas)
@@ -16,7 +15,6 @@ export const addFavorite = async (userId: number, mangaId: number) => {
     throw new AppError("Manga not found", HttpStatusCode.NotFound);
   }
 
-  // Use onConflictDoNothing to handle if the favorite already exists
   await db
     .insert(favorites)
     .values({
