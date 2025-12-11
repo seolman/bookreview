@@ -1,11 +1,11 @@
 import { ErrorRequestHandler } from "express";
 import { HttpStatusCode } from "axios";
-import { ZodError } from "zod";
+import z, { ZodError } from "zod";
 
 import AppError from "../utils/error.js";
 import env from "../configs/env.js";
 import logger from "../utils/logger.js";
-import { DrizzleError, DrizzleQueryError } from "drizzle-orm";
+import { DrizzleError } from "drizzle-orm";
 
 export type MyErrorResponse = {
   success: false;
@@ -35,7 +35,7 @@ const errorhandler: ErrorRequestHandler = (err, req, res, next) => {
   } else if (err instanceof ZodError) {
     message = err.message;
     statusCode = HttpStatusCode.UnprocessableEntity;
-    details = err.issues;
+    details = z.treeifyError(err);
   } else if (err instanceof DrizzleError) {
     message = err.message;
   } else if (err instanceof Error) {
