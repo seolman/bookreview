@@ -42,7 +42,11 @@ export const authMiddleware: RequestHandler = asyncHandler(
       req.user = user;
       next();
     } catch (err) {
-      throw new AppError("Unauthorized", HttpStatusCode.Unauthorized, (err as Error).message);
+      throw new AppError(
+        "Unauthorized",
+        HttpStatusCode.Unauthorized,
+        (err as Error).message
+      );
     }
   }
 );

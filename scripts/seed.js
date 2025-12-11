@@ -63,7 +63,9 @@ async function seed() {
   const admin1 = seededUsers.find((u) => u.email === "admin@example.com");
 
   if (!user1 || !admin1 || seededMangas.length < 2) {
-    console.log("Not enough users or mangas to seed reviews/comments. Exiting.");
+    console.log(
+      "Not enough users or mangas to seed reviews/comments. Exiting."
+    );
     return;
   }
 
@@ -81,13 +83,15 @@ async function seed() {
         userId: admin1.id,
         mangaId: seededMangas[0].id,
         rating: 4,
-        content: "Great story and art, but the pacing felt a bit slow in the middle.",
+        content:
+          "Great story and art, but the pacing felt a bit slow in the middle.",
       },
       {
         userId: user1.id,
         mangaId: seededMangas[1].id,
         rating: 3,
-        content: "It was okay. Not my cup of tea, but I can see why others like it.",
+        content:
+          "It was okay. Not my cup of tea, but I can see why others like it.",
       },
     ])
     .onConflictDoNothing()

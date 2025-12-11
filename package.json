@@ -10,7 +10,7 @@
     "start": "node .",
     "dev": "tsx watch src/index.ts",
     "test": "vitest run",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint . --ext .ts --max-warnings 0",
     "format:check": "prettier . --check",
     "format:write": "prettier . --write",
     "db:seed": "node scripts/seed.js",

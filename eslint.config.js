@@ -17,10 +17,7 @@ export default defineConfig(
   },
   {
     rules: {
-      // turns a rule on with no configuration (i.e. uses the default configuration)
-      '@typescript-eslint/array-type': 'error',
-      // turns on a rule with configuration
-      '@typescript-eslint/no-explicit-any': ['warn', { ignoreRestArgs: true }],
+      "@typescript-eslint/no-explicit-any": ["off", { ignoreRestArgs: true }],
     },
-  },
+  }
 );

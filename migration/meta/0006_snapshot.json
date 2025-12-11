@@ -53,12 +53,8 @@
           "name": "comments_user_id_users_id_fk",
           "tableFrom": "comments",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -66,12 +62,8 @@
           "name": "comments_review_id_reviews_id_fk",
           "tableFrom": "comments",
           "tableTo": "reviews",
-          "columnsFrom": [
-            "review_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["review_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -112,12 +104,8 @@
           "name": "favorites_user_id_users_id_fk",
           "tableFrom": "favorites",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -125,12 +113,8 @@
           "name": "favorites_manga_id_mangas_id_fk",
           "tableFrom": "favorites",
           "tableTo": "mangas",
-          "columnsFrom": [
-            "manga_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["manga_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -138,10 +122,7 @@
       "compositePrimaryKeys": {
         "favorites_user_id_manga_id_pk": {
           "name": "favorites_user_id_manga_id_pk",
-          "columns": [
-            "user_id",
-            "manga_id"
-          ]
+          "columns": ["user_id", "manga_id"]
         }
       },
       "uniqueConstraints": {},
@@ -217,9 +198,7 @@
         "mangas_mal_id_unique": {
           "name": "mangas_mal_id_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "mal_id"
-          ]
+          "columns": ["mal_id"]
         }
       },
       "policies": {},
@@ -262,12 +241,8 @@
           "name": "refresh_tokens_user_id_users_id_fk",
           "tableFrom": "refresh_tokens",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -277,9 +252,7 @@
         "refresh_tokens_token_unique": {
           "name": "refresh_tokens_token_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "token"
-          ]
+          "columns": ["token"]
         }
       },
       "policies": {},
@@ -342,12 +315,8 @@
           "name": "reviews_user_id_users_id_fk",
           "tableFrom": "reviews",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -355,12 +324,8 @@
           "name": "reviews_manga_id_mangas_id_fk",
           "tableFrom": "reviews",
           "tableTo": "mangas",
-          "columnsFrom": [
-            "manga_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["manga_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -440,16 +405,12 @@
         "users_username_unique": {
           "name": "users_username_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "username"
-          ]
+          "columns": ["username"]
         },
         "users_email_unique": {
           "name": "users_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
@@ -461,10 +422,7 @@
     "public.user_role": {
       "name": "user_role",
       "schema": "public",
-      "values": [
-        "user",
-        "admin"
-      ]
+      "values": ["user", "admin"]
     }
   },
   "schemas": {},

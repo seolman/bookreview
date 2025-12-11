@@ -8,8 +8,10 @@ async function reset() {
       "favorites",
       "refresh_tokens",
       "reviews",
-      "mangas"
-    ].map(name => `"${name}"`).join(", ");
+      "mangas",
+    ]
+      .map((name) => `"${name}"`)
+      .join(", ");
 
     console.log("start truncate");
 

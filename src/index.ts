@@ -9,7 +9,7 @@ const startServer = async () => {
     console.log(`http://localhost:${env.PORT}/docs`);
   });
   const signals: NodeJS.Signals[] = ["SIGINT", "SIGTERM"];
-  signals.forEach(signal => {
+  signals.forEach((signal) => {
     process.on(signal, () => {
       server.close(async (err) => {
         if (err) {
