@@ -40,9 +40,9 @@ export type MyPaginationResponse<T> = {
   message?: string;
 };
 
-export const sendSuccess = (
+export const sendSuccess = <T>(
   res: Response,
-  data: any,
+  data: T,
   code: number = 200,
   message?: string
 ) => {
@@ -53,9 +53,9 @@ export const sendSuccess = (
   });
 };
 
-export const sendSuccessPagination = (
+export const sendSuccessPagination = <T>(
   res: Response,
-  data: any[],
+  data: T[],
   pagination: Pagination,
   code: number = 200,
   message?: string
