@@ -209,53 +209,54 @@ POSTGRESQL 16
 
 ## 엔드포인트
 
-baseurl: `http://localhost:8080/v1/api`
-swagger: `http://localhost:8080/docs`
+- swagger: `http://localhost:8080/docs`
+
+- baseurl: `http://localhost:8080/v1/api`
 
 - auth(3)
-  post /auth/login
-  post /auth/logout
-  post /auth/refresh
+  - post /auth/login
+  - post /auth/logout
+  - post /auth/refresh
 
 - users(7)
-  post /users
-  get /users/me
-  put /users/me
-  get /users (admin)
-  get /users/:id (admin)
-  delete /users/me
-  patch /users/:id/role (admin)
+  - post /users
+  - get /users/me
+  - put /users/me
+  - get /users (admin)
+  - get /users/:id (admin)
+  - delete /users/me
+  - patch /users/:id/role (admin)
 
 - mangas(5)
-  post /mangas (admin)
-  get /mangas
-  get /mangas/:id
-  put /mangas/:id (admin)
-  delete /mangas/:id (admin)
+  - post /mangas (admin)
+  - get /mangas
+  - get /mangas/:id
+  - put /mangas/:id (admin)
+  - delete /mangas/:id (admin)
 
 - reviews(6)
-  post /mangas/:id/reviews
-  get /mangas/:id/reviews
-  get /reviews/:id
-  put /reviews/:id
-  delete /reviews/:id
-  get /users/:id/reviews
+  - post /mangas/:id/reviews
+  - get /mangas/:id/reviews
+  - get /reviews/:id
+  - put /reviews/:id
+  - delete /reviews/:id
+  - get /users/:id/reviews
 
 - comments(4)
-  post /reviews/:id/comments
-  get /reviews/:id/comments
-  put /comments/:id
-  delete /comments/:id
+  - post /reviews/:id/comments
+  - get /reviews/:id/comments
+  - put /comments/:id
+  - delete /comments/:id
 
 - favorites(3)
-  post /mangas/:id/favorites
-  get /mangas/:id/favorites
-  get /users/:id/favorites
+  - post /mangas/:id/favorites
+  - get /mangas/:id/favorites
+  - get /users/:id/favorites
 
 - stats(3)
-  get /stats/top-reviews
-  get /stats/top-rated-mangas
-  get /health
+  - get /stats/top-reviews
+  - get /stats/top-rated-mangas
+  - get /health
 
 ## 성능/보안 고려사항
 
