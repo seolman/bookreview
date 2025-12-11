@@ -2,7 +2,7 @@ import { RequestHandler } from "express";
 import { HttpStatusCode } from "axios";
 
 import asyncHandler from "../utils/asyncHandler.js";
-import { sendSuccess, sendSuccessPagenation } from "../utils/response.js";
+import { sendSuccess, sendSuccessPagination } from "../utils/response.js";
 import {
   createManga,
   deleteMangaById,
@@ -20,7 +20,7 @@ export const listMangasHandler: RequestHandler = asyncHandler(
 
     const { mangas, pagination } = await getMangas(page, size, sort, keyword);
 
-    sendSuccessPagenation(res, mangas, pagination);
+    sendSuccessPagination(res, mangas, pagination);
   }
 );
 

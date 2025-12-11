@@ -6,6 +6,22 @@ import AppError from "../utils/error.js";
 import env from "../configs/env.js";
 import logger from "../utils/logger.js";
 
+export type MyErrorResponse = {
+  success: false;
+  error: {
+    timestamp: Date;
+    path: string;
+    message: string;
+    /**
+     * @example 400
+     **/
+    status: number;
+    details?: {
+      [key: string]: string;
+    };
+  };
+};
+
 const errorhandler: ErrorRequestHandler = (err, req, res, next) => {
   let message = "Internal Server Error";
   let statusCode = HttpStatusCode.InternalServerError;

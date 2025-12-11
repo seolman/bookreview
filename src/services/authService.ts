@@ -56,7 +56,6 @@ export const refreshAccessToken = async (refreshToken: string) => {
       throw new AppError("Invalid Refresh Token", HttpStatusCode.Unauthorized);
     }
 
-
     if (decoded.exp * 1000 < Date.now()) {
       await db
         .delete(refreshTokens)

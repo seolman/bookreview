@@ -2,7 +2,7 @@ import { RequestHandler } from "express";
 import { HttpStatusCode } from "axios";
 
 import asyncHandler from "../utils/asyncHandler.js";
-import { sendSuccess, sendSuccessPagenation } from "../utils/response.js";
+import { sendSuccess, sendSuccessPagination } from "../utils/response.js";
 import {
   createReview,
   deleteReview,
@@ -38,7 +38,7 @@ export const getReviewsByMangaHandler: RequestHandler = asyncHandler(
       sort
     );
 
-    sendSuccessPagenation(res, reviews, pagination);
+    sendSuccessPagination(res, reviews, pagination);
   }
 );
 
@@ -88,6 +88,6 @@ export const getReviewsByUserHandler: RequestHandler = asyncHandler(
       sort
     );
 
-    sendSuccessPagenation(res, reviews, pagination);
+    sendSuccessPagination(res, reviews, pagination);
   }
 );

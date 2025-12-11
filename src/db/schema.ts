@@ -39,6 +39,7 @@ export const users = table("users", {
 // }));
 
 export type NewManga = typeof mangas.$inferInsert;
+export type Manga = typeof mangas.$inferSelect;
 
 export const mangas = table("mangas", {
   id: serial("id").primaryKey(),
@@ -54,6 +55,9 @@ export const mangas = table("mangas", {
     .notNull()
     .$onUpdate(() => new Date()),
 });
+
+export type NewReview = typeof reviews.$inferInsert;
+export type Review = typeof reviews.$inferSelect;
 
 export const reviews = table(
   "reviews",
@@ -79,11 +83,18 @@ export const reviews = table(
   ]
 );
 
+export type NewComment = typeof comments.$inferInsert;
+export type Comment = typeof comments.$inferSelect;
+
 export const comments = table("comments", {
   id: serial("id").primaryKey(),
   content: text("content").notNull(),
-  userId: integer(),
-  reviewId: integer(),
+  userId: integer()
+    .references(() => users.id, { onDelete: "cascade" })
+    .notNull(),
+  reviewId: integer()
+    .references(() => reviews.id, { onDelete: "cascade" })
+    .notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at")
     .defaultNow()

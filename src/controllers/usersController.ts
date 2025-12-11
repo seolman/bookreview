@@ -4,7 +4,7 @@ import { HttpStatusCode } from "axios";
 import asyncHandler from "../utils/asyncHandler.js";
 import {
   sendSuccess,
-  sendSuccessPagenation as sendSuccessPagination,
+  sendSuccessPagination as sendSuccessPagination,
 } from "../utils/response.js";
 import {
   createUser,

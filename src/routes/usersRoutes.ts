@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { Tspec } from "tspec";
 
 import { getFavoritesByUserHandler } from "../controllers/favoritesController.js";
 import { getReviewsByUserHandler } from "../controllers/reviewsController.js";

@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { Tspec } from "tspec";
 
 import { addFavoriteHandler } from "../controllers/favoritesController.js";
 import {
@@ -24,8 +25,28 @@ import { createReviewSchema } from "../validations/reviewValidation.js";
 const mangasRouter = Router();
 
 mangasRouter.get("/mangas", listMangasHandler);
+mangasRouter.post(
+  "/mangas",
+  authMiddleware,
+  authorizeRoles(["admin"]),
+  validationMiddleware(createMangaSchema),
+  createMangaHandler
+);
 
 mangasRouter.get("/mangas/:id", getMangaByIdHandler);
+mangasRouter.put(
+  "/mangas/:id",
+  authMiddleware,
+  authorizeRoles(["admin"]),
+  validationMiddleware(updateMangaSchema),
+  updateMangaByIdHandler
+);
+mangasRouter.delete(
+  "/mangas/:id",
+  authMiddleware,
+  authorizeRoles(["admin"]),
+  deleteMangaByIdHandler
+);
 
 mangasRouter.post(
   "/mangas/:id/reviews",
@@ -36,28 +57,5 @@ mangasRouter.post(
 mangasRouter.get("/mangas/:id/reviews", getReviewsByMangaHandler);
 
 mangasRouter.post("/mangas/:id/favorites", authMiddleware, addFavoriteHandler);
-
-mangasRouter.put(
-  "/mangas/:id",
-  authMiddleware,
-  authorizeRoles(["admin"]),
-  validationMiddleware(updateMangaSchema),
-  updateMangaByIdHandler
-);
-
-mangasRouter.delete(
-  "/mangas/:id",
-  authMiddleware,
-  authorizeRoles(["admin"]),
-  deleteMangaByIdHandler
-);
-
-mangasRouter.post(
-  "/mangas",
-  authMiddleware,
-  authorizeRoles(["admin"]),
-  validationMiddleware(createMangaSchema),
-  createMangaHandler
-);
 
 export default mangasRouter;
