@@ -1,7 +1,7 @@
 import { count, eq, asc, desc } from "drizzle-orm";
 import { HttpStatusCode } from "axios";
 
-import db from "../db/index.js";
+import { db } from "../db/index.js";
 import { comments, reviews, users } from "../db/schema.js";
 import AppError from "../utils/error.js";
 
@@ -22,9 +22,9 @@ export const createComment = async (
   const [newComment] = await db
     .insert(comments)
     .values({
+      content,
       userId,
       reviewId,
-      content,
     })
     .returning();
 

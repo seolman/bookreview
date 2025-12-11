@@ -1,6 +1,6 @@
-import { asc, desc, eq, gt, sql } from "drizzle-orm";
+import { desc, eq, gte, sql } from "drizzle-orm";
 
-import db from "../db/index.js";
+import { db } from "../db/index.js";
 import { reviews, users, mangas } from "../db/schema.js";
 
 export const getTopReviews = async (limit: number = 10) => {
@@ -25,7 +25,7 @@ export const getTopReviews = async (limit: number = 10) => {
     .from(reviews)
     .leftJoin(users, eq(reviews.userId, users.id))
     .leftJoin(mangas, eq(reviews.mangaId, mangas.id))
-    .where(gt(reviews.rating, 3))
+    .where(gte(reviews.rating, 3))
     .orderBy(desc(reviews.rating), desc(reviews.createdAt))
     .limit(limit);
 

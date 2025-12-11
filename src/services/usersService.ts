@@ -1,7 +1,7 @@
 import { asc, count, desc, eq } from "drizzle-orm";
 import { HttpStatusCode } from "axios";
 
-import db from "../db/index.js";
+import { db } from "../db/index.js";
 import { NewUser, users } from "../db/schema.js";
 import AppError from "../utils/error.js";
 import { hashPassword } from "../utils/password.js";

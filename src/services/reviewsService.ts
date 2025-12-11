@@ -1,7 +1,7 @@
 import { and, asc, count, desc, eq } from "drizzle-orm";
 import { HttpStatusCode } from "axios";
 
-import db from "../db/index.js";
+import { db } from "../db/index.js";
 import { reviews, users, mangas } from "../db/schema.js";
 import AppError from "../utils/error.js";
 
@@ -15,7 +15,6 @@ export const createReview = async (
   mangaId: number,
   payload: CreateReviewPayload
 ) => {
-  // Check if the user has already reviewed this manga
   const [existingReview] = await db
     .select()
     .from(reviews)

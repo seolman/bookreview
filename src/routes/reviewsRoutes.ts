@@ -17,7 +17,6 @@ import { updateReviewSchema } from "../validations/reviewValidation.js";
 const router = Router();
 
 router.get("/reviews/:id", getReviewByIdHandler);
-
 router.put(
   "/reviews/:id",
   authMiddleware,
@@ -32,7 +31,6 @@ router.post(
   validationMiddleware(createCommentSchema),
   createCommentHandler
 );
-
 router.get("/reviews/:id/comments", getCommentsByReviewHandler);
 
 export default router;

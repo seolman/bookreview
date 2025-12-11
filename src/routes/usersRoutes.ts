@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { Tspec } from "tspec";
 
 import { getFavoritesByUserHandler } from "../controllers/favoritesController.js";
 import { getReviewsByUserHandler } from "../controllers/reviewsController.js";
@@ -25,12 +24,23 @@ usersRouter.post(
   validationMiddleware(registerUserSchema),
   registerHandler
 );
+usersRouter.get(
+  "/users",
+  authMiddleware,
+  authorizeRoles(["admin"]),
+  getUsersHandler
+);
 
 usersRouter.get("/users/me", authMiddleware, getMyProfileHandler);
-
 usersRouter.put("/users/me", authMiddleware, updateMyUserProfileHandler);
-
 usersRouter.delete("/users/me", authMiddleware, deleteMyAccountHandler);
+
+usersRouter.get(
+  "/users/:id",
+  authMiddleware,
+  authorizeRoles(["admin"]),
+  getUserHandler
+);
 
 usersRouter.get("/users/:id/reviews", getReviewsByUserHandler);
 
@@ -42,20 +52,6 @@ usersRouter.patch(
   authorizeRoles(["admin"]),
   validationMiddleware(updateUserRoleSchema),
   updateRoleHandler
-);
-
-usersRouter.get(
-  "/users",
-  authMiddleware,
-  authorizeRoles(["admin"]),
-  getUsersHandler
-);
-
-usersRouter.get(
-  "/users/:id",
-  authMiddleware,
-  authorizeRoles(["admin"]),
-  getUserHandler
 );
 
 export default usersRouter;

@@ -49,8 +49,17 @@ export const initApp = async () => {
   };
   app.use(cors(env.NODE_ENV === "development" ? {} : corsOptions));
 
-  // TODO
-  app.use("/docs", await TspecDocsMiddleware());
+  app.use("/docs", await TspecDocsMiddleware({
+    openapi: {
+      securityDefinitions: {
+        jwt: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    },
+  }));
   app.use("/v1/api", v1Router);
 
   app.get("/health", (req, res) => {

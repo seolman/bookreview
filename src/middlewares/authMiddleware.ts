@@ -6,7 +6,7 @@ import { eq } from "drizzle-orm";
 import asyncHandler from "../utils/asyncHandler.js";
 import AppError from "../utils/error.js";
 import env from "../configs/env.js";
-import db from "../db/index.js";
+import { db } from "../db/index.js";
 import { users } from "../db/schema.js";
 
 declare global {

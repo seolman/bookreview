@@ -5,6 +5,7 @@ import { ZodError } from "zod";
 import AppError from "../utils/error.js";
 import env from "../configs/env.js";
 import logger from "../utils/logger.js";
+import { DrizzleError, DrizzleQueryError } from "drizzle-orm";
 
 export type MyErrorResponse = {
   success: false;
@@ -35,12 +36,14 @@ const errorhandler: ErrorRequestHandler = (err, req, res, next) => {
     message = err.message;
     statusCode = HttpStatusCode.UnprocessableEntity;
     details = err.issues;
+  } else if (err instanceof DrizzleError) {
+    message = err.message;
   } else if (err instanceof Error) {
     message = err.message;
   }
 
   if (env.NODE_ENV === "development") {
-    console.error(err);
+    console.error((err as Error).stack);
   } else {
     logger.error(
       `Path: ${req.path}, Error: ${err.message}, Stack: ${err.stack}`

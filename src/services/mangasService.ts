@@ -1,7 +1,7 @@
 import { count, eq, asc, desc, ilike, or } from "drizzle-orm";
 import { HttpStatusCode } from "axios";
 
-import db from "../db/index.js";
+import { db } from "../db/index.js";
 import { mangas, NewManga } from "../db/schema.js";
 import AppError from "../utils/error.js";
 

@@ -3,7 +3,7 @@ import { eq } from "drizzle-orm";
 import jwt from "jsonwebtoken";
 
 import { users, refreshTokens } from "../db/schema.js";
-import db from "../db/index.js";
+import { db } from "../db/index.js";
 import AppError from "../utils/error.js";
 import { comparePassword } from "../utils/password.js";
 import env from "../configs/env.js";

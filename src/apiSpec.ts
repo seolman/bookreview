@@ -52,24 +52,6 @@ type CommentWithUser = Comment & {
 
 export type ApiSpec = Tspec.DefineApiSpec<{
   basePath: "/v1/api";
-  // tags: [
-  //   "Authentication",
-  //   "Users",
-  //   "Mangas",
-  //   "Reviews",
-  //   "Comments",
-  //   "Favorites",
-  //   "Statistics",
-  //   "System"
-  // ];
-  securityDefinitions: {
-    jwt: {
-      type: "apiKey";
-      name: "Authorization";
-      in: "header";
-      description: "Bearer token for authentication. Example: Bearer <token>";
-    };
-  };
   paths: {
     "/auth/login": {
       post: {

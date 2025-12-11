@@ -1,6 +1,6 @@
 {
-  "id": "5db268b8-8f05-43fa-9c71-18e86692b178",
-  "prevId": "a2c91e7d-baa1-4f1e-9e37-9fcaeb22e008",
+  "id": "e1e790a8-2311-4eb1-8386-8b8a7f90768e",
+  "prevId": "3954b2a0-ab07-4047-bff0-d4ebadd52842",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -20,14 +20,14 @@
           "primaryKey": false,
           "notNull": true
         },
-        "userId": {
-          "name": "userId",
+        "user_id": {
+          "name": "user_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": true
         },
-        "reviewId": {
-          "name": "reviewId",
+        "review_id": {
+          "name": "review_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": true
@@ -49,21 +49,29 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "comments_userId_users_id_fk": {
-          "name": "comments_userId_users_id_fk",
+        "comments_user_id_users_id_fk": {
+          "name": "comments_user_id_users_id_fk",
           "tableFrom": "comments",
           "tableTo": "users",
-          "columnsFrom": ["userId"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "comments_reviewId_reviews_id_fk": {
-          "name": "comments_reviewId_reviews_id_fk",
+        "comments_review_id_reviews_id_fk": {
+          "name": "comments_review_id_reviews_id_fk",
           "tableFrom": "comments",
           "tableTo": "reviews",
-          "columnsFrom": ["reviewId"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "review_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -104,8 +112,12 @@
           "name": "favorites_user_id_users_id_fk",
           "tableFrom": "favorites",
           "tableTo": "users",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -113,8 +125,12 @@
           "name": "favorites_manga_id_mangas_id_fk",
           "tableFrom": "favorites",
           "tableTo": "mangas",
-          "columnsFrom": ["manga_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "manga_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -122,7 +138,10 @@
       "compositePrimaryKeys": {
         "favorites_user_id_manga_id_pk": {
           "name": "favorites_user_id_manga_id_pk",
-          "columns": ["user_id", "manga_id"]
+          "columns": [
+            "user_id",
+            "manga_id"
+          ]
         }
       },
       "uniqueConstraints": {},
@@ -198,7 +217,9 @@
         "mangas_mal_id_unique": {
           "name": "mangas_mal_id_unique",
           "nullsNotDistinct": false,
-          "columns": ["mal_id"]
+          "columns": [
+            "mal_id"
+          ]
         }
       },
       "policies": {},
@@ -241,8 +262,12 @@
           "name": "refresh_tokens_user_id_users_id_fk",
           "tableFrom": "refresh_tokens",
           "tableTo": "users",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -252,7 +277,9 @@
         "refresh_tokens_token_unique": {
           "name": "refresh_tokens_token_unique",
           "nullsNotDistinct": false,
-          "columns": ["token"]
+          "columns": [
+            "token"
+          ]
         }
       },
       "policies": {},
@@ -285,7 +312,8 @@
           "name": "rating",
           "type": "integer",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": 0
         },
         "content": {
           "name": "content",
@@ -314,8 +342,12 @@
           "name": "reviews_user_id_users_id_fk",
           "tableFrom": "reviews",
           "tableTo": "users",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -323,8 +355,12 @@
           "name": "reviews_manga_id_mangas_id_fk",
           "tableFrom": "reviews",
           "tableTo": "mangas",
-          "columnsFrom": ["manga_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "manga_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -404,12 +440,16 @@
         "users_username_unique": {
           "name": "users_username_unique",
           "nullsNotDistinct": false,
-          "columns": ["username"]
+          "columns": [
+            "username"
+          ]
         },
         "users_email_unique": {
           "name": "users_email_unique",
           "nullsNotDistinct": false,
-          "columns": ["email"]
+          "columns": [
+            "email"
+          ]
         }
       },
       "policies": {},
@@ -421,7 +461,10 @@
     "public.user_role": {
       "name": "user_role",
       "schema": "public",
-      "values": ["user", "admin"]
+      "values": [
+        "user",
+        "admin"
+      ]
     }
   },
   "schemas": {},

@@ -1,4 +1,5 @@
 import { Router } from "express";
+
 import {
   getTopRatedMangasHandler,
   getTopReviewsHandler,
@@ -7,6 +8,7 @@ import {
 const router = Router();
 
 router.get("/stats/top-reviews", getTopReviewsHandler);
+
 router.get("/stats/top-rated-mangas", getTopRatedMangasHandler);
 
 export default router;

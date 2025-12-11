@@ -69,7 +69,7 @@ export const reviews = table(
     mangaId: integer("manga_id")
       .references(() => mangas.id, { onDelete: "cascade" })
       .notNull(),
-    rating: integer("rating").notNull(),
+    rating: integer("rating").notNull().default(0),
     content: text("content").notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at")
@@ -89,10 +89,10 @@ export type Comment = typeof comments.$inferSelect;
 export const comments = table("comments", {
   id: serial("id").primaryKey(),
   content: text("content").notNull(),
-  userId: integer()
+  userId: integer("user_id")
     .references(() => users.id, { onDelete: "cascade" })
     .notNull(),
-  reviewId: integer()
+  reviewId: integer("review_id")
     .references(() => reviews.id, { onDelete: "cascade" })
     .notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),

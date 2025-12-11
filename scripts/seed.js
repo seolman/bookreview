@@ -1,18 +1,10 @@
-import { drizzle } from "drizzle-orm/node-postgres";
-import { Pool } from "pg";
-import {} from "axios";
-
-import { users, mangas } from "../dist/db/schema.js";
+import { users, mangas, reviews, comments } from "../dist/db/schema.js";
 import { hashPassword } from "../dist/utils/password.js";
-import env from "../dist/configs/env.js";
+import { pool, db } from "../dist/db/index.js";
 
-const pool = new Pool({
-  connectionString: env.DATABASE_URL,
-});
-const db = drizzle(pool);
-
-async function main() {
+async function seed() {
   console.log("seeding...");
+
   const testUsers = [
     {
       email: "user@example.com",
@@ -28,8 +20,8 @@ async function main() {
     },
   ];
 
+  const hashedPassword = await hashPassword(testUsers[0].password);
   for (const user of testUsers) {
-    const hashedPassword = await hashPassword(user.password);
     await db
       .insert(users)
       .values({
@@ -38,41 +30,97 @@ async function main() {
         hashedPassword: hashedPassword,
         role: user.role,
       })
-      .onConflictDoNothing({ target: users.email });
+      .onConflictDoUpdate({ target: users.email, set: { hashedPassword } });
+  }
+  console.log("Users seeded.");
+
+  const mangaRes = await fetch("https://api.jikan.moe/v4/manga?page=1");
+  if (!mangaRes.ok) {
+    throw new Error("Failed to fetch manga data from Jikan API.");
   }
 
-  const a = await fetch("https://api.jikan.moe/v4/manga?page=1");
-  if (!a.ok) {
-    throw new Error();
-  }
-
-  const mangaData = await a.json();
+  const mangaData = await mangaRes.json();
   for (const manga of mangaData.data) {
+    if (!manga.published.from) continue;
     await db
       .insert(mangas)
       .values({
         malId: manga.mal_id,
         title: manga.title,
         synopsis: manga.synopsis,
-        author: manga.authors[0].name,
-        publishedAt: manga.published.from
-          ? new Date(manga.published.from)
-          : new Date(),
+        author: manga.authors[0]?.name || "Unknown",
+        publishedAt: new Date(manga.published.from),
         imageUrl: manga.images.jpg.image_url,
       })
       .onConflictDoNothing({ target: mangas.malId });
+  }
+  console.log("Mangas seeded.");
+
+  const seededUsers = await db.select().from(users);
+  const seededMangas = await db.select().from(mangas);
+
+  const user1 = seededUsers.find((u) => u.email === "user@example.com");
+  const admin1 = seededUsers.find((u) => u.email === "admin@example.com");
+
+  if (!user1 || !admin1 || seededMangas.length < 2) {
+    console.log("Not enough users or mangas to seed reviews/comments. Exiting.");
+    return;
+  }
+
+  console.log("Seeding reviews...");
+  const seededReviews = await db
+    .insert(reviews)
+    .values([
+      {
+        userId: user1.id,
+        mangaId: seededMangas[0].id,
+        rating: 5,
+        content: "This is a masterpiece, a must-read for everyone!",
+      },
+      {
+        userId: admin1.id,
+        mangaId: seededMangas[0].id,
+        rating: 4,
+        content: "Great story and art, but the pacing felt a bit slow in the middle.",
+      },
+      {
+        userId: user1.id,
+        mangaId: seededMangas[1].id,
+        rating: 3,
+        content: "It was okay. Not my cup of tea, but I can see why others like it.",
+      },
+    ])
+    .onConflictDoNothing()
+    .returning();
+  console.log("Reviews seeded.");
+
+  if (seededReviews.length > 0) {
+    console.log("Seeding comments...");
+    await db.insert(comments).values([
+      {
+        userId: admin1.id,
+        reviewId: seededReviews[0].id,
+        content: "I totally agree! The art is breathtaking.",
+      },
+      {
+        userId: user1.id,
+        reviewId: seededReviews[0].id,
+        content: "Right? I've re-read it three times already.",
+      },
+    ]);
+    console.log("Comments seeded.");
   }
 
   console.log("seeding end");
 }
 
-main()
+seed()
   .catch((err) => {
     console.error("failed seeding: ", err);
     process.exit(1);
   })
   .finally(async () => {
-    console.log("closing databaes connection");
+    console.log("closing database connection");
     await pool.end();
     console.log("closed");
   });

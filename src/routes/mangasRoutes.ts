@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { Tspec } from "tspec";
 
 import { addFavoriteHandler } from "../controllers/favoritesController.js";
 import {

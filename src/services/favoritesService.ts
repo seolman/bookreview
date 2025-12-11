@@ -1,7 +1,7 @@
 import { and, eq } from "drizzle-orm";
 import { HttpStatusCode } from "axios";
 
-import db from "../db/index.js";
+import { db } from "../db/index.js";
 import { favorites, mangas, users } from "../db/schema.js";
 import AppError from "../utils/error.js";
 
