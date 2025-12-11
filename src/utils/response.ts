@@ -20,7 +20,7 @@ export const sendSuccess = (
   });
 };
 
-export const sendSuccessPagenation = (
+export const sendSuccessPagination = (
   res: Response,
   data: any[],
   pagination: Pagination,

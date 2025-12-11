@@ -4,6 +4,8 @@ import { HttpStatusCode } from "axios";
 import asyncHandler from "../utils/asyncHandler.js";
 import { sendSuccess, sendSuccessPagenation } from "../utils/response.js";
 import {
+  createManga,
+  deleteMangaById,
   getMangaById,
   getMangas,
   updateMangaById,
@@ -14,7 +16,9 @@ export const listMangasHandler: RequestHandler = asyncHandler(
     const page = parseInt(req.query.page as string) || 1;
     const size = parseInt(req.query.size as string) || 10;
     const sort = (req.query.sort as string) || "createdAt,desc";
-    const { mangas, pagination } = await getMangas(page, size, sort);
+    const keyword = req.query.keyword as string | undefined;
+
+    const { mangas, pagination } = await getMangas(page, size, sort, keyword);
 
     sendSuccessPagenation(res, mangas, pagination);
   }
@@ -37,12 +41,18 @@ export const updateMangaByIdHandler: RequestHandler = asyncHandler(
   }
 );
 
-// TODO
 export const deleteMangaByIdHandler: RequestHandler = asyncHandler(
-  async (req, res) => {}
+  async (req, res) => {
+    const id = parseInt(req.params.id as string);
+    await deleteMangaById(id);
+    res.status(HttpStatusCode.NoContent).send();
+  }
 );
 
-// TODO
 export const createMangaHandler: RequestHandler = asyncHandler(
-  async (req, res) => {}
+  async (req, res) => {
+    const newManga = await createManga(req.body);
+
+    sendSuccess(res, newManga, HttpStatusCode.Created);
+  }
 );

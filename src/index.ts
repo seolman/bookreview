@@ -9,8 +9,9 @@ import v1Router from "./routes/index.js";
 import env from "./configs/env.js";
 import errorhandler from "./middlewares/errorMiddleware.js";
 import AppError from "./utils/error.js";
+import logger from "./utils/logger.js";
 
-const initServer = async () => {
+export const initApp = async () => {
   const app = express();
 
   app.use(express.json());
@@ -27,7 +28,13 @@ const initServer = async () => {
   });
   app.use(globalRateLimiter);
 
-  app.use(morgan(env.NODE_ENV === "development" ? "dev" : "combined"));
+  app.use(
+    morgan(env.NODE_ENV === "development" ? "dev" : "combined", {
+      stream: {
+        write: (message) => logger.http(message.trim()),
+      },
+    })
+  );
 
   const corsOptions: CorsOptions = {
     origin(requestOrigin, callback) {
@@ -42,7 +49,7 @@ const initServer = async () => {
   };
   app.use(cors(env.NODE_ENV === "development" ? {} : corsOptions));
 
-  // TODO swagger ui
+  // TODO
   app.use("/docs", await TspecDocsMiddleware());
   app.use("/v1/api", v1Router);
 
@@ -55,11 +62,16 @@ const initServer = async () => {
 
   app.use(errorhandler);
 
+  return app;
+};
+
+const startServer = async () => {
+  const app = await initApp();
   app.listen(env.PORT, () => {
-    console.log(`server listening to http://localhost:${env.PORT}/`);
+    logger.info(`Server listening on http://localhost:${env.PORT}/`);
   });
 };
 
-initServer();
-
-// TODO graceful shutdown
+if (env.NODE_ENV !== "test") {
+  startServer();
+}

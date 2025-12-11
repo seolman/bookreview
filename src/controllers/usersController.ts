@@ -57,7 +57,7 @@ export const updateRoleHandler: RequestHandler = asyncHandler(
   async (req, res) => {
     const userId = parseInt(req.params.id);
     const { role } = req.body;
-    const updatedUser = updateUserRole(userId, role);
+    const updatedUser = await updateUserRole(userId, role);
     sendSuccess(res, updatedUser);
   }
 );

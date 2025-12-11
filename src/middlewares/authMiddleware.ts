@@ -17,35 +17,31 @@ declare global {
   }
 }
 
-const authHandler: RequestHandler = asyncHandler(async (req, res, next) => {
-  // check header
-  const authHeader = req.headers.authorization;
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    throw new AppError("Unauthorized", HttpStatusCode.Unauthorized);
-  }
-
-  // decode token
-  const token = authHeader.split(" ")[1];
-  try {
-    const decoded = jwt.verify(token, env.JWT_SECRET) as {
-      id: number;
-      [key: string]: any;
-    };
-    // find user
-    const [user] = await db
-      .select()
-      .from(users)
-      .where(eq(users.id, decoded.id));
-    if (!user) {
+export const authMiddleware: RequestHandler = asyncHandler(
+  async (req, res, next) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
       throw new AppError("Unauthorized", HttpStatusCode.Unauthorized);
     }
 
-    // add user to req
-    req.user = user;
-    next();
-  } catch (err) {
-    throw new AppError("Unauthorized", HttpStatusCode.Unauthorized);
-  }
-});
+    const token = authHeader.split(" ")[1];
+    try {
+      const decoded = jwt.verify(token, env.JWT_SECRET) as {
+        id: number;
+        [key: string]: any;
+      };
+      const [user] = await db
+        .select()
+        .from(users)
+        .where(eq(users.id, decoded.id));
+      if (!user) {
+        throw new AppError("Unauthorized", HttpStatusCode.Unauthorized);
+      }
 
-export default authHandler;
+      req.user = user;
+      next();
+    } catch (err) {
+      throw new AppError("Unauthorized", HttpStatusCode.Unauthorized);
+    }
+  }
+);

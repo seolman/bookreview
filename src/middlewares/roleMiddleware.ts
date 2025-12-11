@@ -1,13 +1,14 @@
 import { RequestHandler } from "express";
-
-import AppError from "../utils/error.js";
 import { HttpStatusCode } from "axios";
 
-const adminOnly: RequestHandler = (req, res, next) => {
-  if (req.user?.role !== "admin") {
-    throw new AppError("Forbidden", HttpStatusCode.Forbidden);
-  }
-  next();
-};
+import AppError from "../utils/error.js";
 
-export default adminOnly;
+// TODO define type
+export const authorizeRoles = (roles: ["admin" | "user"]): RequestHandler => {
+  return (req, res, next) => {
+    if (!req.user || !roles.includes(req.user.role)) {
+      throw new AppError("Forbidden", HttpStatusCode.Forbidden);
+    }
+    next();
+  };
+};

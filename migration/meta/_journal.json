@@ -15,6 +15,20 @@
       "when": 1764990420174,
       "tag": "0001_thick_hemingway",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1765074314887,
+      "tag": "0002_numerous_anita_blake",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1765075947701,
+      "tag": "0003_clumsy_molten_man",
+      "breakpoints": true
     }
   ]
 }

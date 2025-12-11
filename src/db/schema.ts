@@ -9,8 +9,7 @@ import {
   check,
   pgEnum,
 } from "drizzle-orm/pg-core";
-import { relations, sql } from "drizzle-orm";
-import { createInsertSchema, createSelectSchema } from "drizzle-zod";
+import { sql } from "drizzle-orm";
 
 export type NewUser = typeof users.$inferInsert;
 export type User = typeof users.$inferSelect;
@@ -67,6 +66,7 @@ export const reviews = table(
       .references(() => mangas.id, { onDelete: "cascade" })
       .notNull(),
     rating: integer("rating").notNull(),
+    content: text("content").notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at")
       .defaultNow()
@@ -105,7 +105,11 @@ export const favorites = table(
   (t) => [primaryKey({ columns: [t.userId, t.mangaId] })]
 );
 
-// TODO refresh token
-// export const refreshTokens = table("refresh_tokens", {
-
-// });
+export const refreshTokens = table("refresh_tokens", {
+  userId: integer("user_id")
+    .references(() => users.id, { onDelete: "cascade" })
+    .notNull(),
+  token: text("token").notNull().unique(),
+  expiresAt: timestamp("expires_at").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});

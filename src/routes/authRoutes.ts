@@ -1,17 +1,29 @@
 import { Router } from "express";
 
-import { loginHandler, logoutHandler } from "../controllers/authController.js";
-import validationHandler from "../middlewares/validationMiddleware.js";
+import {
+  loginHandler,
+  logoutHandler,
+  refreshHandler,
+} from "../controllers/authController.js";
+import { authMiddleware } from "../middlewares/authMiddleware.js";
+import { validationMiddleware } from "../middlewares/validationMiddleware.js";
+import { loginUserSchema } from "../validations/authValidation.js";
 
 const authRouter = Router();
 
-// TODO add validation
-authRouter.post("/auth/login", loginHandler);
+authRouter.post(
+  "/auth/login",
+  validationMiddleware(loginUserSchema),
+  loginHandler
+);
 
-// TODO
-authRouter.post("/auth/logout", logoutHandler);
+authRouter.post("/auth/logout", authMiddleware, logoutHandler);
 
-// authRouter.use("/auth/refresh");
+authRouter.post(
+  "/auth/refresh",
+  // validationMiddleware(RefreshRequestSchema),
+  refreshHandler
+);
 
 // authRouter.use("/auth/google");
 // authRouter.use("/auth/google/callback");

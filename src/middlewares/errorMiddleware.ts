@@ -4,6 +4,7 @@ import { ZodError } from "zod";
 
 import AppError from "../utils/error.js";
 import env from "../configs/env.js";
+import logger from "../utils/logger.js";
 
 const errorhandler: ErrorRequestHandler = (err, req, res, next) => {
   let message = "Internal Server Error";
@@ -22,8 +23,12 @@ const errorhandler: ErrorRequestHandler = (err, req, res, next) => {
     message = err.message;
   }
 
-  if (env.NODE_ENV == "development") {
+  if (env.NODE_ENV === "development") {
     console.error(err);
+  } else {
+    logger.error(
+      `Path: ${req.path}, Error: ${err.message}, Stack: ${err.stack}`
+    );
   }
 
   res.status(statusCode).json({

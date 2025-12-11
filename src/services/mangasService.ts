@@ -1,4 +1,4 @@
-import { count, eq, asc, desc } from "drizzle-orm";
+import { count, eq, asc, desc, ilike, or } from "drizzle-orm";
 import { HttpStatusCode } from "axios";
 
 import db from "../db/index.js";
@@ -14,8 +14,25 @@ export const getMangaById = async (id: number) => {
   return data;
 };
 
-export const getMangas = async (page: number, size: number, sort: string) => {
-  const [total] = await db.select({ value: count() }).from(mangas);
+export const getMangas = async (
+  page: number,
+  size: number,
+  sort: string,
+  keyword?: string
+) => {
+  let query = db.select().from(mangas).$dynamic();
+  let countQuery = db.select({ value: count() }).from(mangas).$dynamic();
+
+  if (keyword) {
+    const searchCondition = or(
+      ilike(mangas.title, `%${keyword}%`),
+      ilike(mangas.synopsis, `%${keyword}%`)
+    );
+    query = query.where(searchCondition);
+    countQuery = countQuery.where(searchCondition);
+  }
+
+  const [total] = await countQuery;
 
   const totalPages = Math.ceil(total.value / size) || 1;
   if (page > totalPages) {
@@ -33,9 +50,7 @@ export const getMangas = async (page: number, size: number, sort: string) => {
 
   const orderByColumn = sortableColumns[field] || mangas.createdAt;
 
-  const data = await db
-    .select()
-    .from(mangas)
+  const data = await query
     .limit(size)
     .offset((page - 1) * size)
     .orderBy(sortOrder(orderByColumn));
@@ -46,6 +61,7 @@ export const getMangas = async (page: number, size: number, sort: string) => {
     totalElements: total.value,
     totalPages,
     sort,
+    keyword,
   };
 
   return {
@@ -54,22 +70,47 @@ export const getMangas = async (page: number, size: number, sort: string) => {
   };
 };
 
+export const createManga = async (payload: NewManga) => {
+  const [existingManga] = await db
+    .select()
+    .from(mangas)
+    .where(eq(mangas.malId, payload.malId));
+
+  if (existingManga) {
+    throw new AppError(
+      "Manga with this malId already exists",
+      HttpStatusCode.Conflict
+    );
+  }
+
+  const [newManga] = await db.insert(mangas).values(payload).returning();
+  return newManga;
+};
+
 export const updateMangaById = async (
   mangaId: number,
   updateData: Partial<NewManga>
 ) => {
-  const { title, author, imageUrl, publishedAt, synopsis } = updateData;
+  const [data] = await db.select().from(mangas).where(eq(mangas.id, mangaId));
+  if (!data) {
+    throw new AppError("Manga not found", HttpStatusCode.NotFound);
+  }
   const [updatedManga] = await db
     .update(mangas)
     .set({
-      title: title,
-      author: author,
-      imageUrl: imageUrl,
-      publishedAt: publishedAt,
-      synopsis: synopsis,
+      ...updateData,
+      updatedAt: new Date(),
     })
     .where(eq(mangas.id, mangaId))
     .returning();
 
   return updatedManga;
+};
+
+export const deleteMangaById = async (mangaId: number) => {
+  const [manga] = await db.select().from(mangas).where(eq(mangas.id, mangaId));
+  if (!manga) {
+    throw new AppError("Manga not found", HttpStatusCode.NotFound);
+  }
+  await db.delete(mangas).where(eq(mangas.id, mangaId));
 };

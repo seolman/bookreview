@@ -1,5 +1,7 @@
 import { Router } from "express";
 
+import { getFavoritesByUserHandler } from "../controllers/favoritesController.js";
+import { getReviewsByUserHandler } from "../controllers/reviewsController.js";
 import {
   deleteMyAccountHandler,
   getMyProfileHandler,
@@ -9,28 +11,50 @@ import {
   updateMyUserProfileHandler,
   updateRoleHandler,
 } from "../controllers/usersController.js";
+import { authMiddleware } from "../middlewares/authMiddleware.js";
+import { authorizeRoles } from "../middlewares/roleMiddleware.js";
+import { validationMiddleware } from "../middlewares/validationMiddleware.js";
+import { registerUserSchema } from "../validations/authValidation.js";
+import { updateUserRoleSchema } from "../validations/userValidation.js";
 
 const usersRouter = Router();
 
-// TODO validate
-usersRouter.post("/users", registerHandler);
+usersRouter.post(
+  "/users",
+  validationMiddleware(registerUserSchema),
+  registerHandler
+);
 
-// TODO auth middleware
-usersRouter.get("/users/me", getMyProfileHandler);
+usersRouter.get("/users/me", authMiddleware, getMyProfileHandler);
 
-// TODO auth middleware
-usersRouter.put("/users/me", updateMyUserProfileHandler);
+usersRouter.put("/users/me", authMiddleware, updateMyUserProfileHandler);
 
-// TODO auth middleware
-usersRouter.delete("/users/me", deleteMyAccountHandler);
+usersRouter.delete("/users/me", authMiddleware, deleteMyAccountHandler);
 
-// admin
-usersRouter.patch("/users/:id/role", updateRoleHandler);
+usersRouter.get("/users/:id/reviews", getReviewsByUserHandler);
 
-// TODO role check
-usersRouter.get("/users", getUsersHandler);
+usersRouter.get("/users/:id/favorites", getFavoritesByUserHandler);
 
-// TODO admin
-usersRouter.get("/users/:id", getUserHandler);
+usersRouter.patch(
+  "/users/:id/role",
+  authMiddleware,
+  authorizeRoles(["admin"]),
+  validationMiddleware(updateUserRoleSchema),
+  updateRoleHandler
+);
+
+usersRouter.get(
+  "/users",
+  authMiddleware,
+  authorizeRoles(["admin"]),
+  getUsersHandler
+);
+
+usersRouter.get(
+  "/users/:id",
+  authMiddleware,
+  authorizeRoles(["admin"]),
+  getUserHandler
+);
 
 export default usersRouter;
