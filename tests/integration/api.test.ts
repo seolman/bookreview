@@ -1,11 +1,12 @@
 import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import request from "supertest";
 import { Server } from "http";
+import type { Application } from "express";
+
 import { createApp } from "../../src/app.js";
 import { pool, db } from "../../src/db/index.js";
 import { users, mangas, reviews, comments } from "../../src/db/schema.js";
 import { hashPassword } from "../../src/utils/password.js";
-import type { Application } from "express";
 
 let app: Application;
 let server: Server;
@@ -13,6 +14,7 @@ let server: Server;
 let regularUserToken: string;
 let adminUserToken: string;
 let regularUserId: number;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 let adminUserId: number;
 let testMangaId: number;
 
