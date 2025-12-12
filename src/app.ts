@@ -36,18 +36,27 @@ export const createApp = async () => {
     })
   );
 
-  const corsOptions: CorsOptions = {
-    origin(requestOrigin, callback) {
-      const allowedOrgins = env.ALLOWED_ORIGINS!.split(",") || [];
-      if (!requestOrigin || allowedOrgins.includes(requestOrigin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-  };
-  app.use(cors(env.NODE_ENV === "development" ? {} : corsOptions));
+  if (env.NODE_ENV === "production") {
+    const corsOptions: CorsOptions = {
+      origin(requestOrigin, callback) {
+        const allowedOrgins = env.ALLOWED_ORIGINS?.split(",") || [];
+        if (!requestOrigin || allowedOrgins.includes(requestOrigin)) {
+          callback(null, true);
+        } else {
+          callback(new Error("Not allowed by CORS"));
+        }
+      },
+      credentials: true,
+    };
+    app.use(cors(corsOptions));
+  } else {
+    app.use(
+      cors({
+        origin: true,
+        credentials: true,
+      })
+    );
+  }
 
   app.use(
     "/docs",
