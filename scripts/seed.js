@@ -34,27 +34,37 @@ async function seed() {
   }
   console.log("Users seeded.");
 
-  const mangaRes = await fetch("https://api.jikan.moe/v4/manga?page=1");
-  if (!mangaRes.ok) {
-    throw new Error("Failed to fetch manga data from Jikan API.");
-  }
+  const delay = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms))
+  };
 
-  const mangaData = await mangaRes.json();
-  for (const manga of mangaData.data) {
-    if (!manga.published.from) continue;
-    await db
-      .insert(mangas)
-      .values({
-        malId: manga.mal_id,
-        title: manga.title,
-        synopsis: manga.synopsis,
-        author: manga.authors[0]?.name || "Unknown",
-        publishedAt: new Date(manga.published.from),
-        imageUrl: manga.images.jpg.image_url,
-      })
-      .onConflictDoNothing({ target: mangas.malId });
+  for (let i = 1; i <= 8; i++) {
+    if (i > 1) {
+      await delay(1000);
+    }
+    const mangaRes = await fetch(`https://api.jikan.moe/v4/manga?page=${i}`);
+    if (!mangaRes.ok) {
+      console.error(mangaRes.statusText);
+      throw new Error("Failed to fetch manga data from Jikan API.");
+    }
+
+    const mangaData = await mangaRes.json();
+    for (const manga of mangaData.data) {
+      if (!manga.published.from) continue;
+      await db
+        .insert(mangas)
+        .values({
+          malId: manga.mal_id,
+          title: manga.title,
+          synopsis: manga.synopsis,
+          author: manga.authors[0]?.name || "Unknown",
+          publishedAt: new Date(manga.published.from),
+          imageUrl: manga.images.jpg.image_url,
+        })
+        .onConflictDoNothing({ target: mangas.malId });
+    }
+    console.log("Mangas seeded.");
   }
-  console.log("Mangas seeded.");
 
   const seededUsers = await db.select().from(users);
   const seededMangas = await db.select().from(mangas);
