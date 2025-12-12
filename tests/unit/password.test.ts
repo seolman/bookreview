@@ -9,7 +9,7 @@ describe("Password Utility", () => {
     const hashedPassword = await hashPassword(plainPassword);
 
     expect(hashedPassword).toBeDefined();
-    expect(typeof hashedPassword).toBe('string');
+    expect(typeof hashedPassword).toBe("string");
     expect(hashedPassword).not.toBe(plainPassword);
   });
 
