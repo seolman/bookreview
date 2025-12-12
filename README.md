@@ -177,15 +177,35 @@ Client (사용자) <-> Server (백엔드)
    - 이제 클라이언트가 가지고 있는 Refresh Token은 서버에서 무효화되었으므로, 더 이상 새로운 Access Token을 발급받을 수 없게 되어
      세션이 효과적으로 종료됩니다.
 
-## RBAC
+## RBAC (역할 기반 접근 제어)
 
-<!-- TODO -->
+본 서비스는 'user'와 'admin' 두 가지 역할을 지원하며, 각 역할별 API 접근 권한은 다음과 같습니다.
 
-user
+| API Endpoints            | Method         | User    | Admin | 설명                         |
+| :----------------------- | :------------- | :------ | :---- | :--------------------------- |
+| `/auth/login`            | POST           | O       | O     | 로그인                       |
+| `/auth/logout`           | POST           | O       | O     | 로그아웃 (본인)              |
+| `/auth/refresh`          | POST           | O       | O     | 토큰 재발급                  |
+| `/users`                 | POST           | O       | O     | 회원가입                     |
+| `/users/me`              | GET/PUT/DELETE | O       | O     | 내 정보 조회/수정/탈퇴       |
+| `/users`                 | GET            | X       | O     | **모든 사용자 목록 조회**    |
+| `/users/{id}`            | GET            | X       | O     | **특정 사용자 정보 조회**    |
+| `/users/{id}/role`       | PATCH          | X       | O     | **사용자 역할 변경**         |
+| `/mangas`                | GET            | O       | O     | 만화 목록 조회               |
+| `/mangas/{id}`           | GET            | O       | O     | 특정 만화 정보 조회          |
+| `/mangas`                | POST           | X       | O     | **새 만화 추가**             |
+| `/mangas/{id}`           | PUT            | X       | O     | **만화 정보 수정**           |
+| `/mangas/{id}`           | DELETE         | X       | O     | **만화 삭제**                |
+| `/mangas/{id}/reviews`   | POST           | O       | O     | 만화에 리뷰 작성             |
+| `/reviews/{id}`          | PUT            | O(본인) | X     | 리뷰 수정 (본인만 가능)      |
+| `/reviews/{id}`          | DELETE         | O(본인) | O     | 리뷰 삭제 (본인 또는 관리자) |
+| `/reviews/{id}/comments` | POST           | O       | O     | 리뷰에 댓글 작성             |
+| `/comments/{id}`         | PUT            | O(본인) | X     | 댓글 수정 (본인만 가능)      |
+| `/comments/{id}`         | DELETE         | O(본인) | O     | 댓글 삭제 (본인 또는 관리자) |
 
-admin
+_(O: 허용, X: 금지, O(본인): 리소스 소유자일 경우 허용)_
 
-## 테스크 계정
+## 테스트 계정
 
 user 계정
 
@@ -201,81 +221,66 @@ admin@example.com
 password123
 ```
 
-## 데이터베이스 연결
-
-POSTGRESQL 16
-
-<!-- TODO -->
-
 ## 엔드포인트
 
-- swagger: `http://localhost:8080/docs`
+- **Swagger 문서 주소**: `http://localhost:8080/docs`
+- **API Base URL**: `http://localhost:8080/v1/api`
 
-- baseurl: `http://localhost:8080/v1/api`
+| 리소스        | Method | URL                       | 설명 (주요 기능)                        | 인증 | 역할         |
+| :------------ | :----- | :------------------------ | :-------------------------------------- | :--- | :----------- |
+| **Auth**      | POST   | `/auth/login`             | 사용자 로그인 및 토큰 발급              | X    | -            |
+|               | POST   | `/auth/logout`            | 로그아웃 (Refresh Token 무효화)         | O    | User, Admin  |
+|               | POST   | `/auth/refresh`           | 액세스 토큰 재발급                      | X    | -            |
+| **Users**     | POST   | `/users`                  | 회원가입                                | X    | -            |
+|               | GET    | `/users/me`               | 내 프로필 조회                          | O    | User, Admin  |
+|               | PUT    | `/users/me`               | 내 프로필 수정                          | O    | User, Admin  |
+|               | DELETE | `/users/me`               | 회원 탈퇴                               | O    | User, Admin  |
+|               | GET    | `/users`                  | 모든 사용자 조회                        | O    | **Admin**    |
+|               | GET    | `/users/{id}`             | 특정 사용자 조회                        | O    | **Admin**    |
+|               | PATCH  | `/users/{id}/role`        | 사용자 역할 변경                        | O    | **Admin**    |
+| **Mangas**    | GET    | `/mangas`                 | 만화 목록 조회 (페이지네이션/검색/정렬) | X    | -            |
+|               | GET    | `/mangas/{id}`            | 특정 만화 상세 조회                     | X    | -            |
+|               | POST   | `/mangas`                 | 새 만화 추가                            | O    | **Admin**    |
+|               | PUT    | `/mangas/{id}`            | 만화 정보 수정                          | O    | **Admin**    |
+|               | DELETE | `/mangas/{id}`            | 만화 삭제                               | O    | **Admin**    |
+| **Reviews**   | POST   | `/mangas/{id}/reviews`    | 특정 만화에 리뷰 작성                   | O    | User, Admin  |
+|               | GET    | `/mangas/{id}/reviews`    | 특정 만화의 리뷰 목록 조회              | X    | -            |
+|               | GET    | `/reviews/{id}`           | 특정 리뷰 상세 조회                     | X    | -            |
+|               | GET    | `/users/{id}/reviews`     | 특정 사용자의 리뷰 목록 조회            | X    | -            |
+|               | PUT    | `/reviews/{id}`           | 리뷰 수정 (본인만)                      | O    | User (Owner) |
+|               | DELETE | `/reviews/{id}`           | 리뷰 삭제 (본인 또는 Admin)             | O    | User, Admin  |
+| **Comments**  | POST   | `/reviews/{id}/comments`  | 특정 리뷰에 댓글 작성                   | O    | User, Admin  |
+|               | GET    | `/reviews/{id}/comments`  | 특정 리뷰의 댓글 목록 조회              | X    | -            |
+|               | PUT    | `/comments/{id}`          | 댓글 수정 (본인만)                      | O    | User (Owner) |
+|               | DELETE | `/comments/{id}`          | 댓글 삭제 (본인 또는 Admin)             | O    | User, Admin  |
+| **Favorites** | POST   | `/mangas/{id}/favorites`  | 만화 즐겨찾기 추가                      | O    | User, Admin  |
+|               | GET    | `/users/{id}/favorites`   | 특정 사용자의 즐겨찾기 목록 조회        | O    | User, Admin  |
+| **Stats**     | GET    | `/stats/top-reviews`      | 인기 리뷰 목록 조회                     | X    | -            |
+|               | GET    | `/stats/top-rated-mangas` | 평균 평점 높은 만화 목록 조회           | X    | -            |
+|               | GET    | `/health`                 | 서버 상태 확인                          | X    | -            |
 
-- auth(3)
-  - post /auth/login
-  - post /auth/logout
-  - post /auth/refresh
-
-- users(7)
-  - post /users
-  - get /users/me
-  - put /users/me
-  - get /users (admin)
-  - get /users/:id (admin)
-  - delete /users/me
-  - patch /users/:id/role (admin)
-
-- mangas(5)
-  - post /mangas (admin)
-  - get /mangas
-  - get /mangas/:id
-  - put /mangas/:id (admin)
-  - delete /mangas/:id (admin)
-
-- reviews(6)
-  - post /mangas/:id/reviews
-  - get /mangas/:id/reviews
-  - get /reviews/:id
-  - put /reviews/:id
-  - delete /reviews/:id
-  - get /users/:id/reviews
-
-- comments(4)
-  - post /reviews/:id/comments
-  - get /reviews/:id/comments
-  - put /comments/:id
-  - delete /comments/:id
-
-- favorites(3)
-  - post /mangas/:id/favorites
-  - get /mangas/:id/favorites
-  - get /users/:id/favorites
-
-- stats(3)
-  - get /stats/top-reviews
-  - get /stats/top-rated-mangas
-  - get /health
+_(총 31개 엔드포인트)_
 
 ## 성능/보안 고려사항
 
-<!-- TODO -->
+- **API 요청 속도 제한 (Rate Limiting)**: `express-rate-limit` 라이브러리를 사용하여 모든 API 요청에 대해 전역적으로 요청 횟수를 제한합니다. 이를 통해 DoS(Denial-of-Service) 공격과 같은 악의적인 요청으로부터 서버를 보호합니다. (예: 15분당 100회)
 
-rate limit
-password hashing
-jwt
-access refresh
-env
-cors
+- **비밀번호 해싱 (Password Hashing)**: 사용자의 비밀번호는 `bcryptjs` 라이브러리를 사용하여 단방향으로 암호화(해싱)되어 데이터베이스에 저장됩니다. 이를 통해 데이터베이스가 유출되더라도 사용자의 실제 비밀번호를 알 수 없도록 합니다.
+
+- **JWT 기반 인증/인가**: Stateless한 API 통신을 위해 JWT(JSON Web Token)를 사용합니다. 수명이 짧은 Access Token으로 API 접근을 제어하고, 수명이 긴 Refresh Token으로 Access Token을 재발급받아 사용자 경험과 보안을 모두 확보합니다.
+
+- **환경 변수 관리**: 데이터베이스 접속 정보, JWT 시크릿 키 등 민감한 정보는 코드가 아닌 `.env` 파일에 저장하여 관리합니다. 이 파일은 `.gitignore`에 등록되어 Git 리포지토리에 포함되지 않으므로, 소스 코드 상에 민감 정보가 노출되지 않습니다.
+
+- **CORS 정책**: `cors` 라이브러리와 `ALLOWED_ORIGINS` 환경 변수를 사용하여, 허용된 출처(Origin)의 프론트엔드 애플리케이션만 API에 접근할 수 있도록 제한합니다.
 
 ## 한계와 개선점
 
-<!-- TODO -->
+- **비즈니스 모델 및 결제**: 현재는 기본적인 리뷰 기능에 초점이 맞춰져 있어, 향후 유료 콘텐츠나 작가 후원 등 비즈니스 모델과 이에 따른 결제 시스템 연동이 필요할 수 있습니다.
 
-비즈니스 모델의 부족, 결제 시스템의 부재
+- **확장성**: 현재는 단일 서버 인스턴스 배포를 기준으로 합니다. 대규모 트래픽 발생 시, 로드 밸런서를 도입하고 애플리케이션을 여러 인스턴스로 확장(Scale-out)할 수 있는 구조적 개선이 필요합니다.
 
-확장성
-캐싱
-로깅 모니터링
-지속적 배포
+- **캐싱 전략**: 인기 만화 목록, 통계 데이터 등 자주 조회되지만 자주 변경되지 않는 데이터에 대해 Redis와 같은 인-메모리 캐시를 도입하여 데이터베이스 부하를 줄이고 응답 속도를 향상시킬 수 있습니다.
+
+- **로깅 및 모니터링**: 현재는 기본적인 파일 로깅만 구현되어 있습니다. ElasticSearch, Datadog 등과 같은 외부 로깅/모니터링 시스템과 연동하여 에러 추적, 성능 분석, 알림 기능을 고도화할 필요가 있습니다.
+
+- **지속적 배포(CD)**: GitHub Actions에 CI(지속적 통합)만 구성되어 있습니다. `main` 브랜치에 병합된 코드가 테스트를 통과하면 자동으로 서버에 배포되는 CD(지속적 배포) 파이프라인을 구축하여 배포 과정을 자동화할 수 있습니다.
