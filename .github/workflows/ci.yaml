@@ -49,8 +49,11 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # - name: Run tests
-      #   run: npm run test
+      - name: Run database migration
+        run: npm run build
+
+      - name: Run tests
+        run: npm run test
 
     env:
       DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/test_db"

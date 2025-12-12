@@ -35,7 +35,7 @@ async function seed() {
   console.log("Users seeded.");
 
   const delay = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms))
+    return new Promise((resolve) => setTimeout(resolve, ms));
   };
 
   for (let i = 1; i <= 8; i++) {
