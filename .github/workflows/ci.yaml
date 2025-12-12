@@ -50,7 +50,7 @@ jobs:
         run: npm run build
 
       - name: Run database migration
-        run: npm run build
+        run: npm run db:migrate
 
       - name: Run tests
         run: npm run test
