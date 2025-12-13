@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Integration:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
+      # TODO docker build
+
+      # TODO docker login
+
+      # TODO docker image push
+
+      # TODO deploy
