@@ -1,4 +1,4 @@
-import { db, pool } from "../dist/db/index.js";
+import { db, pool } from "../dist/src/db/index.js";
 
 async function reset() {
   try {
