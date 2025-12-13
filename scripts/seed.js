@@ -1,6 +1,6 @@
-import { users, mangas, reviews, comments } from "../dist/db/schema.js";
-import { hashPassword } from "../dist/utils/password.js";
-import { pool, db } from "../dist/db/index.js";
+import { users, mangas, reviews, comments } from "../dist/src/db/schema.js";
+import { hashPassword } from "../dist/src/utils/password.js";
+import { pool, db } from "../dist/src/db/index.js";
 
 async function seed() {
   console.log("seeding...");
