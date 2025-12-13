@@ -27,16 +27,18 @@
 
 ```bash
 npm i
+npm run build
 npm run db:migrate
-npm run build && npm run start
+npm run start
 ```
 
 - 테스트, 개발 용도
 
 ```bash
 npm i
+npm run build
 npm run db:migrate && npm run db:seed
-npm run build && npm run start
+npm run dev
 ```
 
 ```bash
