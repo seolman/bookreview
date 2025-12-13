@@ -68,6 +68,56 @@ ALLOWED_ORIGINS= #http://localhost:3000,...
 
 ## 배포
 
+### 리버스 프록시
+
+`Postgresql 16.11`
+
+```bash
+sudo apt install postgresql
+sudo -u postgres psql
+```
+
+```sql
+alter user postgres with password postgres;
+create database manga_db;
+```
+
+`Nginx/1.24.0`
+
+`/etc/nginx/sites-enabled/manga-app`
+
+```nginx
+server {
+  listen 80;
+  listen [::]:80;
+
+  server_name <public-ip>;
+
+  location / {
+    proxy_pass http://localhost:8080;
+
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+}
+```
+
+```bash
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+```bash
+sudo npm i pm2 -g
+pm2 start dist/src/index.js --name manga-app
+```
+
+```bash
+curl http://<public-ip>:<port>/health --silent # | jq "."
+```
+
 ### 도커
 
 ```bash
@@ -105,6 +155,10 @@ docker run -d \
   -p 8080:8080 \
   your-username/manga-app:latest
 ```
+
+### 쿠버네티스
+
+<!-- TODO -->
 
 ## 인증 흐름
 
