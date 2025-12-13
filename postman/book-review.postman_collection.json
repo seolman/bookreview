@@ -1,0 +1,295 @@
+{
+  "info": {
+    "_postman_id": "4d0fc827-e084-42de-98fa-2569c7a62ace",
+    "name": "book-review",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31831347"
+  },
+  "item": [
+    {
+      "name": "stats",
+      "item": [
+        {
+          "name": "health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/health",
+              "host": ["{{baseURL}}"],
+              "path": ["health"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "top review",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/v1/api/stats/top-reviews",
+              "host": ["{{baseURL}}"],
+              "path": ["v1", "api", "stats", "top-reviews"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "auth&users",
+      "item": [
+        {
+          "name": "login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"login\", () => {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData.data.accessToken).to.be.a(\"string\");\r",
+                  "    pm.environment.set(\"userToken\", jsonData.data.accessToken);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/v1/api/auth/login",
+              "host": ["{{baseURL}}"],
+              "path": ["v1", "api", "auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"new-user\",\r\n    \"email\": \"new@example.com\",\r\n    \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/v1/api/users",
+              "host": ["{{baseURL}}"],
+              "path": ["v1", "api", "users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "list users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/v1/api/users",
+              "host": ["{{baseURL}}"],
+              "path": ["v1", "api", "users"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "contents",
+      "item": [
+        {
+          "name": "list mangas",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password123\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/v1/api/mangas?size=20&page=1&sort=createdAt,ASC",
+              "host": ["{{baseURL}}"],
+              "path": ["v1", "api", "mangas"],
+              "query": [
+                {
+                  "key": "size",
+                  "value": "20"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "sort",
+                  "value": "createdAt,ASC"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get mangas",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password123\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/v1/api/mangas/1",
+              "host": ["{{baseURL}}"],
+              "path": ["v1", "api", "mangas", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get review",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password123\"\r\n}"
+            },
+            "url": {
+              "raw": "{{baseURL}}/v1/api/mangas/1/reviews",
+              "host": ["{{baseURL}}"],
+              "path": ["v1", "api", "mangas", "1", "reviews"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/v1/api/reviews/1/comments",
+              "host": ["{{baseURL}}"],
+              "path": ["v1", "api", "reviews", "1", "comments"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "errors",
+      "item": [
+        {
+          "name": "no authorization",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/v1/api/users/me",
+              "host": ["{{baseURL}}"],
+              "path": ["v1", "api", "users", "me"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "invalid data",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"newUser\",\r\n    \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/v1/api/users",
+              "host": ["{{baseURL}}"],
+              "path": ["v1", "api", "users"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{userToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": ""
+    }
+  ]
+}
