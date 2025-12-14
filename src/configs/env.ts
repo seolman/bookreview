@@ -7,6 +7,7 @@ const envSchema = z.object({
     .default("development"),
   PORT: z.coerce.number().int().positive().default(8080),
   DATABASE_URL: z.url().nonempty(),
+  REDIS_URL: z.url().nonempty().default("redis://localhost:6379"),
   JWT_SECRET: z.base64().nonempty(),
   ALLOWED_ORIGINS: z.string().optional(),
 });

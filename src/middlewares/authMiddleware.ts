@@ -3,7 +3,7 @@ import { HttpStatusCode } from "axios";
 import jwt from "jsonwebtoken";
 import { eq } from "drizzle-orm";
 
-import asyncHandler from "../utils/asyncHandler.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 import AppError from "../utils/error.js";
 import env from "../configs/env.js";
 import { db } from "../db/index.js";

@@ -1,6 +1,7 @@
 import { createApp } from "./app.js";
 import env from "./configs/env.js";
 import { pool } from "./db/index.js";
+import { redis } from "./db/redis.js";
 
 const startServer = async () => {
   const app = await createApp();
@@ -17,8 +18,10 @@ const startServer = async () => {
         }
         try {
           await pool.end();
+          await redis.quit();
         } catch (err) {
           console.error("not finished db", err);
+          process.exit(1);
         }
 
         process.exit(0);
