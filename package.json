@@ -3,7 +3,7 @@
   "private": true,
   "name": "book-review",
   "description": "book review service backend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
