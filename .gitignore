@@ -148,6 +148,6 @@ result-*
 GEMINI.md
 data.json
 assets/
-./jcloud_Assignment_key
-./database.txt
-./accounts.txt
+jcloud_Assignment_key
+database.txt
+accounts.txt
