@@ -83,6 +83,21 @@ export type ApiSpec = Tspec.DefineApiSpec<{
         };
       };
     };
+    "/auth/firebase-login": {
+      post: {
+        summary: "Firebase 소셜 로그인 (Google, Naver, Github 등)";
+        tags: ["Authentication", "OAuth"];
+        description: "클라이언트에서 받은 Firebase ID Token을 검증하고, 서비스의 자체 액세스/리프레시 토큰을 발급합니다.";
+        body: {
+          idToken: string;
+        };
+        responses: {
+          200: MyResponse<{ accessToken: string; refreshToken: string }>;
+          400: MyErrorResponse;
+          401: MyErrorResponse;
+        };
+      };
+    };
     "/auth/google": {
       get: {
         summary: "Google 소셜 로그인 시작";

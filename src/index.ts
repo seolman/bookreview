@@ -2,6 +2,7 @@ import { createApp } from "./app.js";
 import env from "./configs/env.js";
 import { pool } from "./db/index.js";
 import { redis } from "./db/redis.js";
+import "./configs/firebase.js";
 
 const startServer = async () => {
   if (!redis.isReady) {
