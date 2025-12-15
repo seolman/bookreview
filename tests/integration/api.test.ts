@@ -30,6 +30,9 @@ const adminUserCredentials = {
 };
 
 beforeAll(async () => {
+  if (!redis.isReady) {
+    await redis.connect();
+  }
   app = await createApp();
   server = app.listen();
 
@@ -37,10 +40,6 @@ beforeAll(async () => {
   await db.delete(reviews);
   await db.delete(mangas);
   await db.delete(users);
-
-  if (!redis.isReady) {
-    await redis.connect();
-  }
 
   const hashedPassword = await hashPassword(regularUserCredentials.password);
   const [seededRegularUser] = await db

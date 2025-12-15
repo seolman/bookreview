@@ -14,7 +14,3 @@ redis.on("error", (err) => {
 redis.on("connect", () => {
   logger.info("Redis client connected");
 });
-
-(async () => {
-  await redis.connect();
-})();

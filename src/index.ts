@@ -4,6 +4,9 @@ import { pool } from "./db/index.js";
 import { redis } from "./db/redis.js";
 
 const startServer = async () => {
+  if (!redis.isReady) {
+    await redis.connect();
+  }
   const app = await createApp();
   const server = app.listen(env.PORT, () => {
     console.log(`http://localhost:${env.PORT}/`);
@@ -18,7 +21,9 @@ const startServer = async () => {
         }
         try {
           await pool.end();
-          await redis.quit();
+          if (redis.isReady) {
+            await redis.quit();
+          }
         } catch (err) {
           console.error("not finished db", err);
           process.exit(1);
