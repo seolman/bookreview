@@ -50,6 +50,20 @@
       "when": 1765437507603,
       "tag": "0006_fixed_puff_adder",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1765761191121,
+      "tag": "0007_amazing_namora",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1765761831643,
+      "tag": "0008_groovy_roland_deschain",
+      "breakpoints": true
     }
   ]
 }

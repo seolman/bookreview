@@ -4,6 +4,10 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - develop
+
 jobs:
   Integration:
     runs-on: ubuntu-latest
@@ -22,6 +26,15 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
 
     steps:
       - name: Checkout repo
@@ -53,5 +66,9 @@ jobs:
 
     env:
       DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/test_db"
-      JWT_SECRET: "VGCc+fts4Z5Tbn70c5PY5DkmP1+tJOTjPTHtRkQlE9Q="
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
       NODE_ENV: "test"
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_CALLBACK_URL: "http://localhost:8080/v1/api/auth/google/callback"
+      REDIS_URL: "redis://localhost:6379"

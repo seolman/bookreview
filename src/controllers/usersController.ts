@@ -1,7 +1,7 @@
 import { RequestHandler } from "express";
 import { HttpStatusCode } from "axios";
 
-import asyncHandler from "../utils/asyncHandler.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 import {
   sendSuccess,
   sendSuccessPagination as sendSuccessPagination,

@@ -1,5 +1,5 @@
 import { ErrorRequestHandler } from "express";
-import { HttpStatusCode } from "axios";
+import { HttpStatusCode, AxiosError } from "axios";
 import z, { ZodError } from "zod";
 
 import AppError from "../utils/error.js";
@@ -39,6 +39,9 @@ const errorhandler: ErrorRequestHandler = (err, req, res, _next) => {
     details = z.treeifyError(err);
   } else if (err instanceof DrizzleError) {
     message = err.message;
+  } else if (err instanceof AxiosError) {
+    message = err.message;
+    details = err.toJSON;
   } else if (err instanceof Error) {
     message = err.message;
   }

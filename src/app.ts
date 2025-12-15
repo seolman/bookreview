@@ -3,6 +3,7 @@ import morgan from "morgan";
 import cors, { CorsOptions } from "cors";
 import { TspecDocsMiddleware } from "tspec";
 import { rateLimit } from "express-rate-limit";
+import { RedisStore } from "rate-limit-redis";
 import { HttpStatusCode } from "axios";
 
 import v1Router from "./routes/index.js";
@@ -10,6 +11,7 @@ import env from "./configs/env.js";
 import errorhandler from "./middlewares/errorMiddleware.js";
 import AppError from "./utils/error.js";
 import logger from "./utils/logger.js";
+import { redis } from "./db/redis.js";
 
 export const createApp = async () => {
   const app = express();
@@ -20,6 +22,9 @@ export const createApp = async () => {
   const globalRateLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     limit: 100,
+    store: new RedisStore({
+      sendCommand: (...args: string[]) => redis.sendCommand(args),
+    }),
     standardHeaders: true,
     legacyHeaders: false,
     handler: (_req, _res, next) => {

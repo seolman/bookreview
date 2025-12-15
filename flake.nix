@@ -34,12 +34,13 @@
       in
       {
         devShells.default = pkgs.mkShell {
-          packages = [
+            packages = [
             pkgs.postgresql_16
             # nodejs_18-pkgs.nodejs_18
             pkgs.nodejs_24
             redis-pkgs.redis
             nginx-pkgs.nginx
+            pkgs.minikube
           ];
 
           shellHook = ''
@@ -48,6 +49,7 @@
             echo "$(psql --version)"
             echo "$(redis-cli --version)"
             echo "$(nginx -v)"
+            echo "$(minikube version)"
           '';
         };
         formatter = pkgs.nixfmt-tree;

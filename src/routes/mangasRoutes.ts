@@ -20,10 +20,11 @@ import {
   updateMangaSchema,
 } from "../validations/mangaValidation.js";
 import { createReviewSchema } from "../validations/reviewValidation.js";
+import { cacheMiddleware } from "../middlewares/cacheMiddleware.js";
 
 const mangasRouter = Router();
 
-mangasRouter.get("/mangas", listMangasHandler);
+mangasRouter.get("/mangas", cacheMiddleware, listMangasHandler);
 mangasRouter.post(
   "/mangas",
   authMiddleware,

@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
 
-import asyncHandler from "../utils/asyncHandler.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 import { sendSuccess } from "../utils/response.js";
 import { getTopRatedMangas, getTopReviews } from "../services/statsService.js";
 

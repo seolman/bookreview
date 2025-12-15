@@ -1,9 +1,10 @@
 import { RequestHandler } from "express";
 import { HttpStatusCode } from "axios";
 
-import asyncHandler from "../utils/asyncHandler.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 import { sendSuccess } from "../utils/response.js";
 import {
+  googleLogin,
   loginUser,
   logoutUser,
   refreshAccessToken,
@@ -36,3 +37,16 @@ export const refreshHandler: RequestHandler = asyncHandler(async (req, res) => {
   const { accessToken } = await refreshAccessToken(refreshToken);
   sendSuccess(res, { accessToken }, HttpStatusCode.Ok);
 });
+
+export const googleCallbackHandler: RequestHandler = asyncHandler(
+  async (req, res) => {
+    const code = req.query.code as string;
+
+    if (!code) {
+      throw new AppError("Bad Request", HttpStatusCode.BadRequest);
+    }
+
+    const { accessToken, refreshToken } = await googleLogin(code);
+    sendSuccess(res, { accessToken, refreshToken });
+  }
+);

@@ -1,5 +1,7 @@
 # 도서 리뷰 서비스 백엔드
 
+<!-- TODO -->
+
 [English](/README.en.md)
 
 ## 프로젝트에 대하여
@@ -119,6 +121,8 @@ curl http://<public-ip>:<port>/health --silent # | jq "."
 ```
 
 ### 도커
+
+<!-- TODO -->
 
 ```bash
 docker network create manga-app-network

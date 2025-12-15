@@ -30,13 +30,18 @@ export const users = table("users", {
     .$onUpdate(() => new Date()),
 });
 
-// TODO oauth
-// export const oauth = table("oauth", {
-//   providerId: varchar("provider_id", { length: 256 }).notNull(),
-//   providerUserId: varchar("provider_"),
-//   userId: integer("user_id").references(() => users.id).notNull()
-// }, (t) => ({
-// }));
+export const oauth = table(
+  "oauth",
+  {
+    provider: varchar("provider", { length: 256 }).notNull(),
+    providerUserId: varchar("provider_user_id", { length: 256 }).notNull(),
+    userId: integer("user_id")
+      .references(() => users.id, { onDelete: "cascade" })
+      .notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.provider, t.providerUserId] })]
+);
 
 export type NewManga = typeof mangas.$inferInsert;
 export type Manga = typeof mangas.$inferSelect;

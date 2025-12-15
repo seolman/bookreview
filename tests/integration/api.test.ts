@@ -1,12 +1,13 @@
 import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import request from "supertest";
 import { Server } from "http";
-import type { Application } from "express";
+import { Application } from "express";
 
 import { createApp } from "../../src/app.js";
 import { pool, db } from "../../src/db/index.js";
 import { users, mangas, reviews, comments } from "../../src/db/schema.js";
 import { hashPassword } from "../../src/utils/password.js";
+import { redis } from "../../src/db/redis.js";
 
 let app: Application;
 let server: Server;
@@ -29,6 +30,9 @@ const adminUserCredentials = {
 };
 
 beforeAll(async () => {
+  if (!redis.isReady) {
+    await redis.connect();
+  }
   app = await createApp();
   server = app.listen();
 
@@ -80,6 +84,9 @@ beforeAll(async () => {
 afterAll(async () => {
   server.close();
   await pool.end();
+  if (redis.isReady) {
+    await redis.quit();
+  }
 });
 
 describe("Authentication API (/v1/api/auth)", () => {
