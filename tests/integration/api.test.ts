@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import request from "supertest";
 import { Server } from "http";
-import type { Application } from "express";
+import { Application } from "express";
 
 import { createApp } from "../../src/app.js";
 import { pool, db } from "../../src/db/index.js";
