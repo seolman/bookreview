@@ -7,7 +7,7 @@ import { createApp } from "../../src/app.js";
 import { pool, db } from "../../src/db/index.js";
 import { users, mangas, reviews, comments } from "../../src/db/schema.js";
 import { hashPassword } from "../../src/utils/password.js";
-import { redis } from "../db/redis.js";
+import { redis } from "../../src/db/redis.js";
 
 let app: Application;
 let server: Server;
