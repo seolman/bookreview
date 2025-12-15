@@ -83,6 +83,29 @@ export type ApiSpec = Tspec.DefineApiSpec<{
         };
       };
     };
+    "/auth/google": {
+      get: {
+        summary: "Google 소셜 로그인 시작";
+        tags: ["Authentication", "OAuth"];
+        description: "사용자를 Google 로그인 및 권한 동의 페이지로 리디렉션합니다.";
+        responses: { 302: { description: "Google 인증 페이지로 리디렉션" } };
+      };
+    };
+    "/auth/google/callback": {
+      get: {
+        summary: "Google 소셜 로그인 콜백";
+        tags: ["Authentication", "OAuth"];
+        description: "Google 인증 후 호출되는 콜백 URL. 성공 시 서비스의 토큰을 발급합니다.";
+        query: {
+          code: string;
+        };
+        responses: {
+          200: MyResponse<{ accessToken: string; refreshToken: string }>;
+          400: MyErrorResponse;
+          500: MyErrorResponse;
+        };
+      };
+    };
 
     "/users": {
       post: {

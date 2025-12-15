@@ -10,6 +10,10 @@ const router = Router();
 
 router.get("/stats/top-reviews", cacheMiddleware, getTopReviewsHandler);
 
-router.get("/stats/top-rated-mangas", cacheMiddleware, getTopRatedMangasHandler);
+router.get(
+  "/stats/top-rated-mangas",
+  cacheMiddleware,
+  getTopRatedMangasHandler
+);
 
 export default router;

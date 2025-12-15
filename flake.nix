@@ -34,14 +34,13 @@
       in
       {
         devShells.default = pkgs.mkShell {
-          packages = [
+            packages = [
             pkgs.postgresql_16
             # nodejs_18-pkgs.nodejs_18
             pkgs.nodejs_24
             redis-pkgs.redis
             nginx-pkgs.nginx
             pkgs.minikube
-            pkgs.ngrok
           ];
 
           shellHook = ''

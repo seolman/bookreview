@@ -3,7 +3,7 @@ import morgan from "morgan";
 import cors, { CorsOptions } from "cors";
 import { TspecDocsMiddleware } from "tspec";
 import { rateLimit } from "express-rate-limit";
-import { RedisStore } from 'rate-limit-redis';
+import { RedisStore } from "rate-limit-redis";
 import { HttpStatusCode } from "axios";
 
 import v1Router from "./routes/index.js";
@@ -23,7 +23,7 @@ export const createApp = async () => {
     windowMs: 15 * 60 * 1000,
     limit: 100,
     store: new RedisStore({
-      sendCommand: (...args: string[]) => redis.sendCommand(args)
+      sendCommand: (...args: string[]) => redis.sendCommand(args),
     }),
     standardHeaders: true,
     legacyHeaders: false,

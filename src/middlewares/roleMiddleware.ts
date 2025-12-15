@@ -2,7 +2,7 @@ import { RequestHandler } from "express";
 import { HttpStatusCode } from "axios";
 
 import AppError from "../utils/error.js";
-import { userRoleEnum } from "src/db/schema.js";
+import { userRoleEnum } from "../db/schema.js";
 
 type UserRoles = (typeof userRoleEnum.enumValues)[number];
 
