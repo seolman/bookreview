@@ -1,4 +1,4 @@
-# 도서 리뷰 서비스 백엔드
+# 만화 리뷰 서비스 백엔드
 
 <!-- TODO -->
 
@@ -60,6 +60,10 @@ npm run db:reset && npm run db:seed # 기본적인 개발환경으로 초기화
 DATABASE_URL= #<protocol>://<username>:<password>@<address>:<port>/<database>
 JWT_SECRET= # openssl rand -base64 32
 ALLOWED_ORIGINS= #http://localhost:3000,...
+REDIS_URL=
+GOOGLE_CLIENT_ID= # https://console.cloud.google.com/auth
+GOOGLE_CLIENT_SECRET=
+GOOGLE_CALLBACK_URL=
 ```
 
 `PORT`: 서비스의 포트번호
@@ -83,6 +87,10 @@ sudo -u postgres psql
 alter user postgres with password postgres;
 create database manga_db;
 ```
+
+<!-- TODO -->
+
+`redis 8.2.2`
 
 `Nginx/1.24.0`
 

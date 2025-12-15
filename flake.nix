@@ -1,5 +1,5 @@
 {
-  description = "Development environment for the book review service backend";
+  description = "Development environment for the manga review service backend";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -44,7 +44,6 @@
           ];
 
           shellHook = ''
-            echo "Entering Bookstore development environment..."
             echo "Node.js $(node -v)"
             echo "$(psql --version)"
             echo "$(redis-cli --version)"

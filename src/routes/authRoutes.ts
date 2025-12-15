@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import {
+  firebaseLoginHandler,
   googleCallbackHandler,
   loginHandler,
   logoutHandler,
@@ -34,7 +35,6 @@ authRouter.get("/auth/google", (_req, res) => {
 });
 authRouter.get("/auth/google/callback", googleCallbackHandler);
 
-// TODO
-// authRouter.use("/auth/firebase/naver");
+authRouter.post("/auth/firebase-login", firebaseLoginHandler);
 
 export default authRouter;
