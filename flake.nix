@@ -41,6 +41,7 @@
             redis-pkgs.redis
             nginx-pkgs.nginx
             pkgs.minikube
+            pkgs.ngrok
           ];
 
           shellHook = ''

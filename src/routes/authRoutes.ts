@@ -19,6 +19,7 @@ authRouter.post(
 
 authRouter.post("/auth/logout", authMiddleware, logoutHandler);
 
+// TODO change to redis
 authRouter.post(
   "/auth/refresh",
   // validationMiddleware(RefreshRequestSchema),
@@ -28,5 +29,9 @@ authRouter.post(
 // TODO
 // authRouter.use("/auth/google");
 // authRouter.use("/auth/google/callback");
+
+// TODO
+// authRouter.use("/auth/naver");
+// authRouter.use("/auth/naver/callback");
 
 export default authRouter;
