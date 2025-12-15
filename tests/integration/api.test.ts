@@ -7,6 +7,7 @@ import { createApp } from "../../src/app.js";
 import { pool, db } from "../../src/db/index.js";
 import { users, mangas, reviews, comments } from "../../src/db/schema.js";
 import { hashPassword } from "../../src/utils/password.js";
+import { redis } from "../db/redis.js";
 
 let app: Application;
 let server: Server;
@@ -36,6 +37,10 @@ beforeAll(async () => {
   await db.delete(reviews);
   await db.delete(mangas);
   await db.delete(users);
+
+  if (!redis.isReady) {
+    await redis.connect();
+  }
 
   const hashedPassword = await hashPassword(regularUserCredentials.password);
   const [seededRegularUser] = await db
@@ -80,6 +85,9 @@ beforeAll(async () => {
 afterAll(async () => {
   server.close();
   await pool.end();
+  if (redis.isReady) {
+    await redis.quit();
+  }
 });
 
 describe("Authentication API (/v1/api/auth)", () => {
