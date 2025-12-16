@@ -13,6 +13,7 @@ const envSchema = z.object({
   GOOGLE_CLIENT_ID: z.string().nonempty(),
   GOOGLE_CLIENT_SECRET: z.string().nonempty(),
   GOOGLE_CALLBACK_URL: z.url().nonempty(),
+  GOOGLE_APPLICATION_CREDENTIALS: z.string().nonempty(),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);
