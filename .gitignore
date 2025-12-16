@@ -146,9 +146,10 @@ result-*
 .direnv
 
 GEMINI.md
-data.json
-assets/
 jcloud_assignment_key
 database.txt
 accounts.txt
 manga-app-2b780-firebase-adminsdk-fbsvc-50911a7782.json
+
+# Kubernetes secrets
+infra/secrets.yaml
