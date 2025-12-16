@@ -73,3 +73,5 @@ jobs:
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
       GOOGLE_CALLBACK_URL: "http://localhost:8080/v1/api/auth/google/callback"
       REDIS_URL: "redis://localhost:6379"
+      GOOGLE_APPLICATION_CREDENTIALS: "test.json"
+
