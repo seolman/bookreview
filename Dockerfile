@@ -20,7 +20,7 @@ RUN npm ci --omit=dev
 
 COPY --from=builder /app/dist ./dist
 
-COPY entrypoint.sh .
+COPY scripts/entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
 ARG USER_UID=10001
