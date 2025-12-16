@@ -3,7 +3,7 @@ name: Test
 on:
   push:
     branches:
-      - dockerize
+      - feature/dockerize
 
 env:
   IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/manga-app
