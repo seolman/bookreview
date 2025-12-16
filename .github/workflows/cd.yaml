@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - "v*"
 
 env:
   IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/manga-app
@@ -16,7 +18,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      # TODO docker meta
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=tag
+            type=raw,value=latest,enable=true
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
@@ -35,9 +44,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: |
-            ${{ env.IMAGE_NAME }}:latest
-            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
 
   deploy:
     name: Deploy
