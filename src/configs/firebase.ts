@@ -6,6 +6,6 @@ try {
   admin.initializeApp();
   logger.info("Firebase Admin SDK init");
 } catch (err) {
-  logger.error("Firebase Admin error");
+  logger.error("Firebase Admin error: ", err);
   process.exit(1);
 }

@@ -206,10 +206,12 @@ export const firebaseLogin = async (idToken: string) => {
     .select()
     .from(oauth)
     .leftJoin(users, eq(oauth.userId, users.id))
-    .where(and(
-      eq(oauth.provider, decodedToken.firebase.sign_in_provider),
-      eq(oauth.providerUserId, decodedToken.uid)
-    ));
+    .where(
+      and(
+        eq(oauth.provider, decodedToken.firebase.sign_in_provider),
+        eq(oauth.providerUserId, decodedToken.uid)
+      )
+    );
 
   let user: User | undefined;
   if (result && result.users) {
@@ -221,7 +223,7 @@ export const firebaseLogin = async (idToken: string) => {
       await db.insert(oauth).values({
         provider: decodedToken.firebase.sign_in_provider,
         providerUserId: decodedToken.uid,
-        userId: existingUser.id
+        userId: existingUser.id,
       });
       user = existingUser;
     } else {
@@ -242,12 +244,15 @@ export const firebaseLogin = async (idToken: string) => {
         });
 
         user = newUser;
-      })
+      });
     }
   }
 
   if (!user) {
-    throw new AppError("Internal Server Error", HttpStatusCode.InternalServerError);
+    throw new AppError(
+      "Internal Server Error",
+      HttpStatusCode.InternalServerError
+    );
   }
   const tokens = await generateAppTokens(user);
 
