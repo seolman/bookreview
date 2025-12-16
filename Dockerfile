@@ -15,18 +15,22 @@ FROM node:24-alpine
 
 WORKDIR /app
 
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-USER appuser
+COPY package*.json ./
+RUN npm ci --omit=dev
 
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/dist ./dist
-
-EXPOSE 8080
 
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+ARG USER_UID=10001
+ARG GROUP_UID=10001
+RUN addgroup -g ${GROUP_UID} -S appgroup && \
+    adduser -u ${USER_UID} -S appuser -G appgroup
 
+USER appuser
+
+EXPOSE 8080
+
+ENTRYPOINT [ "./entrypoint.sh" ]
 CMD [ "node", "dist/src/index.js" ]
