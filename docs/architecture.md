@@ -25,10 +25,10 @@ graph TD
 
 `src` 디렉토리의 각 모듈은 다음과 같은 역할을 담당합니다.
 
-- **`configs`**: 환경 변수(`NODE_ENV`, `PORT`, `DATABASE_URL` 등)를 파싱하고 관리합니다.
+- **`configs`**: 환경 변수(`NODE_ENV`, `PORT`, `DATABASE_URL`, Firebase, Prometheus 등)를 파싱하고 관리합니다.
 - **`db`**: Drizzle ORM을 사용하여 데이터베이스 스키마(`schema.ts`)를 정의하고, DB 커넥션 인스턴스를 제공합니다.
 - **`routes`**: Express의 `Router`를 사용하여 API 엔드포인트를 정의하고, 해당 경로의 요청을 적절한 컨트롤러 함수로 연결합니다.
-- **`middlewares`**: 여러 라우트에서 공통으로 사용되는 로직을 정의합니다. (예: `authMiddleware` - 인증 처리, `errorMiddleware` - 전역 에러 처리)
+- **`middlewares`**: 여러 라우트에서 공통으로 사용되는 로직을 정의합니다. (예: `authMiddleware` - 인증 처리, `errorMiddleware` - 전역 에러 처리, `cacheMiddleware` - 응답 캐싱)
 - **`controllers`**: HTTP 요청(`req`)을 받아 응답(`res`)을 보내는 역할을 합니다. 요청의 유효성을 검증하고, 비즈니스 로직 처리를 서비스 계층에 위임합니다.
 - **`services`**: 애플리케이션의 핵심 비즈니스 로직을 담당합니다. 데이터베이스 쿼리, 외부 API 호출 등 실제적인 작업을 수행합니다.
 - **`utils`**: 공통 유틸리티 함수(비밀번호 해싱, 로거, 공통 응답 함수 등)를 제공합니다.
@@ -43,6 +43,9 @@ graph TD
 - **`pg`**: PostgreSQL 드라이버
 - **`zod`**: 유효성 검사 라이브러리
 - **`jsonwebtoken`**: JWT 생성 및 검증
+- **`firebase-admin`**: Firebase 서비스 연동 (소셜 로그인 등)
+- **`express-rate-limit`**: API 요청 속도 제한
+- **`prom-client`**: Prometheus 메트릭 수집
 - **`bcryptjs`**: 비밀번호 해싱
 - **`pm2`**: Node.js 프로세스 매니저 (프로덕션 환경)
 - **`tspec`**: TypeScript 타입 기반 OpenAPI(Swagger) 문서 자동 생성

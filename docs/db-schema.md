@@ -53,11 +53,18 @@ erDiagram
         Timestamp expiresAt
         Timestamp createdAt
     }
+    oauth {
+        String provider PK
+        String providerUserId PK
+        Int userId FK
+        Timestamp createdAt
+    }
 
     users ||--o{ reviews : "writes"
     users ||--o{ comments : "writes"
     users ||--o{ favorites : "has"
     users ||--o{ refresh_tokens : "has"
+    users ||--o{ oauth : "has"
     mangas ||--o{ reviews : "has"
     mangas ||--o{ favorites : "is_favorited_by"
     reviews ||--o{ comments : "has"
@@ -131,3 +138,12 @@ erDiagram
 | `token`     | `text`      | `NOT NULL`, `UNIQUE`         | Refresh Token 문자열 |
 | `expiresAt` | `timestamp` | `NOT NULL`                   | 토큰 만료 시각       |
 | `createdAt` | `timestamp` | `NOT NULL`, `DEFAULT now()`  | 토큰 생성 시각       |
+
+### `oauth` 테이블
+
+| 컬럼명           | 데이터 타입    | 제약 조건                                     | 설명                                |
+| :--------------- | :------------- | :-------------------------------------------- | :---------------------------------- |
+| `provider`       | `varchar(256)` | **PK**, `NOT NULL`                            | OAuth 제공자 (예: 'google', 'kakao') |
+| `providerUserId` | `varchar(256)` | **PK**, `NOT NULL`                            | OAuth 제공자가 부여한 사용자 ID     |
+| `userId`         | `integer`      | `NOT NULL`, `FK to users.id` (onDelete: CASCADE) | 내부 `users` 테이블의 사용자 ID     |
+| `createdAt`      | `timestamp`    | `NOT NULL`, `DEFAULT now()`                   | OAuth 연동 시각                     |
