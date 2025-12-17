@@ -40,13 +40,15 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
-  node_exporter:
+  node-exporter:
     image: prom/node-exporter:latest
     command:
       - "--path.rootfs=/host"
     network_mode: host
     pid: host
     restart: unless-stopped
+    ports:
+      - "9100:9100"
     volumes:
       - "/:/host:ro,rslave"
 
