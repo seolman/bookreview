@@ -4,6 +4,7 @@ import { HttpStatusCode } from "axios";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { sendSuccess } from "../utils/response.js";
 import {
+  firebaseLogin,
   googleLogin,
   loginUser,
   logoutUser,
@@ -48,5 +49,17 @@ export const googleCallbackHandler: RequestHandler = asyncHandler(
 
     const { accessToken, refreshToken } = await googleLogin(code);
     sendSuccess(res, { accessToken, refreshToken });
+  }
+);
+
+export const firebaseLoginHandler: RequestHandler = asyncHandler(
+  async (req, res) => {
+    const { idToken } = req.body;
+    if (!idToken) {
+      throw new AppError("Bad Request", HttpStatusCode.BadRequest);
+    }
+
+    const tokens = await firebaseLogin(idToken);
+    sendSuccess(res, tokens);
   }
 );

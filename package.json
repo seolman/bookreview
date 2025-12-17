@@ -1,9 +1,9 @@
 {
   "$schema": "https://schemastore.org/package.json",
   "private": true,
-  "name": "book-review",
-  "description": "book review service backend",
-  "version": "1.0.0",
+  "name": "manga-review",
+  "description": "manga review service backend",
+  "version": "1.1.0",
   "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
@@ -35,6 +35,7 @@
     "drizzle-zod": "^0.8.3",
     "express": "^5.1.0",
     "express-rate-limit": "^8.2.1",
+    "firebase-admin": "^13.6.0",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.1",
     "passport": "^0.7.0",

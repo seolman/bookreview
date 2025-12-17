@@ -1,0 +1,77 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-service
+spec:
+  type: NodePort # Minikube 환경에서 외부 접근을 위해 NodePort 타입 사용
+  selector:
+    app: book-review-app
+  ports:
+    - protocol: TCP
+      port: 8080 # 클러스터 내부에서 사용할 포트
+      targetPort: 8080 # Pod(컨테이너)의 포트
+      # nodePort: 30007 # 외부에서 접근할 포트 (지정하지 않으면 랜덤 할당)
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-review-app
+  template:
+    metadata:
+      labels:
+        app: book-review-app
+    spec:
+      containers:
+        - name: book-review-app-container
+          # CI/CD를 통해 빌드하고 푸시한 이미지 주소를 사용해야 합니다.
+          # 예: your-dockerhub-username/book-review:latest
+          image: "seolman/book-review:latest"
+          ports:
+            - containerPort: 8080
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: PORT
+              value: "8080"
+            # Service 이름을 사용하여 DB와 Redis에 접근
+            - name: DATABASE_URL
+              value: "postgresql://postgres:$(POSTGRES_PASSWORD)@db-service:5432/bookreview"
+            - name: REDIS_URL
+              value: "redis://redis-service:6379"
+
+            # Secret에서 민감한 정보 가져오기
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: book-review-secrets
+                  key: POSTGRES_PASSWORD
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: book-review-secrets
+                  key: JWT_SECRET
+            - name: GOOGLE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: book-review-secrets
+                  key: GOOGLE_CLIENT_ID
+            - name: GOOGLE_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: book-review-secrets
+                  key: GOOGLE_CLIENT_SECRET
+            - name: GOOGLE_CALLBACK_URL # 실제 배포 시에는 고정된 도메인 사용
+              value: "http://<YOUR_DOMAIN>/v1/api/auth/google/callback"
+
+            # GOOGLE_APPLICATION_CREDENTIALS 대신 파일 내용을 직접 주입
+            - name: FIREBASE_SERVICE_ACCOUNT
+              valueFrom:
+                secretKeyRef:
+                  name: book-review-secrets
+                  key: FIREBASE_SERVICE_ACCOUNT

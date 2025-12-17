@@ -1,29 +1,38 @@
-# TODO
-
-FROM node:lts-alpine AS builder
+FROM node:24-alpine AS builder
 
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm i
+RUN npm ci
 
 COPY . .
 
 RUN npm run build
 
 
-FROM node:lts-alpine
+FROM node:24-alpine
+
+RUN apk update && apk add --no-cache postgresql-client bash
 
 WORKDIR /app
 
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-USER appuser
+COPY package*.json ./
+RUN npm ci --omit=dev
 
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/dist ./dist
+
+COPY scripts/entrypoint.sh .
+RUN chmod +x entrypoint.sh
+
+ARG USER_UID=10001
+ARG GROUP_UID=10001
+RUN addgroup -g ${GROUP_UID} -S appgroup && \
+    adduser -u ${USER_UID} -S appuser -G appgroup
+
+USER appuser
 
 EXPOSE 8080
 
-CMD [ "node", "dist/index.js" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
+CMD [ "node", "dist/src/index.js" ]

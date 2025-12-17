@@ -1,6 +1,7 @@
 import axios, { HttpStatusCode } from "axios";
 import { eq, and } from "drizzle-orm";
 import jwt from "jsonwebtoken";
+import admin from "firebase-admin";
 
 import { users, refreshTokens, User, oauth } from "../db/schema.js";
 import { db } from "../db/index.js";
@@ -197,4 +198,63 @@ export const googleLogin = async (code: string) => {
   }
   const { accessToken, refreshToken } = await generateAppTokens(user);
   return { accessToken, refreshToken };
+};
+
+export const firebaseLogin = async (idToken: string) => {
+  const decodedToken = await admin.auth().verifyIdToken(idToken);
+  const [result] = await db
+    .select()
+    .from(oauth)
+    .leftJoin(users, eq(oauth.userId, users.id))
+    .where(
+      and(
+        eq(oauth.provider, decodedToken.firebase.sign_in_provider),
+        eq(oauth.providerUserId, decodedToken.uid)
+      )
+    );
+
+  let user: User | undefined;
+  if (result && result.users) {
+    const [existingUser] = await db
+      .select()
+      .from(users)
+      .where(eq(users.email, decodedToken.email!));
+    if (existingUser) {
+      await db.insert(oauth).values({
+        provider: decodedToken.firebase.sign_in_provider,
+        providerUserId: decodedToken.uid,
+        userId: existingUser.id,
+      });
+      user = existingUser;
+    } else {
+      await db.transaction(async (tx) => {
+        const [newUser] = await tx
+          .insert(users)
+          .values({
+            email: decodedToken.email!,
+            username: decodedToken.name,
+            avatarUrl: decodedToken.picture,
+          })
+          .returning();
+
+        await tx.insert(oauth).values({
+          provider: "google",
+          providerUserId: decodedToken.id,
+          userId: newUser.id,
+        });
+
+        user = newUser;
+      });
+    }
+  }
+
+  if (!user) {
+    throw new AppError(
+      "Internal Server Error",
+      HttpStatusCode.InternalServerError
+    );
+  }
+  const tokens = await generateAppTokens(user);
+
+  return tokens;
 };
