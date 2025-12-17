@@ -19,6 +19,8 @@ RUN addgroup -g ${GROUP_UID} -S appgroup && \
     adduser -u ${USER_UID} -S appuser -G appgroup
 USER appuser
 
+RUN mkdir /app/logs && chown -R appuser:appgroup /app/logs
+
 EXPOSE 8080
 
 ENTRYPOINT [ "./scripts/entrypoint.sh" ]
