@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+
 import { users, mangas, reviews, comments } from "../dist/src/db/schema.js";
 import { hashPassword } from "../dist/src/utils/password.js";
 import { pool, db } from "../dist/src/db/index.js";
@@ -34,36 +37,41 @@ async function seed() {
   }
   console.log("Users seeded.");
 
-  const delay = (ms) => {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  };
+  console.log("Reading manga data from local seed-data/ directory...");
+  const dataDir = path.join(process.cwd(), "seed-data");
 
-  for (let i = 1; i <= 8; i++) {
-    if (i > 1) {
-      await delay(1000);
-    }
-    const mangaRes = await fetch(`https://api.jikan.moe/v4/manga?page=${i}`);
-    if (!mangaRes.ok) {
-      console.error(mangaRes.statusText);
-      throw new Error("Failed to fetch manga data from Jikan API.");
-    }
+  try {
+    const files = fs.readdirSync(dataDir);
 
-    const mangaData = await mangaRes.json();
-    for (const manga of mangaData.data) {
-      if (!manga.published.from) continue;
-      await db
-        .insert(mangas)
-        .values({
-          malId: manga.mal_id,
-          title: manga.title,
-          synopsis: manga.synopsis,
-          author: manga.authors[0]?.name || "Unknown",
-          publishedAt: new Date(manga.published.from),
-          imageUrl: manga.images.jpg.image_url,
-        })
-        .onConflictDoNothing({ target: mangas.malId });
+    for (const file of files) {
+      if (path.extname(file) === ".json") {
+        console.log(`Processing ${file}...`);
+        const filePath = path.join(dataDir, file);
+        const rawData = fs.readFileSync(filePath, "utf8");
+        const mangaData = JSON.parse(rawData);
+
+        for (const manga of mangaData.data) {
+          if (!manga.published.from) continue;
+          await db
+            .insert(mangas)
+            .values({
+              malId: manga.mal_id,
+              title: manga.title,
+              synopsis: manga.synopsis,
+              author: manga.authors[0]?.name || "Unknown",
+              publishedAt: new Date(manga.published.from),
+              imageUrl: manga.images.jpg.image_url,
+            })
+            .onConflictDoNothing({ target: mangas.malId });
+        }
+      }
     }
-    console.log("Mangas seeded.");
+    console.log("All manga pages seeded from local files.");
+  } catch (error) {
+    console.error("Failed to read from seed-data directory:", error);
+    throw new Error(
+      "Make sure the seed-data directory and its JSON files exist."
+    );
   }
 
   const seededUsers = await db.select().from(users);

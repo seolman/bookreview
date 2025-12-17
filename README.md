@@ -88,8 +88,6 @@ alter user postgres with password postgres;
 create database manga_db;
 ```
 
-<!-- TODO -->
-
 `redis 8.2.2`
 
 `Nginx/1.24.0`
@@ -130,7 +128,9 @@ curl http://<public-ip>:<port>/health --silent # | jq "."
 
 ### 도커
 
-<!-- TODO -->
+```bash
+docker compose up -d
+```
 
 ```bash
 docker network create manga-app-network
