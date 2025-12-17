@@ -1,0 +1,2370 @@
+{
+  "pagination": {
+    "last_visible_page": 3251,
+    "has_next_page": true,
+    "current_page": 8,
+    "items": { "count": 25, "total": 81252, "per_page": 25 }
+  },
+  "data": [
+    {
+      "mal_id": 180,
+      "url": "https:\/\/myanimelist.net\/manga\/180\/Zurui_Otoko",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/1347.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/1347t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/1347l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/1347.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/1347t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/1347l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Zurui Otoko" },
+        { "type": "Japanese", "title": "\u30ba\u30eb\u3044\u7537" }
+      ],
+      "title": "Zurui Otoko",
+      "title_english": null,
+      "title_japanese": "\u30ba\u30eb\u3044\u7537",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 6,
+      "volumes": 1,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2001-01-01T00:00:00+00:00",
+        "to": null,
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 2001 },
+          "to": { "day": null, "month": null, "year": null }
+        },
+        "string": "2001 to ?"
+      },
+      "score": 6.21,
+      "scored": 6.21,
+      "scored_by": 242,
+      "rank": null,
+      "popularity": 25628,
+      "members": 519,
+      "favorites": 0,
+      "synopsis": "Collection of oneshots.\n\n1) A strange man hired a younger man to act as his new lover to get rid of his ex-boyfriend who's stalking him. It turns out the younger man is a student in the class of the older man... Sweet and a bit of angst.\n\n2) True Blue - Momo and Harumi are childhood friends, and Harumi has always relied on Momo. One day he sees Momo walk into a hotel with an older man.\n\n3-5) The Lover in the secret room - Kou and Natsume are good friends and also happens to the Captain and Assistant Captain on the schools soccer team. Natsume has always liked Kou, until he finds out that Kou is going to study abroad in France. Oda, who's also on the team has liked Natsume from afar. He confesses his feelings for him and then chains him up in his home. (slight bondage)\n\n6) Kaoru and Sei have been living together ever since Kaorus' dad was sent overseas for work. Kaoru catches Sei making out. Sei tells him that he likes someone else, but he can never be with him.\n\n(From: Manga Fox)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 3427,
+          "type": "people",
+          "name": "Hanafubuki, Sakurako",
+          "url": "https:\/\/myanimelist.net\/people\/3427\/Sakurako_Hanafubuki"
+        }
+      ],
+      "serializations": [],
+      "genres": [
+        {
+          "mal_id": 28,
+          "type": "manga",
+          "name": "Boys Love",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/28\/Boys_Love"
+        },
+        {
+          "mal_id": 49,
+          "type": "manga",
+          "name": "Erotica",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/49\/Erotica"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": []
+    },
+    {
+      "mal_id": 181,
+      "url": "https:\/\/myanimelist.net\/manga\/181\/Zombieya_Reiko",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/252973.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/252973t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/252973l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/252973.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/252973t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/252973l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Zombieya Reiko" },
+        { "type": "Synonym", "title": "Zombie Ya Reiko" },
+        { "type": "Synonym", "title": "Zombie-ya Reiko" },
+        {
+          "type": "Japanese",
+          "title": "\u30be\u30f3\u30d3\u5c4b\u308c\u3044\u5b50"
+        },
+        { "type": "English", "title": "Reiko the Zombie Shop" }
+      ],
+      "title": "Zombieya Reiko",
+      "title_english": "Reiko the Zombie Shop",
+      "title_japanese": "\u30be\u30f3\u30d3\u5c4b\u308c\u3044\u5b50",
+      "title_synonyms": ["Zombie Ya Reiko", "Zombie-ya Reiko"],
+      "type": "Manga",
+      "chapters": 58,
+      "volumes": 11,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "1998-06-06T00:00:00+00:00",
+        "to": "2004-03-06T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 6, "month": 6, "year": 1998 },
+          "to": { "day": 6, "month": 3, "year": 2004 }
+        },
+        "string": "Jun 6, 1998 to Mar 6, 2004"
+      },
+      "score": 6.94,
+      "scored": 6.94,
+      "scored_by": 287,
+      "rank": 10328,
+      "popularity": 11287,
+      "members": 1817,
+      "favorites": 24,
+      "synopsis": "Terror has struck the sleepy little town of Shiraike. A serial killer stalks the streets murdering innocent girls. Twenty-nine grisly murders have been committed, with no clues to catch the killer. That is, until the town receives a strange visitor: a beautiful young woman who can raise the dead. She is Reiko the Zombie Shop, necromancer for hire. For a price, she'll wake your dead, if only to find a clue to their demise, but she's not responsible for what the dead will say or do once they awaken! \n\n(Source: Dark Horse)",
+      "background": "Zombieya Reiko had six volumes published in English as Reiko The Zombie Shop by Dark Horse from December 21, 2005 to March 21, 2007, before the license was dropped.",
+      "authors": [
+        {
+          "mal_id": 2200,
+          "type": "people",
+          "name": "Mikamoto, Rei",
+          "url": "https:\/\/myanimelist.net\/people\/2200\/Rei_Mikamoto"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 534,
+          "type": "manga",
+          "name": "Horror M",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/534\/Horror_M"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 14,
+          "type": "manga",
+          "name": "Horror",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/14\/Horror"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": [
+        {
+          "mal_id": 42,
+          "type": "manga",
+          "name": "Josei",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/42\/Josei"
+        }
+      ]
+    },
+    {
+      "mal_id": 182,
+      "url": "https:\/\/myanimelist.net\/manga\/182\/Zombie_Hunter",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/12307.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/12307t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/12307l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/12307.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/12307t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/12307l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Zombie Hunter" },
+        { "type": "Japanese", "title": "\u6b7b\u970a\u72e9\u308a" }
+      ],
+      "title": "Zombie Hunter",
+      "title_english": null,
+      "title_japanese": "\u6b7b\u970a\u72e9\u308a",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 26,
+      "volumes": 4,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "1999-01-01T00:00:00+00:00",
+        "to": "2000-01-01T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 1999 },
+          "to": { "day": 1, "month": 1, "year": 2000 }
+        },
+        "string": "1999 to 2000"
+      },
+      "score": 6.71,
+      "scored": 6.71,
+      "scored_by": 1469,
+      "rank": 14305,
+      "popularity": 6671,
+      "members": 3497,
+      "favorites": 26,
+      "synopsis": "Unknown to the world aliens have begun to invade people's bodies. A young race car pilot named Toshio was won by a mysterious organization for a \"test\" for money. That test turned out to be a hellish training to become a Zombie Hunter. However, Toshio decided to return to a normal life but soon face the harsh reality of a Zombie Hunter. Surrounded by shallow figures and aliens Toshio accepts his new life as a Zombie Hunter ...\n\n(Source: MU)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 2201,
+          "type": "people",
+          "name": "Hirai, Kazumasa",
+          "url": "https:\/\/myanimelist.net\/people\/2201\/Kazumasa_Hirai"
+        },
+        {
+          "mal_id": 2202,
+          "type": "people",
+          "name": "Yang, Kyung-il",
+          "url": "https:\/\/myanimelist.net\/people\/2202\/Kyung-il_Yang"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 114,
+          "type": "manga",
+          "name": "Comic Beam",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/114\/Comic_Beam"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 1,
+          "type": "manga",
+          "name": "Action",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/1\/Action"
+        },
+        {
+          "mal_id": 14,
+          "type": "manga",
+          "name": "Horror",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/14\/Horror"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": []
+    },
+    {
+      "mal_id": 183,
+      "url": "https:\/\/myanimelist.net\/manga\/183\/Zoku_Shishunki_Miman_Okotowari",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/199144.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/199144t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/199144l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/199144.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/199144t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/199144l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Zoku Shishunki Miman Okotowari" },
+        { "type": "Synonym", "title": "No Pre-teens Allowed Continuation" },
+        { "type": "Synonym", "title": "Further Less than puberty refusal" },
+        {
+          "type": "Japanese",
+          "title": "\u7d9a\u30fb\u601d\u6625\u671f\u672a\u6e80\u304a\u65ad\u308a"
+        }
+      ],
+      "title": "Zoku Shishunki Miman Okotowari",
+      "title_english": null,
+      "title_japanese": "\u7d9a\u30fb\u601d\u6625\u671f\u672a\u6e80\u304a\u65ad\u308a",
+      "title_synonyms": [
+        "No Pre-teens Allowed Continuation",
+        "Further Less than puberty refusal"
+      ],
+      "type": "Manga",
+      "chapters": 10,
+      "volumes": 3,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "1992-01-14T00:00:00+00:00",
+        "to": "1994-01-14T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 14, "month": 1, "year": 1992 },
+          "to": { "day": 14, "month": 1, "year": 1994 }
+        },
+        "string": "Jan 14, 1992 to Jan 14, 1994"
+      },
+      "score": 6.91,
+      "scored": 6.91,
+      "scored_by": 220,
+      "rank": 10843,
+      "popularity": 21672,
+      "members": 700,
+      "favorites": 1,
+      "synopsis": "Asuka, who lived in Hokkaido with her mother, moves to Tokyo to look for her father she has never even met before. When she gets to his house, he is not there, only his children who claim they have never met their father either. Asuka decides to stay with her \"brother\" and \"sister\" while she looks for their father. Her two \"siblings\" are living alone and things sorta complicate when Asuka and her \"brother\" start to fall for each other...\n\n(Source: MU)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 1930,
+          "type": "people",
+          "name": "Watase, Yuu",
+          "url": "https:\/\/myanimelist.net\/people\/1930\/Yuu_Watase"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 211,
+          "type": "manga",
+          "name": "Sho-Comi Zoukan",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/211\/Sho-Comi_Zoukan"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 4,
+          "type": "manga",
+          "name": "Comedy",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/4\/Comedy"
+        },
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Romance",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/22\/Romance"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": [
+        {
+          "mal_id": 25,
+          "type": "manga",
+          "name": "Shoujo",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/25\/Shoujo"
+        }
+      ]
+    },
+    {
+      "mal_id": 184,
+      "url": "https:\/\/myanimelist.net\/manga\/184\/Shishunki_Miman_Okotowari",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/199142.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/199142t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/199142l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/199142.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/199142t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/199142l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Shishunki Miman Okotowari" },
+        { "type": "Synonym", "title": "Forbidden to Pre-Adolescents" },
+        { "type": "Synonym", "title": "No Pre-teens Allowed" },
+        { "type": "Synonym", "title": "The Affairs of a Young Girl" },
+        { "type": "Synonym", "title": "Otome no Jijou" },
+        {
+          "type": "Japanese",
+          "title": "\u601d\u6625\u671f\u672a\u6e80\u304a\u65ad\u308a"
+        }
+      ],
+      "title": "Shishunki Miman Okotowari",
+      "title_english": null,
+      "title_japanese": "\u601d\u6625\u671f\u672a\u6e80\u304a\u65ad\u308a",
+      "title_synonyms": [
+        "Forbidden to Pre-Adolescents",
+        "No Pre-teens Allowed",
+        "The Affairs of a Young Girl",
+        "Otome no Jijou"
+      ],
+      "type": "Manga",
+      "chapters": 18,
+      "volumes": 3,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "1990-12-20T00:00:00+00:00",
+        "to": "1991-01-01T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 20, "month": 12, "year": 1990 },
+          "to": { "day": 1, "month": 1, "year": 1991 }
+        },
+        "string": "Dec 20, 1990 to 1991"
+      },
+      "score": 6.98,
+      "scored": 6.98,
+      "scored_by": 578,
+      "rank": 9635,
+      "popularity": 13494,
+      "members": 1429,
+      "favorites": 2,
+      "synopsis": "Higuchi Asuka's mother dies shortly after she tells her teenage daughter who her father is. Only knowing the family name \"Sudou,\" Asuka goes in search to find her absent father.\n\nOn her journey, she finds a guy being rather rough with a younger girl. Unable to resist, Asuka steps in by battering the guy with her motorcycle. When she discovers it was a big misunderstanding (Manato was just trying to get his sister Kazusa to go home), she drives them back to their house.\n\nOnce there, Asuka finds out that Manato and Kazusa are the Sudou family she's been looking for, but the father isn't there, not to mention their mother also being dead since long ago. With no other leads, Asuka decides to move in as the big sister until their father shows up. Things get tricky when love builds within the complex family relationship...\n\n(Source: MU)\n\nIncluded one-shot:\nVolume 3: Otome no Jijou",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 1930,
+          "type": "people",
+          "name": "Watase, Yuu",
+          "url": "https:\/\/myanimelist.net\/people\/1930\/Yuu_Watase"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Sho-Comi",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/22\/Sho-Comi"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 4,
+          "type": "manga",
+          "name": "Comedy",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/4\/Comedy"
+        },
+        {
+          "mal_id": 8,
+          "type": "manga",
+          "name": "Drama",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/8\/Drama"
+        },
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Romance",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/22\/Romance"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": [
+        {
+          "mal_id": 25,
+          "type": "manga",
+          "name": "Shoujo",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/25\/Shoujo"
+        }
+      ]
+    },
+    {
+      "mal_id": 185,
+      "url": "https:\/\/myanimelist.net\/manga\/185\/Shishunki_Miman_Okotowari_Kanketsuhen",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/4\/314673.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/4\/314673t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/4\/314673l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/4\/314673.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/4\/314673t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/4\/314673l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Shishunki Miman Okotowari Kanketsuhen" },
+        {
+          "type": "Synonym",
+          "title": "Shishunki Miman Okotowari Kanketsu Hen"
+        },
+        { "type": "Synonym", "title": "Shishunki Miman Okotowari Ending" },
+        { "type": "Synonym", "title": "Couple" },
+        { "type": "Synonym", "title": "Chikyu no Arukikata" },
+        {
+          "type": "Japanese",
+          "title": "\u601d\u6625\u671f\u672a\u6e80\u304a\u65ad\u308a\u30fb\u5b8c\u7d50\u7de8"
+        }
+      ],
+      "title": "Shishunki Miman Okotowari Kanketsuhen",
+      "title_english": null,
+      "title_japanese": "\u601d\u6625\u671f\u672a\u6e80\u304a\u65ad\u308a\u30fb\u5b8c\u7d50\u7de8",
+      "title_synonyms": [
+        "Shishunki Miman Okotowari Kanketsu Hen",
+        "Shishunki Miman Okotowari Ending",
+        "Couple",
+        "Chikyu no Arukikata"
+      ],
+      "type": "Manga",
+      "chapters": 3,
+      "volumes": 1,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2000-06-01T00:00:00+00:00",
+        "to": null,
+        "prop": {
+          "from": { "day": 1, "month": 6, "year": 2000 },
+          "to": { "day": null, "month": null, "year": null }
+        },
+        "string": "Jun 2000"
+      },
+      "score": 6.96,
+      "scored": 6.96,
+      "scored_by": 450,
+      "rank": 9977,
+      "popularity": 17554,
+      "members": 982,
+      "favorites": 0,
+      "synopsis": "1. Shishunki Miman Okotowari Ending\nAt long last, Yuu Watase brings us the final chapter of the Shinshunki Miman Okotowari series. Manato returns from America, but he doesn't come with the best news for Asuka. This might be the last time he returns to Japan.\n\n2. Couple\nInaho has fallen in love with Takumi, the lead guitarist of a high school band. With hand-made gifts and her strange personality, she gets Takumi to ask her out. But only with a special biwa (a Japanese lute) can their relationship last.\n\n3. Chikyu no Arukikata\nAyuki just got dumped. On the same day, she hurt her ankle during track practice. Later, Ayuki gets trapped on the wrong train to the coast. On this train, she meets Hiroto, a guy who has quit school in search of himself. Ayuki wonders if she should do the same.  \n\n(Source: MU)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 1930,
+          "type": "people",
+          "name": "Watase, Yuu",
+          "url": "https:\/\/myanimelist.net\/people\/1930\/Yuu_Watase"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Sho-Comi",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/22\/Sho-Comi"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 8,
+          "type": "manga",
+          "name": "Drama",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/8\/Drama"
+        },
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Romance",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/22\/Romance"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": [
+        {
+          "mal_id": 25,
+          "type": "manga",
+          "name": "Shoujo",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/25\/Shoujo"
+        }
+      ]
+    },
+    {
+      "mal_id": 186,
+      "url": "https:\/\/myanimelist.net\/manga\/186\/Zoku_-_Kindan_no_Koi_wo_Shiyou",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/10852.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/10852t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/10852l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/10852.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/10852t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/10852l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Zoku - Kindan no Koi wo Shiyou" },
+        { "type": "Synonym", "title": "Let's Have Forbidden Romance" },
+        { "type": "Synonym", "title": "continued" },
+        {
+          "type": "Japanese",
+          "title": "\u7d9a\u30fb\u7981\u65ad\u306e\u604b\u3092\u3057\u3088\u3046"
+        }
+      ],
+      "title": "Zoku - Kindan no Koi wo Shiyou",
+      "title_english": null,
+      "title_japanese": "\u7d9a\u30fb\u7981\u65ad\u306e\u604b\u3092\u3057\u3088\u3046",
+      "title_synonyms": ["Let's Have Forbidden Romance", "continued"],
+      "type": "Manga",
+      "chapters": 4,
+      "volumes": 1,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2001-01-01T00:00:00+00:00",
+        "to": null,
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 2001 },
+          "to": { "day": null, "month": null, "year": null }
+        },
+        "string": "2001"
+      },
+      "score": 7.36,
+      "scored": 7.36,
+      "scored_by": 1644,
+      "rank": 4372,
+      "popularity": 7629,
+      "members": 2972,
+      "favorites": 16,
+      "synopsis": "A manga about werewolves and the continued adventures of Hisako and Yato. This volume falls between the prequel volume, Kindan no Koi wo Shiyou, and the longer main series, Kindan no Koi de Ikou.\n\n(Source: MU)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 2203,
+          "type": "people",
+          "name": "Ohmi, Tomu",
+          "url": "https:\/\/myanimelist.net\/people\/2203\/Tomu_Ohmi"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 73,
+          "type": "manga",
+          "name": "Petit Comic",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/73\/Petit_Comic"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 10,
+          "type": "manga",
+          "name": "Fantasy",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/10\/Fantasy"
+        },
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Romance",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/22\/Romance"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": [
+        {
+          "mal_id": 42,
+          "type": "manga",
+          "name": "Josei",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/42\/Josei"
+        }
+      ]
+    },
+    {
+      "mal_id": 187,
+      "url": "https:\/\/myanimelist.net\/manga\/187\/Kindan_no_Koi_wo_Shiyou",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/17066.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/17066t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/17066l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/17066.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/17066t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/17066l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Kindan no Koi wo Shiyou" },
+        { "type": "Synonym", "title": "Let's Make Forbidden Love" },
+        { "type": "Synonym", "title": "Vampire no Onegai" },
+        { "type": "Synonym", "title": "A Request to the Vampire" },
+        {
+          "type": "Japanese",
+          "title": "\u7981\u65ad\u306e\u604b\u3092\u3057\u3088\u3046"
+        }
+      ],
+      "title": "Kindan no Koi wo Shiyou",
+      "title_english": null,
+      "title_japanese": "\u7981\u65ad\u306e\u604b\u3092\u3057\u3088\u3046",
+      "title_synonyms": [
+        "Let's Make Forbidden Love",
+        "Vampire no Onegai",
+        "A Request to the Vampire"
+      ],
+      "type": "Manga",
+      "chapters": 5,
+      "volumes": 1,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2000-01-01T00:00:00+00:00",
+        "to": null,
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 2000 },
+          "to": { "day": null, "month": null, "year": null }
+        },
+        "string": "2000"
+      },
+      "score": 7.27,
+      "scored": 7.27,
+      "scored_by": 2561,
+      "rank": 5425,
+      "popularity": 4927,
+      "members": 4902,
+      "favorites": 32,
+      "synopsis": "Hisako was saved from a drunkard by a wolf. She decides to adopt the beautiful, and entrancing creature, but Hisako's new pet turns into a fine-looking guy! Somehow his entrancing eyes remain in her mind...\n\nOne-Shot: A Request to the Vampire\nRyouko is targeted as an anorexic, or shall we say, unappetizing, girl. But when her want to die overflows when she meets a vampire, he turns her world around.\n\n(Source: MU)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 2203,
+          "type": "people",
+          "name": "Ohmi, Tomu",
+          "url": "https:\/\/myanimelist.net\/people\/2203\/Tomu_Ohmi"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 73,
+          "type": "manga",
+          "name": "Petit Comic",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/73\/Petit_Comic"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 8,
+          "type": "manga",
+          "name": "Drama",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/8\/Drama"
+        },
+        {
+          "mal_id": 10,
+          "type": "manga",
+          "name": "Fantasy",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/10\/Fantasy"
+        },
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Romance",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/22\/Romance"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": [
+        {
+          "mal_id": 42,
+          "type": "manga",
+          "name": "Josei",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/42\/Josei"
+        }
+      ]
+    },
+    {
+      "mal_id": 188,
+      "url": "https:\/\/myanimelist.net\/manga\/188\/Kindan_no_Koi_de_Ikou",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/5717.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/5717t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/5717l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/5717.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/5717t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/5\/5717l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Kindan no Koi de Ikou" },
+        { "type": "Synonym", "title": "Forbidden Fruit" },
+        { "type": "Synonym", "title": "Let's Go with Forbidden Love" },
+        {
+          "type": "Japanese",
+          "title": "\u7981\u65ad\u306e\u604b\u3067\u3044\u3053\u3046"
+        }
+      ],
+      "title": "Kindan no Koi de Ikou",
+      "title_english": null,
+      "title_japanese": "\u7981\u65ad\u306e\u604b\u3067\u3044\u3053\u3046",
+      "title_synonyms": ["Forbidden Fruit", "Let's Go with Forbidden Love"],
+      "type": "Manga",
+      "chapters": 50,
+      "volumes": 10,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2001-01-01T00:00:00+00:00",
+        "to": "2005-01-01T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 2001 },
+          "to": { "day": 1, "month": 1, "year": 2005 }
+        },
+        "string": "2001 to 2005"
+      },
+      "score": 7.77,
+      "scored": 7.77,
+      "scored_by": 1871,
+      "rank": 1499,
+      "popularity": 5532,
+      "members": 4293,
+      "favorites": 70,
+      "synopsis": "Hisako is saved by a beautiful wolf that turns into an even more beautiful man...but can a relationship like this work!? The continuation of the story of Hisako and Yato seen in Kindan no Koi wo Shiyou and Zoku Kindan no Koi wo Shiyou!\n\n(Source: ShojoMagic)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 2203,
+          "type": "people",
+          "name": "Ohmi, Tomu",
+          "url": "https:\/\/myanimelist.net\/people\/2203\/Tomu_Ohmi"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 73,
+          "type": "manga",
+          "name": "Petit Comic",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/73\/Petit_Comic"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 8,
+          "type": "manga",
+          "name": "Drama",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/8\/Drama"
+        },
+        {
+          "mal_id": 10,
+          "type": "manga",
+          "name": "Fantasy",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/10\/Fantasy"
+        },
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Romance",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/22\/Romance"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": [
+        {
+          "mal_id": 42,
+          "type": "manga",
+          "name": "Josei",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/42\/Josei"
+        }
+      ]
+    },
+    {
+      "mal_id": 190,
+      "url": "https:\/\/myanimelist.net\/manga\/190\/Juunikyuu_de_Tsukamaete",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/273992.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/273992t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/273992l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/273992.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/273992t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/273992l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Juunikyuu de Tsukamaete" },
+        { "type": "Synonym", "title": "Zodiac Detective" },
+        { "type": "Synonym", "title": "Junikyu de Tsukamaete" },
+        {
+          "type": "Japanese",
+          "title": "\u5341\u4e8c\u5bae\u3067\u3064\u304b\u307e\u3048\u3066"
+        },
+        { "type": "English", "title": "Zodiac P.I." }
+      ],
+      "title": "Juunikyuu de Tsukamaete",
+      "title_english": "Zodiac P.I.",
+      "title_japanese": "\u5341\u4e8c\u5bae\u3067\u3064\u304b\u307e\u3048\u3066",
+      "title_synonyms": ["Zodiac Detective", "Junikyu de Tsukamaete"],
+      "type": "Manga",
+      "chapters": 20,
+      "volumes": 4,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2001-03-03T00:00:00+00:00",
+        "to": "2002-12-03T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 3, "month": 3, "year": 2001 },
+          "to": { "day": 3, "month": 12, "year": 2002 }
+        },
+        "string": "Mar 3, 2001 to Dec 3, 2002"
+      },
+      "score": 7.36,
+      "scored": 7.36,
+      "scored_by": 2293,
+      "rank": 4387,
+      "popularity": 5054,
+      "members": 4745,
+      "favorites": 68,
+      "synopsis": "In recent times, a mysterious private investigator under the name of \"Spica\" has been solving crimes before the police arrive, leaving only a star mark nearby to indicate her involvement. The true identity of this rising star is Lili Hoshizawa, an energetic 13-year-old girl who enjoys solving mysteries, athletic activities, and running her mother's fortune-telling business, \"Fortune Teller Spica.\" Using her knowledge of astrology, Lili reads clients' horoscopes by day and catches criminals by night!\n\nBut Lili soon finds that her carefree, crime-solving adventures will need some more caution when her childhood friend Hiromi Oikawa returns from America and is suspicious of her and Spica. His extensive studies in criminal psychology seems to have helped him in solving mysteries\u2014rivaling Lili's astrology and crime-solving skills. But this zodiac detective has no time to worry about a possible rival, for there are many cases and mysteries out there that she must solve in the name of the star!\n\n[Written by MAL Rewrite]",
+      "background": "Juunikyuu de Tsukamaete was published in English as Zodiac P.I. by Tokyopop from July 8, 2003 to December 9, 2003.",
+      "authors": [
+        {
+          "mal_id": 2390,
+          "type": "people",
+          "name": "Ando, Natsumi",
+          "url": "https:\/\/myanimelist.net\/people\/2390\/Natsumi_Ando"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 20,
+          "type": "manga",
+          "name": "Nakayoshi",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/20\/Nakayoshi"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 1,
+          "type": "manga",
+          "name": "Action",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/1\/Action"
+        },
+        {
+          "mal_id": 10,
+          "type": "manga",
+          "name": "Fantasy",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/10\/Fantasy"
+        },
+        {
+          "mal_id": 7,
+          "type": "manga",
+          "name": "Mystery",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/7\/Mystery"
+        },
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Romance",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/22\/Romance"
+        },
+        {
+          "mal_id": 37,
+          "type": "manga",
+          "name": "Supernatural",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/37\/Supernatural"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": [
+        {
+          "mal_id": 25,
+          "type": "manga",
+          "name": "Shoujo",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/25\/Shoujo"
+        }
+      ]
+    },
+    {
+      "mal_id": 191,
+      "url": "https:\/\/myanimelist.net\/manga\/191\/Zipang",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/209661.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/209661t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/209661l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/209661.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/209661t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/209661l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Zipang" },
+        { "type": "Japanese", "title": "\u30b8\u30d1\u30f3\u30b0" }
+      ],
+      "title": "Zipang",
+      "title_english": null,
+      "title_japanese": "\u30b8\u30d1\u30f3\u30b0",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 422,
+      "volumes": 43,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2000-07-27T00:00:00+00:00",
+        "to": "2009-11-05T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 27, "month": 7, "year": 2000 },
+          "to": { "day": 5, "month": 11, "year": 2009 }
+        },
+        "string": "Jul 27, 2000 to Nov 5, 2009"
+      },
+      "score": 7.6,
+      "scored": 7.6,
+      "scored_by": 794,
+      "rank": 2386,
+      "popularity": 6279,
+      "members": 3744,
+      "favorites": 61,
+      "synopsis": "In the year 200X, a Japanese fleet consisting of 3 vessels leave on a mission to South America. After encountering a storm, the ship JDS Mirai find themselves without their escorts and in 1942, traveling towards the island of Midway to face the American fleet in one of largest battles in naval history. The crew of Mirai must decide whether or not to change the course of history by involving itself in WWII.\n\n(Source: MU)",
+      "background": "Zipang won the 26th Kodansha Manga Award in the General category in 2002. The first four volumes of the series were published in bilingual Japanese-English editions by Kodansha in 2002. It was also released in French by Kana from March 4, 2005, to May 7, 2015. A video game adaptation of the manga was released on the PlayStation 2 by Bandai in Japan on May 26, 2005.",
+      "authors": [
+        {
+          "mal_id": 2204,
+          "type": "people",
+          "name": "Kawaguchi, Kaiji",
+          "url": "https:\/\/myanimelist.net\/people\/2204\/Kaiji_Kawaguchi"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 72,
+          "type": "manga",
+          "name": "Morning",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/72\/Morning"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 1,
+          "type": "manga",
+          "name": "Action",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/1\/Action"
+        },
+        {
+          "mal_id": 46,
+          "type": "manga",
+          "name": "Award Winning",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/46\/Award_Winning"
+        },
+        {
+          "mal_id": 8,
+          "type": "manga",
+          "name": "Drama",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/8\/Drama"
+        },
+        {
+          "mal_id": 24,
+          "type": "manga",
+          "name": "Sci-Fi",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/24\/Sci-Fi"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [
+        {
+          "mal_id": 50,
+          "type": "manga",
+          "name": "Adult Cast",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/50\/Adult_Cast"
+        },
+        {
+          "mal_id": 13,
+          "type": "manga",
+          "name": "Historical",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/13\/Historical"
+        },
+        {
+          "mal_id": 38,
+          "type": "manga",
+          "name": "Military",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/38\/Military"
+        },
+        {
+          "mal_id": 79,
+          "type": "manga",
+          "name": "Time Travel",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/79\/Time_Travel"
+        }
+      ],
+      "demographics": [
+        {
+          "mal_id": 41,
+          "type": "manga",
+          "name": "Seinen",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/41\/Seinen"
+        }
+      ]
+    },
+    {
+      "mal_id": 192,
+      "url": "https:\/\/myanimelist.net\/manga\/192\/Zip-Up_Boy",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/152301.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/152301t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/152301l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/152301.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/152301t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/152301l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Zip-Up Boy" },
+        { "type": "Japanese", "title": "Zip-up Boy" }
+      ],
+      "title": "Zip-Up Boy",
+      "title_english": null,
+      "title_japanese": "Zip-up Boy",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 4,
+      "volumes": 1,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "1998-01-01T00:00:00+00:00",
+        "to": null,
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 1998 },
+          "to": { "day": null, "month": null, "year": null }
+        },
+        "string": "1998 to ?"
+      },
+      "score": 5.8,
+      "scored": 5.8,
+      "scored_by": 286,
+      "rank": null,
+      "popularity": 24303,
+      "members": 573,
+      "favorites": 0,
+      "synopsis": "High-school student Kazuki begins a casual sexual relationship with an older man after meeting in a bar. He becomes addicted to the affection but is perplexed by the indifference of his partner. Meanwhile, Kazuki's mother has decided to remarry Akira, the nicest guy you could imagine... unfortunately his brother Reiji just happens to be Kazuki's cold-hearted playmate. \n\n(Source: DokiDoki)\n\nIncluded one-shot: Inu to Shounen (A Dog and a Boy)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 2205,
+          "type": "people",
+          "name": "Kasama, Rumi",
+          "url": "https:\/\/myanimelist.net\/people\/2205\/Rumi_Kasama"
+        }
+      ],
+      "serializations": [],
+      "genres": [
+        {
+          "mal_id": 28,
+          "type": "manga",
+          "name": "Boys Love",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/28\/Boys_Love"
+        },
+        {
+          "mal_id": 8,
+          "type": "manga",
+          "name": "Drama",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/8\/Drama"
+        },
+        {
+          "mal_id": 49,
+          "type": "manga",
+          "name": "Erotica",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/49\/Erotica"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": []
+    },
+    {
+      "mal_id": 193,
+      "url": "https:\/\/myanimelist.net\/manga\/193\/Zig\u2606Zag",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/171468.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/171468t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/171468l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/171468.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/171468t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/171468l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Zig\u2606Zag" },
+        { "type": "Synonym", "title": "ZigZag" },
+        { "type": "Japanese", "title": "ZIG\u2606ZAG" },
+        { "type": "English", "title": "Zig\u2606Zag" }
+      ],
+      "title": "Zig\u2606Zag",
+      "title_english": "Zig\u2606Zag",
+      "title_japanese": "ZIG\u2606ZAG",
+      "title_synonyms": ["ZigZag"],
+      "type": "Manga",
+      "chapters": 44,
+      "volumes": 9,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2004-09-24T00:00:00+00:00",
+        "to": "2008-09-24T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 24, "month": 9, "year": 2004 },
+          "to": { "day": 24, "month": 9, "year": 2008 }
+        },
+        "string": "Sep 24, 2004 to Sep 24, 2008"
+      },
+      "score": 6.99,
+      "scored": 6.99,
+      "scored_by": 304,
+      "rank": 9586,
+      "popularity": 17592,
+      "members": 979,
+      "favorites": 13,
+      "synopsis": "Freshly enrolled in Seifuu Academy, Takaaki Asakura (aka. Taiyou*-kun) is now living in a boys' dormitory. He has a strange and incomprehensible roommate named Sonoh Kirihara. Furthermore, his neighbor is Tatsuki Suwa, whom he hasn't seen since elementary school!? Meanwhile, he becomes friends with his classmates, Saho and Mei, and has high hopes for his new school life!\n\n(Source: Maboroshi Scanlation)\n\nIncluded one-shot:\nVolume 4: Heaven Company",
+      "background": "Zig\u2606Zag had three volumes published in English by Tokyopop from November 1, 2007 to July 8, 2008. It was later published in English in its entirety by the, now defunct, Singaporean publisher Chuang Yi.",
+      "authors": [
+        {
+          "mal_id": 2208,
+          "type": "people",
+          "name": "Nakaji, Yuki",
+          "url": "https:\/\/myanimelist.net\/people\/2208\/Yuki_Nakaji"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 11,
+          "type": "manga",
+          "name": "LaLa",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/11\/LaLa"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 4,
+          "type": "manga",
+          "name": "Comedy",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/4\/Comedy"
+        },
+        {
+          "mal_id": 8,
+          "type": "manga",
+          "name": "Drama",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/8\/Drama"
+        },
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Romance",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/22\/Romance"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [
+        {
+          "mal_id": 23,
+          "type": "manga",
+          "name": "School",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/23\/School"
+        }
+      ],
+      "demographics": [
+        {
+          "mal_id": 25,
+          "type": "manga",
+          "name": "Shoujo",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/25\/Shoujo"
+        }
+      ]
+    },
+    {
+      "mal_id": 194,
+      "url": "https:\/\/myanimelist.net\/manga\/194\/Mai",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/279154.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/279154t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/279154l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/279154.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/279154t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/279154l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Mai" },
+        { "type": "Japanese", "title": "\u821e" },
+        { "type": "English", "title": "Mai, The Psychic Girl" }
+      ],
+      "title": "Mai",
+      "title_english": "Mai, The Psychic Girl",
+      "title_japanese": "\u821e",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 53,
+      "volumes": 6,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "1985-01-01T00:00:00+00:00",
+        "to": "1986-01-01T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 1985 },
+          "to": { "day": 1, "month": 1, "year": 1986 }
+        },
+        "string": "1985 to 1986"
+      },
+      "score": 6.71,
+      "scored": 6.71,
+      "scored_by": 607,
+      "rank": 14262,
+      "popularity": 10247,
+      "members": 2053,
+      "favorites": 30,
+      "synopsis": "Mai is silly, giggly, and flirtatious - just like any other cute fourteen-year-old girl. As far as Mai is concerned, her telekinetic abilities are just good for practical jokes. But when the secret organization known as the Wisdom Alliance tries to exploit her as a weapon to enslave the world, her father puts his life on the line to protect her. And Mai soon learns the hard way that her powers are no joke, but capable of unbelievable, deadly force!\n\n(Source: VIZ Media)",
+      "background": "Mai was first published in comic book format as Mai the Psychic Girl by VIZ Media in VIZ Eclipse International Biweekly, running for a total of 28 issues, from 1987 to 1988. It was later released in graphic novel format both by Titan Books from May 1989 to December 1989, and by VIZ Media in October 1990, both four volumes long. From December 1, 1995 to February 1, 1996, VIZ Media rereleased the series as a VIZ Graphic Novel Perfect Collection title.",
+      "authors": [
+        {
+          "mal_id": 2206,
+          "type": "people",
+          "name": "Kudo, Kazuya",
+          "url": "https:\/\/myanimelist.net\/people\/2206\/Kazuya_Kudo"
+        },
+        {
+          "mal_id": 2207,
+          "type": "people",
+          "name": "Ikegami, Ryouichi",
+          "url": "https:\/\/myanimelist.net\/people\/2207\/Ryouichi_Ikegami"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 229,
+          "type": "manga",
+          "name": "Shounen Sunday",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/229\/Shounen_Sunday"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 1,
+          "type": "manga",
+          "name": "Action",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/1\/Action"
+        },
+        {
+          "mal_id": 37,
+          "type": "manga",
+          "name": "Supernatural",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/37\/Supernatural"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": [
+        {
+          "mal_id": 27,
+          "type": "manga",
+          "name": "Shounen",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/27\/Shounen"
+        }
+      ]
+    },
+    {
+      "mal_id": 195,
+      "url": "https:\/\/myanimelist.net\/manga\/195\/Zig_x_Zag",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1028.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1028t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1028l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1028.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1028t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1028l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Zig x Zag" },
+        { "type": "Japanese", "title": "ZIG\u00d7ZAG" }
+      ],
+      "title": "Zig x Zag",
+      "title_english": null,
+      "title_japanese": "ZIG\u00d7ZAG",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 8,
+      "volumes": 2,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2000-11-13T00:00:00+00:00",
+        "to": "2001-06-13T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 13, "month": 11, "year": 2000 },
+          "to": { "day": 13, "month": 6, "year": 2001 }
+        },
+        "string": "Nov 13, 2000 to Jun 13, 2001"
+      },
+      "score": 6.67,
+      "scored": 6.67,
+      "scored_by": 176,
+      "rank": 14917,
+      "popularity": 28500,
+      "members": 423,
+      "favorites": 0,
+      "synopsis": "In an attempt to see her dad again, Yuuki and her brother Hiroaki decide to make a championship baseball team. Iria, the new transfer student, who is an oddball has star pitching potential. Yuuki forces him to join her team picking up others as they go along. \n\n(Source: MegKF)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 2209,
+          "type": "people",
+          "name": "Yasunaga, Kei",
+          "url": "https:\/\/myanimelist.net\/people\/2209\/Kei_Yasunaga"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 111,
+          "type": "manga",
+          "name": "Bessatsu Friend",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/111\/Bessatsu_Friend"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 8,
+          "type": "manga",
+          "name": "Drama",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/8\/Drama"
+        },
+        {
+          "mal_id": 30,
+          "type": "manga",
+          "name": "Sports",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/30\/Sports"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": [
+        {
+          "mal_id": 25,
+          "type": "manga",
+          "name": "Shoujo",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/25\/Shoujo"
+        }
+      ]
+    },
+    {
+      "mal_id": 196,
+      "url": "https:\/\/myanimelist.net\/manga\/196\/Zeus",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/23202.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/23202t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/23202l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/23202.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/23202t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/23202l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Zeus" },
+        { "type": "Japanese", "title": "\u30bc\u30a6\u30b9" },
+        { "type": "English", "title": "Zeus" }
+      ],
+      "title": "Zeus",
+      "title_english": "Zeus",
+      "title_japanese": "\u30bc\u30a6\u30b9",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 3,
+      "volumes": 2,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "1997-10-01T00:00:00+00:00",
+        "to": "1998-09-01T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 1, "month": 10, "year": 1997 },
+          "to": { "day": 1, "month": 9, "year": 1998 }
+        },
+        "string": "Oct 1997 to Sep 1998"
+      },
+      "score": 6.17,
+      "scored": 6.17,
+      "scored_by": 716,
+      "rank": 20372,
+      "popularity": 14369,
+      "members": 1316,
+      "favorites": 4,
+      "synopsis": "Kira Yuuki is a 15 year old boy whose only wish is to be a normal teenager. Despite what he wants, he isn't really human at all -- he's a Lemora Saramanda. There's a strange symbol on his palm, testimony to what his is. Inaba and Yukia are two of the Kira's closest friends. However, because he is a special type of his species, Kira is wanted by others for the power he can bring. The mysterious Rosen Kroitz Secret Society seems to know a great deal about the Saramanda, keeping them as pets and breeding them. One day, Kira is captured by his pursuers, and Inaba and Yukia chase after the car he's trapped in. The accident that follows changes everything for the friends, as does the appearance of Kira's older brother... (Source: Storm in Heaven)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 2244,
+          "type": "people",
+          "name": "Higuri, You",
+          "url": "https:\/\/myanimelist.net\/people\/2244\/You_Higuri"
+        }
+      ],
+      "serializations": [],
+      "genres": [
+        {
+          "mal_id": 1,
+          "type": "manga",
+          "name": "Action",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/1\/Action"
+        },
+        {
+          "mal_id": 28,
+          "type": "manga",
+          "name": "Boys Love",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/28\/Boys_Love"
+        },
+        {
+          "mal_id": 10,
+          "type": "manga",
+          "name": "Fantasy",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/10\/Fantasy"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [
+        {
+          "mal_id": 40,
+          "type": "manga",
+          "name": "Psychological",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/40\/Psychological"
+        }
+      ],
+      "demographics": []
+    },
+    {
+      "mal_id": 197,
+      "url": "https:\/\/myanimelist.net\/manga\/197\/Zettai_Unmei_Houteishiki",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1345.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1345t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1345l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1345.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1345t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/1345l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Zettai Unmei Houteishiki" },
+        {
+          "type": "Japanese",
+          "title": "\u7d76\u5bfe\u904b\u547d\u65b9\u7a0b\u5f0f"
+        }
+      ],
+      "title": "Zettai Unmei Houteishiki",
+      "title_english": null,
+      "title_japanese": "\u7d76\u5bfe\u904b\u547d\u65b9\u7a0b\u5f0f",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 4,
+      "volumes": 1,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2004-09-25T00:00:00+00:00",
+        "to": null,
+        "prop": {
+          "from": { "day": 25, "month": 9, "year": 2004 },
+          "to": { "day": null, "month": null, "year": null }
+        },
+        "string": "Sep 25, 2004"
+      },
+      "score": 7.07,
+      "scored": 7.07,
+      "scored_by": 1042,
+      "rank": null,
+      "popularity": 11300,
+      "members": 1814,
+      "favorites": 3,
+      "synopsis": "Tamaki, the son of a Yakuza family, is friends with Tomoyuki who is 12 years older than him. One day, Tomoyuki kisses Tamaki. Tamaki becomes confused and runs away but before he has a chance to figure out his feelings, Tomoyuki goes abroad for 3 years without saying anything or keeping in touch with Tamaki. Now Tomoyuki is back in Japan but he's avoiding Tamaki. Can the two become close again? (Source: B-U)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 2210,
+          "type": "people",
+          "name": "Fuwa, Shinri",
+          "url": "https:\/\/myanimelist.net\/people\/2210\/Shinri_Fuwa"
+        }
+      ],
+      "serializations": [],
+      "genres": [
+        {
+          "mal_id": 28,
+          "type": "manga",
+          "name": "Boys Love",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/28\/Boys_Love"
+        },
+        {
+          "mal_id": 49,
+          "type": "manga",
+          "name": "Erotica",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/49\/Erotica"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": []
+    },
+    {
+      "mal_id": 198,
+      "url": "https:\/\/myanimelist.net\/manga\/198\/Gravity_Eyes",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/17732.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/17732t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/17732l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/17732.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/17732t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/17732l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Gravity Eyes" },
+        {
+          "type": "Japanese",
+          "title": "\u30b0\u30fc\u30e9\u30d3\u30c6\u30a3\u30fb\u30a2\u30a4\u30ba"
+        },
+        { "type": "English", "title": "Gravity Eyes" }
+      ],
+      "title": "Gravity Eyes",
+      "title_english": "Gravity Eyes",
+      "title_japanese": "\u30b0\u30fc\u30e9\u30d3\u30c6\u30a3\u30fb\u30a2\u30a4\u30ba",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 8,
+      "volumes": 2,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2007-01-01T00:00:00+00:00",
+        "to": "2008-05-01T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 2007 },
+          "to": { "day": 1, "month": 5, "year": 2008 }
+        },
+        "string": "Jan 2007 to May 2008"
+      },
+      "score": 7.61,
+      "scored": 7.61,
+      "scored_by": 1171,
+      "rank": null,
+      "popularity": 10254,
+      "members": 2050,
+      "favorites": 11,
+      "synopsis": "This series is a spin-off of Tsumasaki ni Kiss following the character of Kyouya.\nfrom Dangerous Pleasure\n\nKyouya has left hosting to go to university and work at a regular job. That is when he meets an assistant professor, Kiriya, whose \"cold eyes\" have drawn him in.\n\nKyouya's problems begin with his restaurant boss who he has an emotional attachment to that he doesn't know how to deal with. He turns to Kiriya, who in turn has his own past to get over.\n\nWill Kyouya and Kiriya be able to overcome their pasts and find a future together?\n\nVolume 1 contains the Extra:  The Flower's Name\nVolume 2 contains the Extra:  Love Life",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 2210,
+          "type": "people",
+          "name": "Fuwa, Shinri",
+          "url": "https:\/\/myanimelist.net\/people\/2210\/Shinri_Fuwa"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 333,
+          "type": "manga",
+          "name": "Chara Selection",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/333\/Chara_Selection"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 28,
+          "type": "manga",
+          "name": "Boys Love",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/28\/Boys_Love"
+        },
+        {
+          "mal_id": 49,
+          "type": "manga",
+          "name": "Erotica",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/49\/Erotica"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": []
+    },
+    {
+      "mal_id": 199,
+      "url": "https:\/\/myanimelist.net\/manga\/199\/Ningyo_Series",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/183364.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/183364t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/183364l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/183364.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/183364t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/183364l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Ningyo Series" },
+        { "type": "Synonym", "title": "Mermaid Forest" },
+        { "type": "Synonym", "title": "Mermaid's Gaze" },
+        { "type": "Synonym", "title": "Mermaid's Scar" },
+        { "type": "Synonym", "title": "Ningyo no Mori" },
+        { "type": "Synonym", "title": "Mermaid Saga" },
+        { "type": "Japanese", "title": "\u4eba\u9b5a\u30b7\u30ea\u30fc\u30ba" }
+      ],
+      "title": "Ningyo Series",
+      "title_english": null,
+      "title_japanese": "\u4eba\u9b5a\u30b7\u30ea\u30fc\u30ba",
+      "title_synonyms": [
+        "Mermaid Forest",
+        "Mermaid's Gaze",
+        "Mermaid's Scar",
+        "Ningyo no Mori",
+        "Mermaid Saga"
+      ],
+      "type": "Manga",
+      "chapters": 16,
+      "volumes": 3,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "1984-08-01T00:00:00+00:00",
+        "to": "1994-02-01T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 1, "month": 8, "year": 1984 },
+          "to": { "day": 1, "month": 2, "year": 1994 }
+        },
+        "string": "Aug 1984 to Feb 1994"
+      },
+      "score": 7.41,
+      "scored": 7.41,
+      "scored_by": 3302,
+      "rank": 3864,
+      "popularity": 2788,
+      "members": 8719,
+      "favorites": 103,
+      "synopsis": "There is a legend that says if someone eats the flesh of a mermaid, they will attain immortality; but this myth contains a darker side, in that the devourer may die or become a monster. \n\nThe youthful Yuta has been wandering Japan in search of mermaids not to become immortal, but to break his curse of eternal life. Over five hundred years ago, he ate a mermaid; now, Yuta is in search of a cure, hoping the mermaids know the secret. When he stumbles upon a hidden village, he quickly learns that it is full of mermaids that live in an underground society centered around the murder and cultivation of young human women to maintain their own youth and immortality. \n\nTheir most recent victim, Mana, is given the flesh of a mermaid to eat in order to fulfill the recipe toward being a perfect candidate to be eaten. Yuta helps her escape, and they find themselves on a journey to live their lives as normal as they can.\n\n[Written by MAL Rewrite]",
+      "background": "Ningyo Series began publication in Shounen Sunday Zoukan and later moved to Weekly Shounen Sunday. It was published sporadically during its serialization. The original Japanese release was two wideband volumes and was incomplete; the second was complete in three small size volumes. The first two story arcs were serialized in English in the 1993 March issue of VIZ Media's Animerica\u2014Anime & Manga Monthly magazine. The remaining stories were subsequently published in comic book format by VIZ Select Comics, with four issues to each part titled Mermaid Forest, Mermaid's Dream, Mermaid's Promise, Mermaid's Scar, Mermaid's Gaze and Mermaid's Mask, published from 1993 to 1995. The series was additionally printed in standard tankoubon format by VIZ Graphic Novels in three volumes titled Mermaid Forest, Mermaid's Scar, and Mermaid's Gaze, from December 6, 1994, to March 8, 1997. VIZ Media republished the title in four volumes as Mermaid Saga from July 14, 2004, to December 22, 2004, in the original right-to-left order. A two-volume collector's edition was later released. The series was also published in Argentina as Cuentos de Sirenas by LARP Editores from November 2008 to April 2009.",
+      "authors": [
+        {
+          "mal_id": 1891,
+          "type": "people",
+          "name": "Takahashi, Rumiko",
+          "url": "https:\/\/myanimelist.net\/people\/1891\/Rumiko_Takahashi"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 411,
+          "type": "manga",
+          "name": "Shounen Sunday Super",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/411\/Shounen_Sunday_Super"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 14,
+          "type": "manga",
+          "name": "Horror",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/14\/Horror"
+        },
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Romance",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/22\/Romance"
+        },
+        {
+          "mal_id": 37,
+          "type": "manga",
+          "name": "Supernatural",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/37\/Supernatural"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": [
+        {
+          "mal_id": 27,
+          "type": "manga",
+          "name": "Shounen",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/27\/Shounen"
+        }
+      ]
+    },
+    {
+      "mal_id": 200,
+      "url": "https:\/\/myanimelist.net\/manga\/200\/Tsumasaki_ni_Kiss",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/4927.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/4927t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/4927l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/4927.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/4927t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/4927l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Tsumasaki ni Kiss" },
+        { "type": "Synonym", "title": "A Gentleman's Kiss" },
+        { "type": "Synonym", "title": "Tiptoe Kiss" },
+        { "type": "Japanese", "title": "\u722a\u5148\u306b\u30ad\u30b9" },
+        { "type": "English", "title": "A Gentleman's Kiss" }
+      ],
+      "title": "Tsumasaki ni Kiss",
+      "title_english": "A Gentleman's Kiss",
+      "title_japanese": "\u722a\u5148\u306b\u30ad\u30b9",
+      "title_synonyms": ["A Gentleman's Kiss", "Tiptoe Kiss"],
+      "type": "Manga",
+      "chapters": 8,
+      "volumes": 2,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2005-01-01T00:00:00+00:00",
+        "to": "2006-01-01T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 2005 },
+          "to": { "day": 1, "month": 1, "year": 2006 }
+        },
+        "string": "2005 to 2006"
+      },
+      "score": 7.52,
+      "scored": 7.52,
+      "scored_by": 916,
+      "rank": null,
+      "popularity": 12140,
+      "members": 1656,
+      "favorites": 5,
+      "synopsis": "Yakuza heir Homura Yasobe has a secret lover, the young businessman Touji Karasuma. A resourceful man who will do whatever it takes to succeed; Touji is in fact the noble son of the rival company competing with Homura. If anyone were to find out, it would mean war between the groups! But can the two keep their rendezvous secret? An adult story of secret love between heirs with lives hanging in the balance! (Source: DMP)",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 2210,
+          "type": "people",
+          "name": "Fuwa, Shinri",
+          "url": "https:\/\/myanimelist.net\/people\/2210\/Shinri_Fuwa"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 333,
+          "type": "manga",
+          "name": "Chara Selection",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/333\/Chara_Selection"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 28,
+          "type": "manga",
+          "name": "Boys Love",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/28\/Boys_Love"
+        },
+        {
+          "mal_id": 8,
+          "type": "manga",
+          "name": "Drama",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/8\/Drama"
+        },
+        {
+          "mal_id": 49,
+          "type": "manga",
+          "name": "Erotica",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/49\/Erotica"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": []
+    },
+    {
+      "mal_id": 201,
+      "url": "https:\/\/myanimelist.net\/manga\/201\/Kidou_Keisatsu_Patlabor",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/194559.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/194559t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/194559l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/194559.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/194559t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/194559l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Kidou Keisatsu Patlabor" },
+        {
+          "type": "Japanese",
+          "title": "\u6a5f\u52d5\u8b66\u5bdf\u30d1\u30c8\u30ec\u30a4\u30d0\u30fc"
+        },
+        { "type": "English", "title": "Mobile Police Patlabor" }
+      ],
+      "title": "Kidou Keisatsu Patlabor",
+      "title_english": "Mobile Police Patlabor",
+      "title_japanese": "\u6a5f\u52d5\u8b66\u5bdf\u30d1\u30c8\u30ec\u30a4\u30d0\u30fc",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 91,
+      "volumes": 22,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "1988-03-23T00:00:00+00:00",
+        "to": "1994-05-11T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 23, "month": 3, "year": 1988 },
+          "to": { "day": 11, "month": 5, "year": 1994 }
+        },
+        "string": "Mar 23, 1988 to May 11, 1994"
+      },
+      "score": 7.62,
+      "scored": 7.62,
+      "scored_by": 676,
+      "rank": 2279,
+      "popularity": 7359,
+      "members": 3105,
+      "favorites": 48,
+      "synopsis": "In the near future, large mecha called Labors are made to assist in various reconstruction projects in major countries around the world that are being threatened by global warming. In Japan, the government has enacted Project Babylon in order to conduct land reclamation. Labors are also being pressed into police and military service aside from civilian use.\n\nHowever, terrorists are now attempting to use labors to make themselves heard, as well as common criminals, thugs and guerrillas. The National Police Agency established the Special Vehicles Division, an all-labor task force to combat the potential use of labors for criminal\/terrorist activities.\n\n(Source: MU)",
+      "background": "Kidou Keisatsu Patlabor won the 36th Shogakukan Manga Award for shounen manga in 1991. The series was partially published in English as Mobile Police Patlabor by VIZ Media, who published the first two volumes between July 6, 1998 and October 6, 1998, before the license was dropped.",
+      "authors": [
+        {
+          "mal_id": 2011,
+          "type": "people",
+          "name": "Yuuki, Masami",
+          "url": "https:\/\/myanimelist.net\/people\/2011\/Masami_Yuuki"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 229,
+          "type": "manga",
+          "name": "Shounen Sunday",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/229\/Shounen_Sunday"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 1,
+          "type": "manga",
+          "name": "Action",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/1\/Action"
+        },
+        {
+          "mal_id": 46,
+          "type": "manga",
+          "name": "Award Winning",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/46\/Award_Winning"
+        },
+        {
+          "mal_id": 4,
+          "type": "manga",
+          "name": "Comedy",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/4\/Comedy"
+        },
+        {
+          "mal_id": 8,
+          "type": "manga",
+          "name": "Drama",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/8\/Drama"
+        },
+        {
+          "mal_id": 24,
+          "type": "manga",
+          "name": "Sci-Fi",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/24\/Sci-Fi"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [
+        {
+          "mal_id": 18,
+          "type": "manga",
+          "name": "Mecha",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/18\/Mecha"
+        }
+      ],
+      "demographics": [
+        {
+          "mal_id": 27,
+          "type": "manga",
+          "name": "Shounen",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/27\/Shounen"
+        }
+      ]
+    },
+    {
+      "mal_id": 202,
+      "url": "https:\/\/myanimelist.net\/manga\/202\/9th_Sleep",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/268329.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/268329t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/268329l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/268329.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/268329t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/268329l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "9th Sleep" },
+        {
+          "type": "Japanese",
+          "title": "\u30ca\u30a4\u30f3\u30b9 \u30b9\u30ea\u30fc\u30d7"
+        },
+        { "type": "English", "title": "9th Sleep" }
+      ],
+      "title": "9th Sleep",
+      "title_english": "9th Sleep",
+      "title_japanese": "\u30ca\u30a4\u30f3\u30b9 \u30b9\u30ea\u30fc\u30d7",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 3,
+      "volumes": 1,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2004-01-01T00:00:00+00:00",
+        "to": null,
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 2004 },
+          "to": { "day": null, "month": null, "year": null }
+        },
+        "string": "2004 to ?"
+      },
+      "score": 6.61,
+      "scored": 6.61,
+      "scored_by": 530,
+      "rank": 15883,
+      "popularity": 16396,
+      "members": 1086,
+      "favorites": 7,
+      "synopsis": "The planet had died once before\u2026 On the day of Despaira, a god appeared in the sky and saved the world. His name was King Shishioh. But now with the throne of the king empty, a vicious battle between two brothers is unfolding. Who will ascend the throne?\n\n(Source: Jun\u00e9)",
+      "background": "9th Sleep was published in English by Digital Media Publishing under the Jun\u00e9 imprint on February 25, 2010, as well as in eBook format on January 25, 2012.",
+      "authors": [
+        {
+          "mal_id": 2211,
+          "type": "people",
+          "name": "Tateno, Makoto",
+          "url": "https:\/\/myanimelist.net\/people\/2211\/Makoto_Tateno"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 447,
+          "type": "manga",
+          "name": "Kurofune Zero",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/447\/Kurofune_Zero"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 28,
+          "type": "manga",
+          "name": "Boys Love",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/28\/Boys_Love"
+        },
+        {
+          "mal_id": 10,
+          "type": "manga",
+          "name": "Fantasy",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/10\/Fantasy"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": []
+    },
+    {
+      "mal_id": 203,
+      "url": "https:\/\/myanimelist.net\/manga\/203\/Ai_no_Chikara_de_Koi_wo_Suru_no_da",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/31095.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/31095t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/31095l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/31095.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/31095t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/2\/31095l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Ai no Chikara de Koi wo Suru no da" },
+        { "type": "Synonym", "title": "Ai no Chikara de Koi wo Surunoda" },
+        { "type": "Synonym", "title": "Love's Purity and Tyranny" },
+        {
+          "type": "Japanese",
+          "title": "\u611b\u306e\u30c1\u30ab\u30e9\u3067\u604b\u3092\u3059\u308b\u306e\u3060"
+        },
+        { "type": "English", "title": "Crushing Love" }
+      ],
+      "title": "Ai no Chikara de Koi wo Suru no da",
+      "title_english": "Crushing Love",
+      "title_japanese": "\u611b\u306e\u30c1\u30ab\u30e9\u3067\u604b\u3092\u3059\u308b\u306e\u3060",
+      "title_synonyms": [
+        "Ai no Chikara de Koi wo Surunoda",
+        "Love's Purity and Tyranny"
+      ],
+      "type": "Manga",
+      "chapters": 8,
+      "volumes": 1,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2006-01-01T00:00:00+00:00",
+        "to": null,
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 2006 },
+          "to": { "day": null, "month": null, "year": null }
+        },
+        "string": "2006"
+      },
+      "score": 6.72,
+      "scored": 6.72,
+      "scored_by": 806,
+      "rank": null,
+      "popularity": 11759,
+      "members": 1724,
+      "favorites": 1,
+      "synopsis": "When rich, gorgeous and heartbroken Keiichiro Kuroda\u2019s ex-lover asks for a loan, he makes a bet with the man: he\u2019ll leave 5 million yen in a park with a sign that reads \u201cPlease Use Freely,\u201d and if it gets turned into the police, his ex can borrow the money; if someone takes the money, Keiichiro can finally turn away the man who broke his heart.\u202f But when the first person to spot the money ends up being a handsome young man in trouble, can Keiichiro give up on his quest for revenge and fall in love once more?\n\n(Source: Jun\u00e9 Manga)",
+      "background": "Ai no Chikara de Koi wo Suru no da was published in English as Crushing Love by Digital Media Publishing's Jun\u00e9 imprint on January 24, 2008.",
+      "authors": [
+        {
+          "mal_id": 2214,
+          "type": "people",
+          "name": "Natsumizu, Ritsu",
+          "url": "https:\/\/myanimelist.net\/people\/2214\/Ritsu_Natsumizu"
+        }
+      ],
+      "serializations": [],
+      "genres": [
+        {
+          "mal_id": 28,
+          "type": "manga",
+          "name": "Boys Love",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/28\/Boys_Love"
+        },
+        {
+          "mal_id": 8,
+          "type": "manga",
+          "name": "Drama",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/8\/Drama"
+        },
+        {
+          "mal_id": 22,
+          "type": "manga",
+          "name": "Romance",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/22\/Romance"
+        },
+        {
+          "mal_id": 49,
+          "type": "manga",
+          "name": "Erotica",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/49\/Erotica"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": []
+    },
+    {
+      "mal_id": 204,
+      "url": "https:\/\/myanimelist.net\/manga\/204\/Ai_no_Kotodama",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/152302.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/152302t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/152302l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/152302.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/152302t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/3\/152302l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Ai no Kotodama" },
+        { "type": "Japanese", "title": "\u611b\u306e\u8a00\u970a" },
+        { "type": "English", "title": "Words of Devotion" }
+      ],
+      "title": "Ai no Kotodama",
+      "title_english": "Words of Devotion",
+      "title_japanese": "\u611b\u306e\u8a00\u970a",
+      "title_synonyms": [],
+      "type": "Manga",
+      "chapters": 13,
+      "volumes": 2,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2000-01-01T00:00:00+00:00",
+        "to": "2002-01-01T00:00:00+00:00",
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 2000 },
+          "to": { "day": 1, "month": 1, "year": 2002 }
+        },
+        "string": "2000 to 2002"
+      },
+      "score": 7.04,
+      "scored": 7.04,
+      "scored_by": 732,
+      "rank": null,
+      "popularity": 13069,
+      "members": 1498,
+      "favorites": 4,
+      "synopsis": "After graduating from high school, Tachibana and Otani have finally confessed their love for each and are not living together. However, their life as \"newlyweds\" is rudely interrupted when they run into an old, high school classmate, Yuki. Otani has always been suspicious of the close friendship between Yuki and Tachibana; and honestly, his suspicions may not be that far off... Are the feelings between Yuki and Tachibana simply an ordinary crush, or could they be more?\n\n(Source: Jun\u00e9)",
+      "background": "Ai no Kotodama was published in English as Words of Devotion by Digital Media Publsihing's Jun\u00e9 imprint from August 1, 2007 to September 1, 2007.",
+      "authors": [
+        {
+          "mal_id": 2215,
+          "type": "people",
+          "name": "Konno, Keiko",
+          "url": "https:\/\/myanimelist.net\/people\/2215\/Keiko_Konno"
+        }
+      ],
+      "serializations": [],
+      "genres": [
+        {
+          "mal_id": 28,
+          "type": "manga",
+          "name": "Boys Love",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/28\/Boys_Love"
+        },
+        {
+          "mal_id": 49,
+          "type": "manga",
+          "name": "Erotica",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/49\/Erotica"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": []
+    },
+    {
+      "mal_id": 205,
+      "url": "https:\/\/myanimelist.net\/manga\/205\/Akutai_wa_Toiki_to_Mazariau",
+      "images": {
+        "jpg": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/5936.jpg",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/5936t.jpg",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/5936l.jpg"
+        },
+        "webp": {
+          "image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/5936.webp",
+          "small_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/5936t.webp",
+          "large_image_url": "https:\/\/cdn.myanimelist.net\/images\/manga\/1\/5936l.webp"
+        }
+      },
+      "approved": true,
+      "titles": [
+        { "type": "Default", "title": "Akutai wa Toiki to Mazariau" },
+        { "type": "Synonym", "title": "Your Voice Likes Sweet Whisper" },
+        { "type": "Synonym", "title": "Mutsugoto wa Akutai ni Torikawaru" },
+        {
+          "type": "Japanese",
+          "title": "\u60aa\u614b\u306f\u5410\u606f\u3068\u307e\u3056\u308a\u3042\u3046"
+        },
+        { "type": "English", "title": "Sweet Whisper" }
+      ],
+      "title": "Akutai wa Toiki to Mazariau",
+      "title_english": "Sweet Whisper",
+      "title_japanese": "\u60aa\u614b\u306f\u5410\u606f\u3068\u307e\u3056\u308a\u3042\u3046",
+      "title_synonyms": [
+        "Your Voice Likes Sweet Whisper",
+        "Mutsugoto wa Akutai ni Torikawaru"
+      ],
+      "type": "Manga",
+      "chapters": 6,
+      "volumes": 1,
+      "status": "Finished",
+      "publishing": false,
+      "published": {
+        "from": "2005-01-01T00:00:00+00:00",
+        "to": null,
+        "prop": {
+          "from": { "day": 1, "month": 1, "year": 2005 },
+          "to": { "day": null, "month": null, "year": null }
+        },
+        "string": "2005 to ?"
+      },
+      "score": 6.9,
+      "scored": 6.9,
+      "scored_by": 831,
+      "rank": null,
+      "popularity": 12413,
+      "members": 1604,
+      "favorites": 2,
+      "synopsis": "\u201cDo not deceive a person. Do not threaten a person. Do not handcuff people. Any illegal activity is forbidden.\u201d This is an excerpt from the deal between Natsume the salarymen in sales and the college kid Touji. It all began with a little stalking, some handcuffs, and an unexpected night in the slammer. Where will this budding love lead? (Source: MangaUpdates)\n\nIncludes the extra: Mutsugoto wa Akutai ni Torikawaru\nTouji's requests are getting more and more. Will Natsume give in to him?",
+      "background": "",
+      "authors": [
+        {
+          "mal_id": 2212,
+          "type": "people",
+          "name": "Fujiyama, Hyouta",
+          "url": "https:\/\/myanimelist.net\/people\/2212\/Hyouta_Fujiyama"
+        }
+      ],
+      "serializations": [
+        {
+          "mal_id": 126,
+          "type": "manga",
+          "name": "Magazine Be x Boy",
+          "url": "https:\/\/myanimelist.net\/manga\/magazine\/126\/Magazine_Be_x_Boy"
+        }
+      ],
+      "genres": [
+        {
+          "mal_id": 28,
+          "type": "manga",
+          "name": "Boys Love",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/28\/Boys_Love"
+        },
+        {
+          "mal_id": 49,
+          "type": "manga",
+          "name": "Erotica",
+          "url": "https:\/\/myanimelist.net\/manga\/genre\/49\/Erotica"
+        }
+      ],
+      "explicit_genres": [],
+      "themes": [],
+      "demographics": []
+    }
+  ]
+}
