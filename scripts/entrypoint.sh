@@ -2,7 +2,7 @@
 
 set -e
 
-export PATH="/usr/bin:$PATH"
+export PATH="/usr/bin:/app/node_modules/.bin$PATH"
 
 DB_HOST=${DB_HOST:-db}                                                                                                            
 DB_USER=${DB_USER:-postgres} 
