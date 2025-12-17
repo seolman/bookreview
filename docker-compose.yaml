@@ -55,11 +55,10 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      # TODO
+      - "./prometheus.yaml:/etc/prometheus/prometheus.yaml"
       - "prometheus-data:/prometheus"
     command:
-      # TODO
-      - "--config.file="
+      - "--config.file=/etc/prometheus/prometheus.yaml"
 
   grafana:
     image: grafana/grafana-oss:latest
