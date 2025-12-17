@@ -12,6 +12,7 @@ import errorhandler from "./middlewares/errorMiddleware.js";
 import AppError from "./utils/error.js";
 import logger from "./utils/logger.js";
 import { redis } from "./db/redis.js";
+import { register } from "./configs/prometheus.js";
 
 export const createApp = async () => {
   const app = express();
@@ -84,6 +85,11 @@ export const createApp = async () => {
       status: "Ok",
       uptime: `${process.uptime().toFixed(2)}`,
     });
+  });
+
+  app.get("/metrics", async (_req, res) => {
+    res.set("Content-Type", register.contentType);
+    res.end(await register.metrics());
   });
 
   app.use(errorhandler);
