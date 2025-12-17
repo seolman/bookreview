@@ -12,7 +12,6 @@ COPY . .
 RUN npm run build
 
 RUN chmod +x ./scripts/entrypoint.sh
-RUN chmod +x ./scripts/data.sh
 
 ARG USER_UID=10001
 ARG GROUP_UID=10001
