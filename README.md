@@ -1,9 +1,5 @@
 # 만화 리뷰 서비스 백엔드
 
-<!-- TODO -->
-
-[English](/README.en.md)
-
 ## 프로젝트에 대하여
 
 이 프로젝트는 만화를 리뷰하고 그에 대해 의견을 나누는 서비스이다.
@@ -51,10 +47,10 @@ npm run db:reset && npm run db:seed # 기본적인 개발환경으로 초기화
 
 `.env.example`
 
-```shell
+```env
 # Optional
 # NODE_ENV= # [development, production, test]
-# PORT= #8080
+# PORT= # 8080
 
 # Required
 DATABASE_URL= #<protocol>://<username>:<password>@<address>:<port>/<database>
@@ -64,6 +60,9 @@ REDIS_URL=
 GOOGLE_CLIENT_ID= # https://console.cloud.google.com/auth
 GOOGLE_CLIENT_SECRET=
 GOOGLE_CALLBACK_URL=
+GITHUB_CLIENT_ID= # https://github.com/settings/developers
+GITHUB_CLIENT_SECRET= #
+GOOGLE_APPLICATION_CREDENTIALS= # admin-sdk.json
 ```
 
 `PORT`: 서비스의 포트번호
@@ -71,6 +70,12 @@ GOOGLE_CALLBACK_URL=
 `DATABASE_URL`: 데이터베이스 주소
 `JWT_SECRET`: Json Web Token의 비밀
 `ALLOWED_ORIGINS`: CORS를 위한 허용 오리진
+`GOOGLE_CLIENT_ID`: Google OAuth 클라이언트 ID (Google Cloud Console에서 발급)
+`GOOGLE_CLIENT_SECRET`: Google OAuth 클라이언트 Secret (Google Cloud Console에서 발급)
+`GOOGLE_CALLBACK_URL`: Google OAuth 콜백 URL
+`GITHUB_CLIENT_ID`: Github OAuth 클라이언트 ID
+`GITHUB_CLIENT_SECRET`: Github OAuth 클라이언트 Secret
+`GOOGLE_APPLICATION_CREDENTIALS`: Firebase Admin SDK
 
 ## 배포
 
@@ -89,6 +94,15 @@ create database manga_db;
 ```
 
 `redis 8.2.2`
+
+```bash
+sudo apt-get install lsb-release curl gpg
+curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+sudo chmod 644 /usr/share/keyrings/redis-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+sudo apt-get update
+sudo apt-get install redis
+```
 
 `Nginx/1.24.0`
 
@@ -132,40 +146,10 @@ curl http://<public-ip>:<port>/health --silent # | jq "."
 docker compose up -d
 ```
 
-```bash
-docker network create manga-app-network
-```
+`예시 데이터 시딩`
 
 ```bash
-docker run -d \
-  --name manga-db \
-  --network manga-app-network \
-  -e POSTGRES_USER=postgres \
-  -e POSTGRES_PASSWORD=postgres \
-  -e POSTGRES_DB=manga_db \
-  -p 5432:5432 \
-  -v pgdata:/var/lib/postgresql/data \
-  postgres:16-trixie
-```
-
-```bash
-docker build -t your-username/manga-app:latest .
-```
-
-```bash
-docker run -d \
-  --name manga-app \
-  --network manga-app-network \
-  -e PORT=8080 \
-  -e DB_HOST=manga-db \
-  -e DB_USER=postgres \
-  -e DB_PASSWORD=postgres \
-  -e DB_NAME=manga_db \
-  -e DATABASE_URL="postgresql://postgres:postgres@manga-db:5432/manga_db" \
-  -e JWT_SECRET=your_super_secret_jwt_key_that_is_very_long \
-  -e NODE_ENV=production \
-  -p 8080:8080 \
-  your-username/manga-app:latest
+docker exec <app_name> npm run db:seed
 ```
 
 ### 쿠버네티스
@@ -245,6 +229,18 @@ Client (사용자) <-> Server (백엔드)
    - 이제 클라이언트가 가지고 있는 Refresh Token은 서버에서 무효화되었으므로, 더 이상 새로운 Access Token을 발급받을 수 없게 되어
      세션이 효과적으로 종료됩니다.
 
+#### 5단계: 소셜 로그인 (Google OAuth & Firebase Auth Github)
+
+1. 클라이언트: 사용자가 Google 소셜 로그인 버튼을 클릭하면, `/auth/google` 엔드포인트로 리다이렉트됩니다.
+2. 서버 (`authController` -> `authService`):
+   - Google OAuth 인증 흐름을 시작하여 Google 로그인 페이지로 사용자를 리다이렉트합니다.
+3. 사용자: Google 로그인 페이지에서 계정을 선택하고 인증을 완료합니다.
+4. Google: 인증 성공 후, `GOOGLE_CALLBACK_URL`로 지정된 콜백 URL (`/auth/google/callback`)로 사용자를 리다이렉트합니다. 이때 인증 코드를 함께 전달합니다.
+5. 서버 (`authController` -> `authService`):
+   - 콜백 URL을 통해 전달받은 인증 코드로 Google, Github API를 호출하여 사용자 정보를 획득합니다.
+   - 소셜 로그인 제공자에서 Custom Token을 생성합니다.
+   - 생성된 Custom Token으로 Access Token 및 Refresh Token을 클라이언트에게 발급하여 응답합니다. 이후 과정은 일반 로그인과 동일합니다.
+
 ## RBAC (역할 기반 접근 제어)
 
 본 서비스는 'user'와 'admin' 두 가지 역할을 지원하며, 각 역할별 API 접근 권한은 다음과 같습니다.
@@ -299,6 +295,9 @@ password123
 | **Auth**      | POST   | `/auth/login`             | 사용자 로그인 및 토큰 발급              | X    | -            |
 |               | POST   | `/auth/logout`            | 로그아웃 (Refresh Token 무효화)         | O    | User, Admin  |
 |               | POST   | `/auth/refresh`           | 액세스 토큰 재발급                      | X    | -            |
+|               | GET    | `/auth/google`            | Google OAuth 로그인 시작                | X    | -            |
+|               | GET    | `/auth/google/callback`   | Google OAuth 콜백 처리                  | X    | -            |
+|               | POST   | `/auth/firebase-login`    | Github OAuth 로그인 시작                | X    | -            |
 | **Users**     | POST   | `/users`                  | 회원가입                                | X    | -            |
 |               | GET    | `/users/me`               | 내 프로필 조회                          | O    | User, Admin  |
 |               | PUT    | `/users/me`               | 내 프로필 수정                          | O    | User, Admin  |
@@ -331,7 +330,7 @@ _(총 31개 엔드포인트)_
 
 ## 성능/보안 고려사항
 
-- **API 요청 속도 제한 (Rate Limiting)**: `express-rate-limit` 라이브러리를 사용하여 모든 API 요청에 대해 전역적으로 요청 횟수를 제한합니다. 이를 통해 DoS(Denial-of-Service) 공격과 같은 악의적인 요청으로부터 서버를 보호합니다. (예: 15분당 100회)
+- **API 요청 속도 제한 (Rate Limiting)**: `express-rate-limit`, `rate-limit-redis` 라이브러리를 사용하여 모든 API 요청에 대해 전역적으로 요청 횟수를 제한합니다. 이를 통해 DoS(Denial-of-Service) 공격과 같은 악의적인 요청으로부터 서버를 보호합니다. (예: 15분당 100회)
 
 - **비밀번호 해싱 (Password Hashing)**: 사용자의 비밀번호는 `bcryptjs` 라이브러리를 사용하여 단방향으로 암호화(해싱)되어 데이터베이스에 저장됩니다. 이를 통해 데이터베이스가 유출되더라도 사용자의 실제 비밀번호를 알 수 없도록 합니다.
 
@@ -346,9 +345,3 @@ _(총 31개 엔드포인트)_
 - **비즈니스 모델 및 결제**: 현재는 기본적인 리뷰 기능에 초점이 맞춰져 있어, 향후 유료 콘텐츠나 작가 후원 등 비즈니스 모델과 이에 따른 결제 시스템 연동이 필요할 수 있습니다.
 
 - **확장성**: 현재는 단일 서버 인스턴스 배포를 기준으로 합니다. 대규모 트래픽 발생 시, 로드 밸런서를 도입하고 애플리케이션을 여러 인스턴스로 확장(Scale-out)할 수 있는 구조적 개선이 필요합니다.
-
-- **캐싱 전략**: 인기 만화 목록, 통계 데이터 등 자주 조회되지만 자주 변경되지 않는 데이터에 대해 Redis와 같은 인-메모리 캐시를 도입하여 데이터베이스 부하를 줄이고 응답 속도를 향상시킬 수 있습니다.
-
-- **로깅 및 모니터링**: 현재는 기본적인 파일 로깅만 구현되어 있습니다. ElasticSearch, Datadog 등과 같은 외부 로깅/모니터링 시스템과 연동하여 에러 추적, 성능 분석, 알림 기능을 고도화할 필요가 있습니다.
-
-- **지속적 배포(CD)**: GitHub Actions에 CI(지속적 통합)만 구성되어 있습니다. `main` 브랜치에 병합된 코드가 테스트를 통과하면 자동으로 서버에 배포되는 CD(지속적 배포) 파이프라인을 구축하여 배포 과정을 자동화할 수 있습니다.
