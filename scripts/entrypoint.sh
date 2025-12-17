@@ -2,6 +2,8 @@
 
 set -e
 
+export PATH="/usr/bin:$PATH"
+
 DB_HOST=${DB_HOST:-db}                                                                                                            
 DB_USER=${DB_USER:-postgres} 
 DB_NAME=${DB_NAME:-manga_db} 

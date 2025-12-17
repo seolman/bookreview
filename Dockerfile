@@ -13,9 +13,6 @@ RUN npm run build
 
 FROM node:24-alpine
 
-RUN echo "https://mirror.kakao.com/alpine/v3.19/main" > /etc/apk/repositories && \
-    echo "https://mirror.kakao.com/alpine/v3.19/community" >> /etc/apk/repositories
-
 RUN apk update && apk add --no-cache postgresql-client bash
 
 WORKDIR /app
