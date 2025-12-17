@@ -61,7 +61,7 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           port: ${{ secrets.DEPLOY_PORT }}
           script: |
-            cd /home/ubuntu/book-review
+            cd /home/ubuntu/bookreview
             git pull origin main
             echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
             docker compose -f docker-compose.yaml pull app

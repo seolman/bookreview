@@ -18,7 +18,7 @@ RUN apk update && apk add --no-cache postgresql-client bash
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm ci
 
 COPY --from=builder /app/dist ./dist
 
