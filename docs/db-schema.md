@@ -141,9 +141,9 @@ erDiagram
 
 ### `oauth` 테이블
 
-| 컬럼명           | 데이터 타입    | 제약 조건                                     | 설명                                |
-| :--------------- | :------------- | :-------------------------------------------- | :---------------------------------- |
-| `provider`       | `varchar(256)` | **PK**, `NOT NULL`                            | OAuth 제공자 (예: 'google', 'kakao') |
-| `providerUserId` | `varchar(256)` | **PK**, `NOT NULL`                            | OAuth 제공자가 부여한 사용자 ID     |
-| `userId`         | `integer`      | `NOT NULL`, `FK to users.id` (onDelete: CASCADE) | 내부 `users` 테이블의 사용자 ID     |
-| `createdAt`      | `timestamp`    | `NOT NULL`, `DEFAULT now()`                   | OAuth 연동 시각                     |
+| 컬럼명           | 데이터 타입    | 제약 조건                                        | 설명                                 |
+| :--------------- | :------------- | :----------------------------------------------- | :----------------------------------- |
+| `provider`       | `varchar(256)` | **PK**, `NOT NULL`                               | OAuth 제공자 (예: 'google', 'kakao') |
+| `providerUserId` | `varchar(256)` | **PK**, `NOT NULL`                               | OAuth 제공자가 부여한 사용자 ID      |
+| `userId`         | `integer`      | `NOT NULL`, `FK to users.id` (onDelete: CASCADE) | 내부 `users` 테이블의 사용자 ID      |
+| `createdAt`      | `timestamp`    | `NOT NULL`, `DEFAULT now()`                      | OAuth 연동 시각                      |

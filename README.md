@@ -61,7 +61,7 @@ GOOGLE_CLIENT_ID= # https://console.cloud.google.com/auth
 GOOGLE_CLIENT_SECRET=
 GOOGLE_CALLBACK_URL=
 GITHUB_CLIENT_ID= # https://github.com/settings/developers
-GITHUB_CLIENT_SECRET= # 
+GITHUB_CLIENT_SECRET= #
 GOOGLE_APPLICATION_CREDENTIALS= # admin-sdk.json
 ```
 
@@ -147,6 +147,7 @@ docker compose up -d
 ```
 
 `예시 데이터 시딩`
+
 ```bash
 docker exec <app_name> npm run db:seed
 ```
