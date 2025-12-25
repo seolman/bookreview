@@ -3,7 +3,7 @@
   "private": true,
   "name": "manga-review",
   "description": "manga review service backend",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
