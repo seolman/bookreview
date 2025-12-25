@@ -26,6 +26,7 @@ export const createApp = async () => {
     store: new RedisStore({
       sendCommand: (...args: string[]) => redis.sendCommand(args),
     }),
+    skip: (req) => req.path === "/health",
     standardHeaders: true,
     legacyHeaders: false,
     handler: (_req, _res, next) => {
